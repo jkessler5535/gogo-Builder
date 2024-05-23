@@ -1,0 +1,362 @@
+$font-family_1: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+$font-family_2: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;500;700;800&display=swap');
+
+html {
+	height: 100%;
+}
+body {
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: transparent radial-gradient(112.71% 51.63% at 50.00% 54.54%, #8A52EE 0%, #542DAA 100%) no-repeat center center;
+	height: 100%;
+  overflow: hidden;
+  font-family: 'Jost', sans-serif;
+}
+code {
+	font-family: $font-family_2;
+}
+
+.app-container {
+  box-sizing: content-box;
+}
+
+header {
+  border-bottom: 1px solid #000;
+background: #6139EB;
+box-shadow: 0px 7px 20px 1px rgba(0, 0, 0, 0.25);
+width: 100%;
+z-index: 2;
+display: flex;
+align-items: center;
+position: relative;
+  img {
+    padding: 10px;
+  }
+  nav {
+    gap: 80px;
+    display: flex;
+    margin-left: 3em;
+    flex: 1;
+    align-items: center;
+    padding: 0 2em;
+    .nav-list {
+      gap: 80px;
+      display: flex;
+      flex: 1;
+    }
+    a {
+      color: #fff;
+      text-decoration: none;
+      background-color: transparent;
+      font-weight: bolder;
+    }
+    .btn {
+      padding: 16px 20px;
+      cursor: pointer;
+    }
+  }
+}
+
+footer {
+  background-color: #0D0959;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  box-sizing: border-box;
+  a {
+    color: #49E988;
+  }
+}
+
+.builder-container {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.gogo-builder{
+  z-index: 2;
+}
+
+.gogo-hat {
+	z-index: 10;
+  top: -25px;
+  animation: headBreathing 4s infinite;
+}
+.gogo-comp-holder {
+	position: relative;
+	width: 600px;
+	height: 600px;
+  top: 54px;
+}
+
+.avatar-only {
+  position: relative;
+	width: 600px;
+	height: 600px;
+}
+.gogo-c {
+	position: absolute;
+}
+.gogo-head {
+	z-index: 5;
+  top: -25px;
+  animation: headBreathing 4s infinite;
+}
+
+.gogo-glasses {
+  z-index: 11;
+  top: -20px;
+}
+
+// @keyframes headBreathing {
+//   0%, 100% {
+//       transform: translateY(0);
+//   }
+//   50% {
+//       transform: translateY(-5px); /* Adjust as needed */
+//   }
+// }
+
+.gogo-belt {
+	z-index: 6;
+	left: -10px;
+	top: -12px;
+}
+.gogo-body {
+	z-index: 3;
+	right: 10px;
+	top: 10px;
+}
+.flex {
+	display: flex;
+}
+.gogo-controls {
+	position: fixed;
+	left: 0;
+	height: 100%;
+  z-index: 900;
+}
+.selected-part-controller {
+	position: fixed;
+	bottom: 80px;
+	border-top: 1px solid #000;
+	background: linear-gradient(180deg, #6139EB 0%, #7F45FA 100%);
+	box-shadow: 0px 7px 20px 1px rgba(0, 0, 0, 0.25);
+	width: 100%;
+  padding: 20px;
+  gap: 30px;
+	button {
+		position: relative;
+		width: 180px;
+		height: 180px;
+    background-color: transparent;
+    border: none;
+    &:hover {
+      cursor: pointer;
+    }
+	}
+	.gogo-c {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+  .active-button {
+    border-radius: 24px;
+    border: 2px solid #6DB0FF;
+    background: rgba(0, 0, 0, 0.20);
+    box-shadow: 0px 0px 44px 0px rgba(48, 193, 255, 0.50);
+  }
+  .hat-options {
+    .gogo-hat {
+      top: 30px;
+    }
+    #gogo-helmet {
+      left: 5px;
+      top: 15px;
+    }
+    .gogo-bear-helmet {
+      top: 7px;
+      left: 7px;
+    }
+  }
+  .body-options {
+    .gogo-body {
+      top: -40px;
+    }
+  }
+  .belt-options {
+    .gogo-belt {
+      top: -50px;
+    }
+  }
+}
+
+
+.none-icon {
+  position: absolute;
+  top: 50%;
+  display: block;
+  margin-top: -35px;
+  margin-left: auto;
+  left: 0;
+  right: 0;
+  margin-right: auto;
+}
+
+.color-picker {
+	position: fixed;
+	right: 0;
+  height: 100%;
+}
+
+.color-picker-tool {
+  background: #824AF6;
+  border-left: 1px solid #000;
+  height: 100%;
+  padding: 8px;
+}
+
+.part-selection {
+	display: flex;
+	flex-direction: column;
+  gap: 20px;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	border-right: 1px solid #000;
+	background: #824AF6;
+	box-shadow: 10px 0px 26px 0px rgba(0, 0, 0, 0.25);
+	padding: 1.5em;
+	button {
+		filter: drop-shadow(0px 14px 17px rgba(0, 0, 0, 0.25));
+		border-radius: 16px;
+		background: linear-gradient(180deg, #B288FF 0%, #9C67FF 100%);
+		width: 88px;
+		height: 88px;
+		border: none;
+    &:hover {
+      cursor: pointer;
+    }
+	}
+	button.active-button {
+		border-radius: 16px;
+		border: 1px solid #5E26D3;
+		background: #713DDC;
+		box-shadow: 0px 6px 15px 0px rgba(87, 48, 174, 0.80) inset;
+	}
+}
+
+
+
+
+// Lab Assets
+.lab-asset {
+  position: absolute;
+}
+
+.lab-asset__platform {
+  z-index: 2;
+  max-width: 1380px;
+  bottom: -523px;
+  left: -220px;
+}
+
+
+.lab-asset__tv  {
+  max-width: 700px;
+  width: 100%;
+  left: 290px;
+  z-index: 1;
+  display: none;
+  top: 100px;
+}
+
+.lab-asset__gen  {
+  max-width: 662px;
+  width: 100%;
+  right: 210px;
+  z-index: 1;
+  display: none;
+  top: 250px;
+}
+
+.lab-asset_panels {
+  width: 100%;
+  z-index: 0;
+}
+
+.btn {
+  border-radius: 48px;
+  background-color: #49E988;
+  color: #000;
+  border: none;
+  padding: 6px 20px;
+  font-weight: bold;
+}
+
+/* For screens larger than 728px */
+@media (min-width: 728px) {
+
+}
+
+/* For screens larger than 1024px */
+@media (min-width: 1024px) {
+  .lab-asset__tv {
+    display: block;
+  }
+  .lab-asset__gen {
+    display: block;
+  }
+}
+
+/* For screens larger than 1230px */
+@media (min-width: 1230px) {
+  .lab-asset__tv {
+    left: 0px;
+  }
+  .lab-asset__gen {
+    right: 0px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .gogo-comp-holder {
+    top: 54px;
+  }
+}
+
+// .scan-line {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   height: 5px; /* Adjust to the desired thickness of the scan line */
+//   background: rgba(0, 221, 255, 0.6); /* Blue semi-transparent */
+//   pointer-events: none; /* So it doesn't interfere with any interactive elements */
+//   transform: translateY(-100%); /* Initially hide the scan line above the container */
+//   animation: scan 2s linear infinite; /* 2 seconds for each scan, adjust as needed */
+// }
+
+// @keyframes scan {
+//   0%, 100% {
+//     transform: translateY(-10%);
+//   }
+//   50% {
+//     transform: translateY(110%);
+//   }
+// }
+
