@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import "./index.scss";
 import AvatarBuilder from "./components/gogo-builder";
 import html2canvas from "html2canvas";

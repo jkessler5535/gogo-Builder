@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ColorPicker from "./color-picker";
 
-import Headphones from "./headphones/headphones";
+
 
 import Hat1 from "./hats/hat-1";
 import Hat2 from "./hats/hat-2";
@@ -22,6 +22,7 @@ import Body6 from "./bodies/body-6";
 import Glasses1 from "./glasses/glasses-1";
 import Glasses2 from "./glasses/glasses-2";
 import Glasses3 from "./glasses/glasses-3";
+import Headphones from "./headphones/headphones";
 
 import Head1 from "./heads/head-1";
 import Belt1 from "./belt/belt-1";
@@ -35,6 +36,7 @@ import { ReactComponent as BeltIcon } from "../assets/icons/belt.svg";
 import  NoneIcon from "../assets/icons/none-icon.svg";
 import { ReactComponent as HeadphonesIcon } from "../assets/icons/headphones.svg";
 
+
 //Lab Assets
 import Platform from "../assets/lab-assets/platform.png";
 
@@ -45,6 +47,7 @@ const partIcons = {
   glasses: <GlassesIcon/>,
   headphones: <HeadphonesIcon/>,
   
+  
 };
 
 const AvatarBuilder = (downloadAvatar) => {
@@ -53,7 +56,8 @@ const AvatarBuilder = (downloadAvatar) => {
   const headOptions = [<Head1 />];
   const beltOptions = [null, <Belt1 />];
   const glassesOptions = [null, <Glasses1 />, <Glasses2 />, <Glasses3 />];
-  
+  const headphonesOptions = [null, <Headphones />];
+ 
 
   const [selectedPart, setSelectedPart] = useState("hat");
   const [colors, setColors] = useState({
@@ -62,6 +66,8 @@ const AvatarBuilder = (downloadAvatar) => {
     head: "#000",
     belt: "#000",
     glasses: "#000",
+    headphones: "#000",
+  
   
   });
 
@@ -70,6 +76,8 @@ const AvatarBuilder = (downloadAvatar) => {
   const [headIndex, setHeadIndex] = useState(0);
   const [beltIndex, setBeltIndex] = useState(0);
   const [glassesIndex, setGlassesIndex] = useState(0);
+  const [headphonesIndex, setHeadphonesIndex] = useState(0);
+  
   
 
   const handleColorChange = (colorHex) => {
@@ -96,6 +104,12 @@ const AvatarBuilder = (downloadAvatar) => {
   ? React.cloneElement(glassesOptions[glassesIndex], { color: colors.glasses }) 
   : null;
 
+  const currentHeadphones = headphonesOptions[headphonesIndex] 
+  ? React.cloneElement(headphonesOptions[headphonesIndex], { color: colors.headphones }) 
+  : null;
+
+
+
 
   return (
     <div className="flex gogo-builder">
@@ -107,6 +121,7 @@ const AvatarBuilder = (downloadAvatar) => {
           {currentHead}
           {currentBelt}
           {currentBody}
+          {currentHeadphones}
         </div>
         <img
           className="lab-asset lab-asset__platform"
@@ -198,6 +213,7 @@ const AvatarBuilder = (downloadAvatar) => {
               ))}
             </div>
           )}
+
           {selectedPart === "glasses" && (
             <div className="glasses-options">
               {glassesOptions.map((Glasses, index) => (
@@ -212,6 +228,27 @@ const AvatarBuilder = (downloadAvatar) => {
                     ? React.cloneElement(Glasses, { color: colors.glasses }) 
                     : <img src={NoneIcon} alt="non icon" className="none-icon"/>
                   }
+                </motion.button>
+              ))}
+            </div>
+          )}
+           
+          {selectedPart === "headphones" && (
+            <div className="headphones-options">
+              {headphonesOptions.map((Headphones, index) => (
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+
+                  key={index}
+                  onClick={() => setHeadphonesIndex(index)}
+                  className={headphonesIndex === index ? "active-button" : ""}
+                >
+                  {Headphones ? (
+                  React.cloneElement(Headphones, { color: colors.headphones })
+                  ):(
+                  <img src={NoneIcon} alt="non icon" className="none-icon"/>
+                  )}
                 </motion.button>
               ))}
             </div>
