@@ -24,6 +24,7 @@ import Glasses2 from "./glasses/glasses-2";
 import Glasses3 from "./glasses/glasses-3";
 import Headphones from "./headphones/headphones";
 
+
 import Head1 from "./heads/head-1";
 import Belt1 from "./belt/belt-1";
 import { motion } from "framer-motion";
@@ -48,6 +49,7 @@ const partIcons = {
   headphones: <HeadphonesIcon/>,
   
   
+  
 };
 
 const AvatarBuilder = (downloadAvatar) => {
@@ -57,6 +59,7 @@ const AvatarBuilder = (downloadAvatar) => {
   const beltOptions = [null, <Belt1 />];
   const glassesOptions = [null, <Glasses1 />, <Glasses2 />, <Glasses3 />];
   const headphonesOptions = [null, <Headphones />];
+  
  
 
   const [selectedPart, setSelectedPart] = useState("hat");
@@ -67,6 +70,7 @@ const AvatarBuilder = (downloadAvatar) => {
     belt: "#000",
     glasses: "#000",
     headphones: "#000",
+    
   
   
   });
@@ -77,7 +81,7 @@ const AvatarBuilder = (downloadAvatar) => {
   const [beltIndex, setBeltIndex] = useState(0);
   const [glassesIndex, setGlassesIndex] = useState(0);
   const [headphonesIndex, setHeadphonesIndex] = useState(0);
-  
+ 
   
 
   const handleColorChange = (colorHex) => {
@@ -107,8 +111,6 @@ const AvatarBuilder = (downloadAvatar) => {
   const currentHeadphones = headphonesOptions[headphonesIndex] 
   ? React.cloneElement(headphonesOptions[headphonesIndex], { color: colors.headphones }) 
   : null;
-
-
 
 
   return (
