@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ColorPicker from "./color-picker";
 
+import Headphones from "./headphones/headphones";
+
 import Hat1 from "./hats/hat-1";
 import Hat2 from "./hats/hat-2";
 import Hat3 from "./hats/hat-3";
@@ -8,6 +10,7 @@ import Hat4 from "./hats/hat-4";
 import Hat5 from "./hats/hat-5";
 import Hat6 from "./hats/hat-6";
 import Hat7 from "./hats/hat-7";
+
 
 import Body1 from "./bodies/body-1";
 import Body2 from "./bodies/body-2";
@@ -30,6 +33,7 @@ import { ReactComponent as BodyIcon } from "../assets/icons/body.svg";
 import { ReactComponent as GlassesIcon } from "../assets/icons/glasses.svg";
 import { ReactComponent as BeltIcon } from "../assets/icons/belt.svg";
 import  NoneIcon from "../assets/icons/none-icon.svg";
+import { ReactComponent as HeadphonesIcon } from "../assets/icons/headphones.svg";
 
 //Lab Assets
 import Platform from "../assets/lab-assets/platform.png";
@@ -39,6 +43,8 @@ const partIcons = {
   body: <BodyIcon />,
   belt: <BeltIcon/>,
   glasses: <GlassesIcon/>,
+  headphones: <HeadphonesIcon/>,
+  
 };
 
 const AvatarBuilder = (downloadAvatar) => {
@@ -47,6 +53,7 @@ const AvatarBuilder = (downloadAvatar) => {
   const headOptions = [<Head1 />];
   const beltOptions = [null, <Belt1 />];
   const glassesOptions = [null, <Glasses1 />, <Glasses2 />, <Glasses3 />];
+  
 
   const [selectedPart, setSelectedPart] = useState("hat");
   const [colors, setColors] = useState({
@@ -55,6 +62,7 @@ const AvatarBuilder = (downloadAvatar) => {
     head: "#000",
     belt: "#000",
     glasses: "#000",
+  
   });
 
   const [hatIndex, setHatIndex] = useState(0);
@@ -62,11 +70,13 @@ const AvatarBuilder = (downloadAvatar) => {
   const [headIndex, setHeadIndex] = useState(0);
   const [beltIndex, setBeltIndex] = useState(0);
   const [glassesIndex, setGlassesIndex] = useState(0);
+  
 
   const handleColorChange = (colorHex) => {
     setColors({ ...colors, [selectedPart]: colorHex });
   };
-
+  
+  
   const currentHat = React.cloneElement(hatOptions[hatIndex], {
     color: colors.hat,
   });
@@ -135,6 +145,7 @@ const AvatarBuilder = (downloadAvatar) => {
               ))}
             </div>
           )}
+
 
           {selectedPart === "body" && (
             <div className="body-options">
