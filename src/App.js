@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.scss";
 import AvatarBuilder from "./components/gogo-builder";
 import html2canvas from "html2canvas";
+import Switch from "./components/switch";
+
 
 //Generator
 import TVGenerator from "./assets/lab-assets/tv-generator.svg";
@@ -13,7 +15,10 @@ import { motion } from "framer-motion";
 import Logo from "./assets/gogobuilder-logo.svg";
 import Fire from "./assets/icons/fire.svg";
 
+
 function App() {
+    
+
   const downloadAvatar = async () => {
     const avatarElement = document.querySelector(".avatar-only");
     const canvas = await html2canvas(avatarElement, {
@@ -39,6 +44,7 @@ function App() {
               Our Mission
             </a>
           </div>
+          <Switch/> 
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}

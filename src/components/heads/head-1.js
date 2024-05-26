@@ -7,6 +7,7 @@ function Head1({ color }) {
     height="600"
     fill="none"
     className="gogo-c gogo-head"
+    id="toggleButton"
   >
     <g clipPath="url(#clip0_1207_992)">
       <path

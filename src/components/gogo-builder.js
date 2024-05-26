@@ -48,8 +48,6 @@ const partIcons = {
   glasses: <GlassesIcon/>,
   headphones: <HeadphonesIcon/>,
   
-  
-  
 };
 
 const AvatarBuilder = (downloadAvatar) => {
@@ -112,6 +110,7 @@ const AvatarBuilder = (downloadAvatar) => {
   ? React.cloneElement(headphonesOptions[headphonesIndex], { color: colors.headphones }) 
   : null;
 
+  
 
   return (
     <div className="flex gogo-builder">
@@ -196,6 +195,7 @@ const AvatarBuilder = (downloadAvatar) => {
               ))}
             </div>
           )}
+         
 
           {selectedPart === "belt" && (
             <div className="belt-options">
