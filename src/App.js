@@ -18,6 +18,7 @@ import Fire from "./assets/icons/fire.svg";
 
 function App() {
   const [isToggled, setIsToggled] = useState(false);
+
   
   const downloadAvatar = async () => {
     const avatarElement = document.querySelector(".avatar-only");
@@ -45,6 +46,7 @@ function App() {
             </a>
           </div>
           <Switch rounded={true} isToggled={isToggled} onToggle={() => setIsToggled(!isToggled) }/> 
+          
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
