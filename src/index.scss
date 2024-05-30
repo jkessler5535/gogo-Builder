@@ -26,8 +26,8 @@ z-index: 2;
 display: flex;
 align-items: center;
 position: relative;
-  img {
-    padding: 10px;
+
+  
   }
   nav {
     gap: 80px;
@@ -35,7 +35,7 @@ position: relative;
     margin-left: 6em;
     flex: 1;
     align-items: center;
-    padding: 0 2em;
+    padding: 10px;
     .nav-list {
       gap: 80px;
       display: flex;
@@ -54,10 +54,10 @@ position: relative;
       cursor: pointer;
     }
   }
-}
+
 
 footer {
-  background-color: #0D0959;
+  background-color: #242031;
   color: #fff;
   position: fixed;
   width: 100%;
@@ -68,10 +68,22 @@ footer {
   justify-content: space-between;
   padding: 16px 24px;
   box-sizing: border-box;
-  a {
-    color: #49E988;
-  }
+  margin: 0 auto;
+  
 }
+.footer-img{
+  font-size: 20px; /* Adjust the size as needed */
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 6px;
+
+ 
+}
+footer p {
+  margin: 0 auto;
+  
+}
+
 
 .builder-container {
 	position: relative;

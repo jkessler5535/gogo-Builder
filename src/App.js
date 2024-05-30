@@ -3,6 +3,7 @@ import "./index.scss";
 import AvatarBuilder from "./components/gogo-builder";
 
 
+
 //Generator
 import TVGenerator from "./assets/lab-assets/tv-generator.svg";
 import Generator from "./assets/lab-assets/generator.svg";
@@ -10,12 +11,12 @@ import PanelLines from "./assets/lab-assets/panel-lines.svg";
 
 
 //Logo
-import Fire from "./assets/icons/fire.svg";
 import Logo2 from "./Images/Logo-2.png";
 import Layer1 from "./Images/layer1.png";
 import Layer2 from "./Images/layer2.png";
 import Button1 from "./Images/Button1.png";
 import Button2 from "./Images/Button2.png";
+import FooterImg from "./Images/Group.png";
 
 function App() {
   
@@ -35,8 +36,9 @@ function App() {
               Explore Subnets
             </a>
           </div>
-          <img src={Button1} alt="gogo letters"/>
-          <img src={Button2} alt="gogo letters"/>
+          
+            <img src={Button1} alt="gogo letters"/>
+            <img src={Button2} alt="gogo letters"/>
           
         </nav>
       </header>
@@ -59,9 +61,7 @@ function App() {
         />
       </div>
       <footer>
-        <p>Made with <span><img src={Fire} alt="decorative icon"/></span> by GoGoPool</p>
-        <p>Copyright © 2023 GoGoPool</p>
-        <a href="https://www.gogopool.com/">GoGoPool</a>
+        <p>Brought to you by<span className="footer-img"><img src={FooterImg} alt="footer-icon"/></span> GoGoPool</p>
       </footer>
     </div>
   );
