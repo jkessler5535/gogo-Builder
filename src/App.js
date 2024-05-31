@@ -38,10 +38,12 @@ function App() {
             <a href="https://docs.gogopool.com/gogopool-primer">
               Explore Subnets
             </a>
+            
           </div>
-          
           <img src={Button1} alt="discord-logo"/>
-          <img className="social2"src={Button2} alt="twitter-logo"/>
+          <img src={Button2} alt="twitter-logo"/>
+          
+          
           
         </nav>
       </header>
