@@ -12,8 +12,8 @@ import PanelLines from "./assets/lab-assets/panel-lines.svg";
 
 //Logo
 import Logo2 from "./Images/Logo-2.png";
-import Layer1 from "./Images/layer1.png";
 import Layer2 from "./Images/layer2.png";
+import Layer1 from "./Images/layer1.png";
 import Button1 from "./Images/Button1.png";
 import Button2 from "./Images/Button2.png";
 import FooterImg from "./Images/Group.png";
@@ -24,10 +24,13 @@ function App() {
   return (
     <div className="app-container">
       <header className="App-header">
-        <img src={Logo2} alt="GogoBuilder head"   />
-        <img src={Layer1} alt="gogo letters"/>
-        <img src={Layer2} alt="gogo letters"/>
+        <div className="img-container">
+          <img src={Logo2} alt="GogoBuilder head"/>
+          <img className="img-logo2" src={Layer2} alt="gogo letters"/>
+          <img className="img-logo1" src={Layer1} alt="gogo letters"/>
+        </div>
         
+       
         <nav>
           <div className="nav-list">
             <a href="https://app.gogopool.com/liquid-staking/">Liquid Stake</a>
@@ -37,8 +40,8 @@ function App() {
             </a>
           </div>
           
-            <img src={Button1} alt="gogo letters"/>
-            <img src={Button2} alt="gogo letters"/>
+          <img src={Button1} alt="discord-logo"/>
+          <img className="social2"src={Button2} alt="twitter-logo"/>
           
         </nav>
       </header>

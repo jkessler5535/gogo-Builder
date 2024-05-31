@@ -35,7 +35,7 @@ position: relative;
     margin-left: 6em;
     flex: 1;
     align-items: center;
-    padding: 10px;
+    padding: 24px;
     .nav-list {
       gap: 80px;
       display: flex;
@@ -49,9 +49,21 @@ position: relative;
       text-transform: uppercase;
       line-height: 21px;
     }
-    .btn {
-      padding: 16px 20px;
-      cursor: pointer;
+    .img-container {
+      .img-logo2{
+      display: inline-block;
+      vertical-align: middle;
+      align-items: center;
+      overflow-clip-margin: initial;
+      overflow: initial;
+      }
+      .img-logo1{
+        overflow-clip-margin: initial;
+        overflow: initial;
+      }
+    }
+    .social2{
+      padding-right:0;
     }
   }
 
@@ -72,7 +84,7 @@ footer {
   
 }
 .footer-img{
-  font-size: 20px; /* Adjust the size as needed */
+  font-size: 20px; 
   display: inline-block;
   vertical-align: middle;
   padding: 0 6px;
