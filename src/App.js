@@ -22,6 +22,7 @@ import NewGlasses from "./components/logos/new-glasses";
 import NewHeadphones from "./components/logos/new-headphones";
 import NewJacket from "./components/logos/new-jacket";
 import NewAcess from "./components/logos/new-acess";
+import SaveIcon from "./components/logos/save";
 
 
 function App() {
@@ -30,11 +31,9 @@ function App() {
   return (
     <div className="app-container">
       <header className="App-header">
-        <button>
-          <img src={Icon}  />
+        <button className="header-icon">
+          <Icon/>
         </button>
-        
-       
         <nav>
           <div className="nav-list">
             <a href="https://app.gogopool.com/liquid-staking/">Liquid Stake</a>
@@ -42,53 +41,123 @@ function App() {
             <a href="https://docs.gogopool.com/gogopool-primer">
               Explore Subnets
             </a>
-              
           </div>
 
-        <div className="btn-container">
-          <button className="icon-button">
-            <Discord />
-          </button>
-          <button className="icon-button">
-            <Twitter />
-          </button>
-        </div>
+          <div className="btn-container">
+            <button className="icon-button">
+              <Discord />
+            </button>
+            <button className="icon-button">
+              <Twitter />
+            </button>
+          </div>
         </nav>
       </header>
+
       <div className="builder-container">
        <div className="builder">
-         <button className="icon-button">
-            <NewTshirt className="logo"/>
-            Shirts
+         <button className="access-bar">
+           <div className="logo-container">
+             <NewTshirt className="logo "/>
+            </div>
+            <div className="text-container">
+              Shirts
+            </div>
           </button>
-          <button className="icon-button">
-            <NewHat className="logo"/>
-            Hats
+          <button className="access-bar">
+            <div className="logo-container">
+              <NewHat className="logo"/>
+            </div>
+            <div className="text-container">
+              Hats
+            </div>
           </button>
-          <button className="icon-button">
-            <NewGlasses className="logo"/>
-            Glasses
+          <button className="access-bar">
+            <div className="logo-container">
+              <NewGlasses className="logo"/>
+            </div>
+            <div className="text-container">
+              Eyewear
+            </div>
           </button>
-          <button className="icon-button">
-            <NewHeadphones className="logo"/>
-            Earwear
+          <button className="access-bar">
+            <div className="logo-container">
+              <NewHeadphones className="logo"/>
+            </div>
+            <div className="text-container">
+              Earwear
+            </div>
           </button>
-          <button className="icon-button">
-            <NewJacket className="logo"/>
-            Outwear
+          <button className="access-bar">
+            <div className="logo-container">
+              <NewJacket className="logo"/>
+            </div>
+            <div className="text-container">
+              Outwear
+            </div>
           </button>
-          <button className="icon-button">
-            <NewAcess className="logo"/>
+          <button className="access-bar">
+            <NewAcess className="logo" />
             Accessories
           </button>
+          <button className="access-bar">
+            <div className="logo-container">
+              <SaveIcon className="logo"/>
+            </div>
+            <div className="text-container">
+              Save Progress
+            </div>
+          </button>
        </div>
-
+       <div className="divider"></div>
       </div>
-      <footer>
-        <p>Brought to you by<span className="footer-img"><img src={FooterImg} alt="footer-icon"/></span> GoGoPool</p>
-      </footer>
-    </div>
-  );
+
+      
+      <div className="main-container">
+        <div className="side-scroll"></div>
+         <div className="main-content">
+            <div className="main-left">
+              <button className="selection">
+                  
+              </button>
+              <button className="selection">
+                  
+              </button>
+              <button className="selection">
+                  
+              </button>
+              <button className="selection">
+                  
+              </button>
+              <button className="selection">
+                  
+              </button>
+              <button className="selection">
+                  
+              </button>
+              <button className="selection">
+                  
+              </button>
+              <button className="selection">
+                  
+              </button>
+              <button className="selection">
+                  
+              </button>
+            </div>
+            <div className="main-right">
+              <div className="hero-img">
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <p>Brought to you by<span className="footer-img"><img src={FooterImg} alt="footer-icon"/></span> GoGoPool</p>
+        </footer>
+      </div>
+   
+ );
 }
 
 export default App;
