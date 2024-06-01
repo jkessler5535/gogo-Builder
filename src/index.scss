@@ -7,7 +7,7 @@ body {
 	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background: transparent radial-gradient(112.71% 51.63% at 50.00% 54.54%, #8A52EE 0%, #542DAA 100%) no-repeat center center;
+	background: #2B2739;
 	height: 100%;
   overflow: hidden;
   font-family: 'Poppins', sans-serif;
@@ -18,7 +18,7 @@ body {
 }
 
 header {
-border-bottom: 1px solid #000;
+border-bottom: none; //1px solid #000 <--old
 background: #242031;
 box-shadow: 0px 7px 20px 1px rgba(0, 0, 0, 0.25);
 width: 100%;
@@ -48,6 +48,18 @@ position: relative;
       font-weight: 700;
       text-transform: uppercase;
       line-height: 21px;
+    }
+    .btn-container{
+      display: flex;
+      gap:30px;
+    }
+    .icon-button{
+      background:#242031;
+      border: 1px solid #ffffff;
+      border-radius: 8px;
+      padding:8px 10px;
+      
+      
     }
   }
 
@@ -132,6 +144,8 @@ footer p {
 //       transform: translateY(-5px); /* Adjust as needed */
 //   }
 // }
+
+//
 
 .gogo-belt {
 	z-index: 6;
@@ -311,6 +325,9 @@ footer p {
   padding: 6px 20px;
   font-weight: bold;
 }
+
+
+  
 
 /* For screens larger than 728px */
 @media (min-width: 728px) {
