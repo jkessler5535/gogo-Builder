@@ -33,7 +33,7 @@ margin-bottom:54px;
 .header-icon{
   background-color: transparent;
   border: none;
-  margin-left: 220px;
+  margin-left: 260px;
   
   
 }
@@ -42,7 +42,7 @@ margin-bottom:54px;
     display: flex;
     align-items: center;
     padding: 24px;
-    margin-left: 80px;
+    margin-left: 90px;
     .nav-list {
       gap: 80px;
       display: flex;
@@ -58,7 +58,7 @@ margin-bottom:54px;
     }
     .btn-container{
       display: flex;
-      margin-left: 345px;
+      margin-left: 250px;
      
     }
     .icon-button{
@@ -73,18 +73,19 @@ margin-bottom:54px;
 
 
 footer {
-  background-color: #242031;
+  background-color: #2B2739;
   color: #fff;
   position: fixed;
   width: 100%;
   bottom: 0;
-  z-index: 10;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 18px 24px;
   box-sizing: border-box;
   margin: 0 auto;
+ 
   
 }
 .footer-img{
@@ -143,7 +144,7 @@ background: #48425F;
 
 }
 .builder button:last-of-type {
-  margin-left:90px;
+  margin-left:40px;
 }
 .logo-container {
   display: flex;
@@ -157,8 +158,10 @@ background: #48425F;
   border: 3px solid #00000033;
   margin-top: 82px; 
   position:absolute;
-  width:65%;
+  width:70%;
 }
+
+
 
 //Main Container//
 .main-container {
@@ -167,25 +170,39 @@ background: #48425F;
   display: flex;
   align-items: center;
   justify-content: center;
+
   
- 
+
+
 }
 .main-content{
-  margin-top:75px;
+  margin-top: 65px;
   display: flex;
   height:100%;
   justify-content: center;
   align-items: center;
   gap:60px;
+  
 }
 
 .main-left{
  display: grid;
  grid-template-columns: repeat(3, 1fr);
- grid-gap:10px;
+ grid-gap:20px;
+ position: relative;
  
-
 }
+.main-left::before{
+  content: "";
+  width: 9px;
+  background-color:  #00000033;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin-left: -80px;
+}
+
 
 .selection {
   width: 177px;
@@ -193,31 +210,39 @@ background: #48425F;
   border-radius: 24px;
   width: 177px;
   opacity: 0px;
+  background: #48425F;
+
+}
+.selection:nth-last-child(-n+3){
   background: linear-gradient(180deg, #48425F 5%, rgba(72, 66, 95, 0) 91.5%);
- 
 
 }
 .main-right {
-  flex: 1;
   display: flex;
-
-  
-}
-
-.hero-img{
-height:560px;
-width: 560px;
-border-radius: 35px;
-opacity: 0px;
-background-color: #FFD089;
-box-shadow: 0px 30px 24.5px 0px #0000000D;
+  position:relative;
+  align-items:flex-end;
+  justify-content:center;
+  height:560px;
+  width: 560px;
+  border-radius: 35px;
+  opacity: 0px;
+  background-color: #FFD089;
+  box-shadow: 0px 30px 24.5px 0px #0000000D;
 
 
 }
-img{
-  max-width: 100%;
-  height: auto;
+.gogoL-btns{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 100%;
 }
+
+.gogo-btns button {
+  flex-direction: row;
+}
+
+
 
 /*
 .gogo-builder{

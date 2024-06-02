@@ -18,11 +18,13 @@ import Discord from "./components/logos/discord-icon";
 import Twitter from "./components/logos/twitter-icon";
 import NewTshirt from "./components/logos/new-tshirt";
 import NewHat from "./components/logos/new-hat";
+import NewHat2 from "./components/logos/NewHat2"
 import NewGlasses from "./components/logos/new-glasses";
 import NewHeadphones from "./components/logos/new-headphones";
 import NewJacket from "./components/logos/new-jacket";
 import NewAcess from "./components/logos/new-acess";
 import SaveIcon from "./components/logos/save";
+import Avatar from "./components/logos/avatar";
 
 
 function App() {
@@ -109,16 +111,17 @@ function App() {
             </div>
           </button>
        </div>
-       <div className="divider"></div>
+         <div className="divider">
+          <div className="active"></div>
+         </div>
       </div>
 
       
       <div className="main-container">
-        <div className="side-scroll"></div>
-         <div className="main-content">
+          <div className="main-content">
             <div className="main-left">
               <button className="selection">
-                  
+                  <NewHat2/>
               </button>
               <button className="selection">
                   
@@ -145,17 +148,17 @@ function App() {
                   
               </button>
             </div>
+          
             <div className="main-right">
-              <div className="hero-img">
-
-              </div>
+              <Avatar className="avatar" alt="avatar"/>
             </div>
           </div>
+           
         </div>
         <footer>
           <p>Brought to you by<span className="footer-img"><img src={FooterImg} alt="footer-icon"/></span> GoGoPool</p>
         </footer>
-      </div>
+    </div>
    
  );
 }
