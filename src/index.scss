@@ -98,6 +98,7 @@ footer {
 }
 footer p {
   margin: 0 auto;
+  font-size: 12px;
   
 }
 
@@ -113,6 +114,8 @@ footer p {
 .builder{
   display:flex;
   align-items: center;
+  position: relative;
+  
 
 }
 .access-bar{
@@ -169,7 +172,9 @@ background: #48425F;
   border: 3px solid #00000033;
   margin-top: 82px; 
   position:absolute;
-  width:70%;
+  width: 95%;
+  
+  
 }
 
 

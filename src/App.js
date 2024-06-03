@@ -109,10 +109,11 @@ function App() {
               Save Progress
             </div>
           </button>
-       </div>
-         <div className="divider">
-          <div className="active"></div>
-         </div>
+       
+          <div className="divider">
+            <div className="active"></div>
+          </div>
+        </div>
       </div>
 
       
