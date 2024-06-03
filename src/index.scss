@@ -15,6 +15,7 @@ body {
 
 .app-container {
   box-sizing: content-box;
+  
 }
 
 header {
@@ -78,7 +79,6 @@ footer {
   position: fixed;
   width: 100%;
   bottom: 0;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -123,6 +123,8 @@ footer p {
 }
 
 .access-bar:last-of-type {
+display: flex;
+align-items: center;
 padding: 11px 16px;
 border-radius: 8px;
 opacity: 0px;
@@ -152,6 +154,15 @@ background: #48425F;
   font-size: 54px;
   margin-right:8px;
   align-items: center;
+}
+.access-bar .text-container{
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+ 
 }
 
 .divider{
@@ -241,6 +252,46 @@ background: #48425F;
 .gogo-btns button {
   flex-direction: row;
 }
+
+.colorShare{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top:30px;
+  justify-content: center;
+  gap: 325px;
+  width:100%;
+ 
+}
+.color-Slider{
+ display:inline-block;
+ 
+
+}
+.slider-picker{
+  border-radius: 4px;
+  
+
+ 
+}
+.d-s-buttonContainer {
+  display: flex;
+  gap: 10px;
+  
+ 
+}
+.d-s-buttonContainer button{
+  flex-direction: row;
+  background: #48425F;
+  border: none;
+  width: 175px;
+  padding: 11px 16px;
+  gap: 10px;
+  border-radius: 8px;
+ 
+}
+
 
 
 
@@ -383,6 +434,7 @@ background: #48425F;
   margin-right: auto;
 }
 
+/*
 .color-picker {
 	position: fixed;
 	right: 0;
@@ -395,7 +447,7 @@ background: #48425F;
   height: 100%;
   padding: 8px;
 }
-
+*/
 .part-selection {
 	display: flex;
 	flex-direction: column;

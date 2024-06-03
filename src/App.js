@@ -1,14 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.scss";
+import { HuePicker } from 'react-color';
 
 
-
-
-//Generator
-import TVGenerator from "./assets/lab-assets/tv-generator.svg";
-import Generator from "./assets/lab-assets/generator.svg";
-import PanelLines from "./assets/lab-assets/panel-lines.svg";
-//
 
 
 //Logo
@@ -25,10 +19,15 @@ import NewJacket from "./components/logos/new-jacket";
 import NewAcess from "./components/logos/new-acess";
 import SaveIcon from "./components/logos/save";
 import Avatar from "./components/logos/avatar";
-
+import ShareIcon from "./components/logos/share";
+import DownloadIcon from "./components/logos/download";
 
 function App() {
+    const [color, setColor] = useState('#ff0000');
   
+    const handleColorChange = (selectedColor) => {
+      setColor(selectedColor.hex);
+    };
     
   return (
     <div className="app-container">
@@ -158,6 +157,29 @@ function App() {
         <footer>
           <p>Brought to you by<span className="footer-img"><img src={FooterImg} alt="footer-icon"/></span> GoGoPool</p>
         </footer>
+        <div className="colorShare">
+          <div className="color-Slider">
+            <HuePicker color={color} onChange={handleColorChange}  className="slider-picker"/>
+          </div>
+          <div className="d-s-buttonContainer">
+            <button className="access-bar">
+              <div className="logo-container">
+                <DownloadIcon className="logo d-s-logo"/>
+              </div>
+              <div className="text-container">
+                Download Art
+              </div>
+            </button>
+            <button className="access-bar">
+              <div className="logo-container">
+                <ShareIcon className="logo d-s-logo"/>
+              </div>
+              <div className="text-container">
+                Share Art
+              </div>
+            </button>
+          </div>
+        </div>
     </div>
    
  );
