@@ -30,48 +30,48 @@ function App() {
     };
     
   return (
-    <div className="app-container">
+    <main>
       <header>
         <nav>
           <div className="nav-list">
-            <ul>
-              <li>
-                <a href="/home">
-                  <Icon className="gogo-icon"/>
-                </a>
-              </li>
-              <li>
-                <a href="https://app.gogopool.com/liquid-staking/">Liquid Stake</a> 
-              </li>
-              <li>
-               <a href="https://app.gogopool.com/">
-                Validate AVAX</a>
-              </li>
-              <li>
-                <a href="https://docs.gogopool.com/gogopool-primer">Explore Subnets</a>
-              </li>
-            </ul>
+          <ul>
+            <li>
+              <a href="/home">
+                <Icon className="gogo-icon"/>
+              </a>
+            </li>
+            <li>
+              <a href="https://app.gogopool.com/liquid-staking/">Liquid Stake</a> 
+            </li>
+            <li>
+              <a href="https://app.gogopool.com/">
+              Validate AVAX</a>
+            </li>
+            <li>
+              <a href="https://docs.gogopool.com/gogopool-primer">Explore Subnets</a>
+            </li>
+          </ul>
           </div>
-
-          <div className="btn-container">
-            <button className="icon-button">
-              <Discord />
-            </button>
-            <button className="icon-button">
-              <Twitter />
-            </button>
-          </div>
+         
+            <div className="btn-container">
+              <button className="social-button">
+                <Discord />
+              </button>
+              <button className="social-button">
+                <Twitter />
+              </button>
+            </div>
         </nav>
       </header>
 
-    <div className="content-container">
-      <div className="builder-container">
-         <button className="access-bar">
-           <div className="logo-container">
-             <NewTshirt className="logo "/>
+      <div className="content-container">
+        <div className="builder-container">
+          <button className="access-bar">
+            <div className="logo-container">
+              <NewTshirt className="logo "/>
             </div>
             <div className="text-container">
-              Shirts
+                Shirts
             </div>
           </button>
           <button className="access-bar">
@@ -118,47 +118,46 @@ function App() {
               Save Progress
             </div>
           </button>
-      </div>
+        </div>
       
 
       
-      <div className="main-container">
-          <div className="main-content">
-            <div className="main-left">
-              <button className="selection">
-                  <NewHat2/>
-              </button>
-              <button className="selection">
-                  
-              </button>
-              <button className="selection">
-                  
-              </button>
-              <button className="selection">
-                  
-              </button>
-              <button className="selection">
-                  
-              </button>
-              <button className="selection">
-                  
-              </button>
-              <button className="selection">
-                  
-              </button>
-              <button className="selection">
-                  
-              </button>
-              <button className="selection">
-                  
-              </button>
+        <div className="main-container">
+            <div className="main-content">
+              <div className="main-left">
+                <button className="selection">
+                    <NewHat2/>
+                </button>
+                <button className="selection">
+                    
+                </button>
+                <button className="selection">
+                    
+                </button>
+                <button className="selection">
+                    
+                </button>
+                <button className="selection">
+                    
+                </button>
+                <button className="selection">
+                    
+                </button>
+                <button className="selection">
+                    
+                </button>
+                <button className="selection">
+                    
+                </button>
+                <button className="selection">
+                    
+                </button>
+              </div>
+            
+              <div className="main-right">
+                <Avatar className="avatar" alt="avatar"/>
+              </div>
             </div>
-          
-            <div className="main-right">
-              <Avatar className="avatar" alt="avatar"/>
-            </div>
-          </div>
-           
         </div>
        
         <div className="colorShare">
@@ -188,7 +187,7 @@ function App() {
           <p>Brought to you by<span className="footer-img"><img src={FooterImg} alt="footer-icon"/></span> GoGoPool</p>
         </footer>
       </div>
-    </div>
+    </main>
     
    
  );

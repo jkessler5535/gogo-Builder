@@ -4,10 +4,12 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
 }
 html {
 	height: 100%;
 }
+
 body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -18,14 +20,6 @@ body {
 
 
 }
-
-.app-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  
-}
-
-
 // Navbar //
 
 header {
@@ -33,10 +27,6 @@ width: 100%;
 border-bottom: none; 
 background: #242031;
 box-shadow: 0px 7px 20px 1px rgba(0, 0, 0, 0.25);
-display: flex;
-
-
-
 
 }
   nav {
@@ -44,20 +34,25 @@ display: flex;
     display: flex;
     align-items: center;
     width: 100%;
+    justify-content: center;
+    padding: 24px;
+    
 
-   
   }
-   
+
     .nav-list ul{
       gap: 80px;
       display: flex;
       align-items: center;
-      padding: 24px;
+      
+      
     }
     .nav-list li{
       list-style: none;
+      
 
     }
+
      a {
       color: #9287BC;
       text-decoration: none;
@@ -65,14 +60,14 @@ display: flex;
       font-weight: 700;
       text-transform: uppercase;
       line-height: 21px;
+  
+      
     }
     .btn-container{
       display: flex;
-      
-    
-     
+      margin-left:160px;
     }
-    .icon-button{
+    .social-button{
       background-color:#242031;
       border: 1px solid #ffffff;
       border-radius: 8px;
@@ -80,11 +75,12 @@ display: flex;
       margin-right:20px;
     }
     
-  
-
 // this ends styles for Navbar //
 
+
 .content-container {
+  max-width: 1200px;
+  margin: 0 auto;
   width: 100%;
   
   
@@ -231,6 +227,7 @@ background: #48425F;
   width: 177px;
   opacity: 0px;
   background: #48425F;
+  border: none;
 
 }
 .selection:first-child{
