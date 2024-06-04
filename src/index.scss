@@ -1,55 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 html {
 	height: 100%;
 }
 body {
-	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background: #2B2739;
 	height: 100%;
   overflow: hidden;
   font-family: 'Poppins', sans-serif;
+
+
 }
 
 .app-container {
-  box-sizing: content-box;
+  max-width: 1200px;
+  margin: 0 auto;
   
 }
+
+
+// Navbar //
 
 header {
-border-bottom: none; //1px solid #000 <--old style
+width: 100%;
+border-bottom: none; 
 background: #242031;
 box-shadow: 0px 7px 20px 1px rgba(0, 0, 0, 0.25);
-width: 100%;
-z-index: 1;
 display: flex;
-position: relative;
 
 
 
 
-}
-.header-icon{
-  background-color: transparent;
-  border: none;
-  margin-left: 260px;
-  
-  
 }
   nav {
     gap: 80px;
     display: flex;
     align-items: center;
-    padding: 24px;
-    margin-left: 90px;
-    .nav-list {
+    width: 100%;
+
+   
+  }
+   
+    .nav-list ul{
       gap: 80px;
       display: flex;
-      flex: 1;
+      align-items: center;
+      padding: 24px;
     }
-    a {
+    .nav-list li{
+      list-style: none;
+
+    }
+     a {
       color: #9287BC;
       text-decoration: none;
       background-color: transparent;
@@ -59,7 +68,8 @@ position: relative;
     }
     .btn-container{
       display: flex;
-      margin-left: 250px;
+      
+    
      
     }
     .icon-button{
@@ -70,8 +80,15 @@ position: relative;
       margin-right:20px;
     }
     
-  }
+  
 
+// this ends styles for Navbar //
+
+.content-container {
+  width: 100%;
+  
+  
+}
 
 footer {
   background-color: #2B2739;
@@ -103,19 +120,14 @@ footer p {
 }
 
 
-.builder-container {
+.builder-container{
+  display:flex;
 	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	height: 100%;
   padding-top: 35px;
-  
-}
-.builder{
-  display:flex;
-  align-items: center;
-  position: relative;
   
 
 }
@@ -138,7 +150,7 @@ background: #48425F;
 
 }
 
-.builder button{
+.builder-container button{
   font-family: Poppins;
   font-size: 16px;
   font-weight: 500;
@@ -149,7 +161,7 @@ background: #48425F;
   color: #FFFFFF;
 
 }
-.builder button:last-of-type {
+.builder-container button:last-of-type {
   margin-left:40px;
 }
 .logo-container {
@@ -166,16 +178,7 @@ background: #48425F;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
- 
-}
 
-.divider{
-  border: 3px solid #00000033;
-  margin-top: 82px; 
-  position:absolute;
-  width: 95%;
-  
-  
 }
 
 
@@ -302,7 +305,6 @@ background: #48425F;
   border-radius: 8px;
  
 }
-
 
 
 

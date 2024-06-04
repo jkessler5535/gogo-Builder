@@ -31,17 +31,26 @@ function App() {
     
   return (
     <div className="app-container">
-      <header className="App-header">
-        <button className="header-icon">
-          <Icon/>
-        </button>
+      <header>
         <nav>
           <div className="nav-list">
-            <a href="https://app.gogopool.com/liquid-staking/">Liquid Stake</a>
-            <a href="https://app.gogopool.com/">Validate AVAX</a>
-            <a href="https://docs.gogopool.com/gogopool-primer">
-              Explore Subnets
-            </a>
+            <ul>
+              <li>
+                <a href="/home">
+                  <Icon className="gogo-icon"/>
+                </a>
+              </li>
+              <li>
+                <a href="https://app.gogopool.com/liquid-staking/">Liquid Stake</a> 
+              </li>
+              <li>
+               <a href="https://app.gogopool.com/">
+                Validate AVAX</a>
+              </li>
+              <li>
+                <a href="https://docs.gogopool.com/gogopool-primer">Explore Subnets</a>
+              </li>
+            </ul>
           </div>
 
           <div className="btn-container">
@@ -55,8 +64,8 @@ function App() {
         </nav>
       </header>
 
+    <div className="content-container">
       <div className="builder-container">
-       <div className="builder">
          <button className="access-bar">
            <div className="logo-container">
              <NewTshirt className="logo "/>
@@ -109,12 +118,8 @@ function App() {
               Save Progress
             </div>
           </button>
-       
-          <div className="divider">
-            <div className="active"></div>
-          </div>
-        </div>
       </div>
+      
 
       
       <div className="main-container">
@@ -155,9 +160,7 @@ function App() {
           </div>
            
         </div>
-        <footer>
-          <p>Brought to you by<span className="footer-img"><img src={FooterImg} alt="footer-icon"/></span> GoGoPool</p>
-        </footer>
+       
         <div className="colorShare">
           <div className="color-Slider">
             <HuePicker color={color} onChange={handleColorChange}  className="slider-picker"/>
@@ -181,7 +184,12 @@ function App() {
             </button>
           </div>
         </div>
+        <footer>
+          <p>Brought to you by<span className="footer-img"><img src={FooterImg} alt="footer-icon"/></span> GoGoPool</p>
+        </footer>
+      </div>
     </div>
+    
    
  );
 }
