@@ -17,7 +17,7 @@ import NewGlasses from "./components/logos/new-glasses";
 import NewHeadphones from "./components/logos/new-headphones";
 import NewJacket from "./components/logos/new-jacket";
 import NewAcess from "./components/logos/new-acess";
-import SaveIcon from "./components/logos/save";
+import SaveIcon from "./components/logos/save2";
 import Avatar from "./components/logos/avatar";
 import ShareIcon from "./components/logos/share";
 import DownloadIcon from "./components/logos/download";
@@ -66,58 +66,64 @@ function App() {
 
       <div className="content-container">
         <div className="builder-container">
-          <button className="access-bar">
-            <div className="logo-container">
-              <NewTshirt className="logo "/>
-            </div>
-            <div className="text-container">
-                Shirts
-            </div>
-          </button>
-          <button className="access-bar">
-            <div className="logo-container">
-              <NewHat className="logo"/>
-            </div>
-            <div className="text-container">
-              Hats
-            </div>
-          </button>
-          <button className="access-bar">
-            <div className="logo-container">
-              <NewGlasses className="logo"/>
-            </div>
-            <div className="text-container">
-              Eyewear
-            </div>
-          </button>
-          <button className="access-bar">
-            <div className="logo-container">
-              <NewHeadphones className="logo"/>
-            </div>
-            <div className="text-container">
-              Earwear
-            </div>
-          </button>
-          <button className="access-bar">
-            <div className="logo-container">
-              <NewJacket className="logo"/>
-            </div>
-            <div className="text-container">
-              Outwear
-            </div>
-          </button>
-          <button className="access-bar">
-            <NewAcess className="logo" />
-            Accessories
-          </button>
-          <button className="access-bar">
-            <div className="logo-container">
-              <SaveIcon className="logo"/>
-            </div>
-            <div className="text-container">
-              Save Progress
-            </div>
-          </button>
+          <ul>
+            <li>
+              <a href="https://www.gogopool.com">
+                <div className="logo-container">
+                  <NewTshirt className="logo" />
+                </div>
+                <div className="text-container">Shirts</div>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.gogopool.com">
+                <div className="logo-container">
+                  <NewHat className="logo" />
+                </div>
+                <div className="text-container">Hats</div>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.gogopool.com">
+                <div className="logo-container">
+                  <NewGlasses className="logo"/>
+                </div>
+                <div className="text-container">Eyewear</div>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.gogopool.com">
+                <div className="logo-container">
+                  <NewHeadphones className="logo"/>
+                </div>
+                <div className="text-container">Earwear</div>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.gogopool.com">
+                <div className="logo-container">
+                  <NewJacket className="logo"/>
+                </div>
+                <div className="text-container">Outwear</div>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.gogopool.com">
+                <div className="logo-container">
+                  <NewAcess className="logo"/>
+                </div>
+                <div className="text-container">Acessories</div>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.gogopool.com">
+                <div className="logo-container">
+                  <SaveIcon className="logo"/>
+                </div>
+                <div className="text-container">Save Progress</div>
+              </a>
+            </li>
+          </ul>
         </div>
       
 
