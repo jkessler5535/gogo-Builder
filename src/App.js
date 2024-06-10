@@ -4,9 +4,7 @@ import { HuePicker } from 'react-color';
 
 
 
-
 //Logo
-import FooterImg from "./Images/Group.png";
 import Icon from "./components/logos/gogoIcon";
 import Discord from "./components/logos/discord-icon";
 import Twitter from "./components/logos/twitter-icon";
@@ -17,10 +15,11 @@ import NewGlasses from "./components/logos/new-glasses";
 import NewHeadphones from "./components/logos/new-headphones";
 import NewJacket from "./components/logos/new-jacket";
 import NewAcess from "./components/logos/new-acess";
-import SaveIcon from "./components/logos/save2";
+import SaveIcon from "./components/logos/save";
 import Avatar from "./components/logos/avatar";
 import ShareIcon from "./components/logos/share";
 import DownloadIcon from "./components/logos/download";
+import FooterIcon from "./components/logos/footerIcon";
 
 function App() {
     const [color, setColor] = useState('#ff0000');
@@ -28,43 +27,58 @@ function App() {
     const handleColorChange = (selectedColor) => {
       setColor(selectedColor.hex);
     };
+
+    window.addEventListener('scroll', () => {
+      const gridContainer = document.getElementById('grid');
+      const scrollPosition = window.scrollY || window.pageYOffset;
+      const isScrolledToBottom = (window.innerHeight + scrollPosition) >= document.body.offsetHeight;
+    
+      console.log('Scrolled to bottom:', isScrolledToBottom); // Check if this message appears in the console
+    
+      if (isScrolledToBottom) {
+        console.log('Revealing hidden boxes...');
+        revealHiddenBoxes(gridContainer);
+      }
+    });
+    
+    function revealHiddenBoxes(gridContainer) {
+      const hiddenBoxes = gridContainer.querySelectorAll('.hidden');
+      hiddenBoxes.forEach(box => {
+        box.classList.remove('hidden'); // Show the hidden boxes
+      });
+    }
+    
+    
     
   return (
-    <main>
-      <header>
-        <nav>
-          <div className="nav-list">
-          <ul>
-            <li>
-              <a href="/home">
-                <Icon className="gogo-icon"/>
-              </a>
-            </li>
-            <li>
-              <a href="https://app.gogopool.com/liquid-staking/">Liquid Stake</a> 
-            </li>
-            <li>
-              <a href="https://app.gogopool.com/">
-              Validate AVAX</a>
-            </li>
-            <li>
-              <a href="https://docs.gogopool.com/gogopool-primer">Explore Subnets</a>
-            </li>
-          </ul>
+    <div className="container">
+        <header>
+          <nav className="nav-list">
+            <ul>
+              <li>
+                <a href="/home">
+                  <Icon className="gogo-icon"/>
+                </a>
+              </li>
+              <li>
+                <a href="https://app.gogopool.com/liquid-staking/">Liquid Stake</a> 
+              </li>
+              <li>
+                <a href="https://app.gogopool.com/">
+                Validate AVAX</a>
+              </li>
+              <li>
+                <a href="https://docs.gogopool.com/gogopool-primer">Explore Subnets</a>
+              </li>
+            </ul>
+          </nav> 
+          <div className="social-btns">
+              <a href="https://discord.com"><Discord/></a>
+              <a href="https://twitter.com"><Twitter/></a>
           </div>
-         
-            <div className="btn-container">
-              <button className="social-button">
-                <Discord />
-              </button>
-              <button className="social-button">
-                <Twitter />
-              </button>
-            </div>
-        </nav>
-      </header>
+        </header>
 
-      <div className="content-container">
+     
         <div className="builder-container">
           <ul>
             <li>
@@ -115,7 +129,7 @@ function App() {
                 <div className="text-container">Acessories</div>
               </a>
             </li>
-            <li>
+            <li className="save-btn">
               <a href="https://www.gogopool.com">
                 <div className="logo-container">
                   <SaveIcon className="logo"/>
@@ -128,74 +142,82 @@ function App() {
       
 
       
-        <div className="main-container">
-            <div className="main-content">
-              <div className="main-left">
-                <button className="selection">
-                    <NewHat2/>
-                </button>
-                <button className="selection">
-                    
-                </button>
-                <button className="selection">
-                    
-                </button>
-                <button className="selection">
-                    
-                </button>
-                <button className="selection">
-                    
-                </button>
-                <button className="selection">
-                    
-                </button>
-                <button className="selection">
-                    
-                </button>
-                <button className="selection">
-                    
-                </button>
-                <button className="selection">
-                    
-                </button>
+        <div className="column-container">
+          <div className="left-column">
+            <div className="grid" id="grid">
+              <div className="selection">
+                  <NewHat2/>
               </div>
-            
-              <div className="main-right">
-                <Avatar className="avatar" alt="avatar"/>
+              <div className="selection">
+                  
+              </div>
+              <div className="selection">
+                  
+              </div>
+              <div className="selection">
+                  
+              </div>
+              <div className="selection">
+                  
+              </div>
+              <div className="selection">
+                  
+              </div>
+              <div className="selection">
+                  
+              </div>
+              <div className="selection">
+                  
+              </div>
+              <div className="selection">
+                  
+              </div>
+              <div className="selection hidden">
+                  
+              </div>
+              <div className="selection hidden">
+                  
+              </div>
+              <div className="selection hidden">
+                  
               </div>
             </div>
-        </div>
-       
-        <div className="colorShare">
-          <div className="color-Slider">
-            <HuePicker color={color} onChange={handleColorChange}  className="slider-picker"/>
+
+            <div className="colorSlide" >
+              <HuePicker color={color} onChange={handleColorChange} className="color"/>
+            </div>
           </div>
-          <div className="d-s-buttonContainer">
-            <button className="access-bar">
-              <div className="logo-container">
-                <DownloadIcon className="logo d-s-logo"/>
+
+
+          <div className="right-column">
+                <div className="avatar-container">
+                  <Avatar className="avatar"/>
+                </div>
+              <div className="d-s-buttonContainer ">
+                <button className="access-bar">
+                  <div className="logo-container">
+                    <DownloadIcon className="logo d-s-logo"/>
+                  </div>
+                  <div className="text-container">
+                    <p className="d-s-text">Download Art</p>
+                  </div>
+                </button>
+                <button className="access-bar hi">
+                  <div className="logo-container share-btn">
+                    <ShareIcon className="logo "/>
+                  </div>
+                  <div className="text-container share-btn">
+                    <p>Share Art</p>
+                  </div>
+                </button>
               </div>
-              <div className="text-container">
-                Download Art
-              </div>
-            </button>
-            <button className="access-bar">
-              <div className="logo-container">
-                <ShareIcon className="logo d-s-logo"/>
-              </div>
-              <div className="text-container">
-                Share Art
-              </div>
-            </button>
           </div>
         </div>
-        <footer>
-          <p>Brought to you by<span className="footer-img"><img src={FooterImg} alt="footer-icon"/></span> GoGoPool</p>
+        
+        <footer className="IamTheFoot">
+          <p>Brought to you by<span className="footer-img"><FooterIcon/></span> GoGoPool</p>
         </footer>
-      </div>
-    </main>
-    
-   
+  </div>
  );
 }
 
