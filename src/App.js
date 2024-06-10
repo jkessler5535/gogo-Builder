@@ -3,11 +3,13 @@ import "./index.scss";
 import { HuePicker } from 'react-color';
 
 
+//Pages
+import Navbar from "./components/navbar.js";
+
+
 
 //Logo
-import Icon from "./components/logos/gogoIcon";
-import Discord from "./components/logos/discord-icon";
-import Twitter from "./components/logos/twitter-icon";
+
 import NewTshirt from "./components/logos/new-tshirt";
 import NewHat from "./components/logos/new-hat";
 import NewHat2 from "./components/logos/NewHat2"
@@ -28,54 +30,14 @@ function App() {
       setColor(selectedColor.hex);
     };
 
-    window.addEventListener('scroll', () => {
-      const gridContainer = document.getElementById('grid');
-      const scrollPosition = window.scrollY || window.pageYOffset;
-      const isScrolledToBottom = (window.innerHeight + scrollPosition) >= document.body.offsetHeight;
-    
-      console.log('Scrolled to bottom:', isScrolledToBottom); // Check if this message appears in the console
-    
-      if (isScrolledToBottom) {
-        console.log('Revealing hidden boxes...');
-        revealHiddenBoxes(gridContainer);
-      }
-    });
-    
-    function revealHiddenBoxes(gridContainer) {
-      const hiddenBoxes = gridContainer.querySelectorAll('.hidden');
-      hiddenBoxes.forEach(box => {
-        box.classList.remove('hidden'); // Show the hidden boxes
-      });
-    }
     
     
+
     
   return (
-    <div className="container">
+    <main>
         <header>
-          <nav className="nav-list">
-            <ul>
-              <li>
-                <a href="/home">
-                  <Icon className="gogo-icon"/>
-                </a>
-              </li>
-              <li>
-                <a href="https://app.gogopool.com/liquid-staking/">Liquid Stake</a> 
-              </li>
-              <li>
-                <a href="https://app.gogopool.com/">
-                Validate AVAX</a>
-              </li>
-              <li>
-                <a href="https://docs.gogopool.com/gogopool-primer">Explore Subnets</a>
-              </li>
-            </ul>
-          </nav> 
-          <div className="social-btns">
-              <a href="https://discord.com"><Discord/></a>
-              <a href="https://twitter.com"><Twitter/></a>
-          </div>
+          <Navbar/>
         </header>
 
      
@@ -217,7 +179,7 @@ function App() {
         <footer className="IamTheFoot">
           <p>Brought to you by<span className="footer-img"><FooterIcon/></span> GoGoPool</p>
         </footer>
-  </div>
+    </main>
  );
 }
 
