@@ -1,27 +1,27 @@
 import React, { useState } from "react";
 import ColorPicker from "./color-picker";
 
-import Hat1 from "./hats/hat-1";
-import Hat2 from "./hats/hat-2";
-import Hat3 from "./hats/hat-3";
-import Hat4 from "./hats/hat-4";
-import Hat5 from "./hats/hat-5";
-import Hat6 from "./hats/hat-6";
-import Hat7 from "./hats/hat-7";
+import Hat1 from "../hats/hat-1";
+import Hat2 from "../hats/hat-2";
+import Hat3 from "../hats/hat-3";
+import Hat4 from "../hats/hat-4";
+import Hat5 from "../hats/hat-5";
+import Hat6 from "../hats/hat-6";
+import Hat7 from "../hats/hat-7";
 
-import Body1 from "./bodies/body-1";
-import Body2 from "./bodies/body-2";
-import Body3 from "./bodies/body-3";
-import Body4 from "./bodies/body-4";
-import Body5 from "./bodies/body-5";
-import Body6 from "./bodies/body-6";
+import Body1 from "../bodies/body-1";
+import Body2 from "../bodies/body-2";
+import Body3 from "../bodies/body-3";
+import Body4 from "../bodies/body-4";
+import Body5 from "../bodies/body-5";
+import Body6 from "../bodies/body-6";
 
-import Glasses1 from "./glasses/glasses-1";
-import Glasses2 from "./glasses/glasses-2";
-import Glasses3 from "./glasses/glasses-3";
+import Glasses1 from "../glasses/glasses-1";
+import Glasses2 from "../glasses/glasses-2";
+import Glasses3 from "../glasses/glasses-3";
 
-import Head1 from "./heads/head-1";
-import Belt1 from "./belt/belt-1";
+import Head1 from "../heads/head-1";
+import Belt1 from "../belt/belt-1";
 import { motion } from "framer-motion";
 
 //Icons

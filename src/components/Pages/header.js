@@ -1,17 +1,18 @@
 import React from 'react';
 
 
+
 //Logos
-import Icon from "./logos/gogoIcon";
-import Discord from "./logos/discord-icon";
-import Twitter from "./logos/twitter-icon";
+import Icon from "../logos/gogoIcon";
+import Discord from "../logos/discord-icon";
+import Twitter from "../logos/twitter-icon";
 
 
-const Navbar = () => {
+const Header = () => {
  return (
-    <>
-      <div className="nav-list">
-        <ul>
+    <header>
+      <nav className="nav-list">
+        <ul className="container">
           <li>
             <a href="/home">
               <Icon className="gogo-icon"/>
@@ -27,15 +28,16 @@ const Navbar = () => {
           <li>
             <a href="https://docs.gogopool.com/gogopool-primer">Explore Subnets</a>
           </li>
+          <li>
+            <a href="https://discord.com"><Discord/></a>
+          </li>
+          <li>
+            <a href="https://twitter.com"><Twitter/></a>
+          </li>
         </ul>
-      </div> 
-      <div className="social-btns">
-          <a href="https://discord.com"><Discord/></a>
-          <a href="https://twitter.com"><Twitter/></a>
-      </div>
-    </>
-
+      </nav>
+    </header>
  );
 }
 
-export default Navbar;
+export default Header;
