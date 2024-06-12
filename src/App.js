@@ -5,7 +5,7 @@ import "./index.scss";
 
 //Pages
 import Header from "./components/Pages/header.js";
-import Builder from "./components/Pages/builder-dash.js"
+import BuilderDash from "./components/Pages/builder-dash.js"
 import PageBody from "./components/Pages/pagebody.js";
 import Footer from "./components/Pages/footer.js";
 
@@ -20,9 +20,10 @@ import DownloadIcon from "./components/logos/download";
 
 function App() {
   return (
-    <>
+    <div>
       <Header/>
-    </>
+      <BuilderDash/>
+    </div>
  );
 }
 
