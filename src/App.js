@@ -11,6 +11,7 @@ import Footer from "./components/Pages/footer.js";
 
 
 
+
 //Logo
 import Avatar from "./components/logos/avatar";
 import ShareIcon from "./components/logos/share";
@@ -23,6 +24,8 @@ function App() {
     <div>
       <Header/>
       <BuilderDash/>
+      <PageBody/>
+      <Footer/>
     </div>
  );
 }
