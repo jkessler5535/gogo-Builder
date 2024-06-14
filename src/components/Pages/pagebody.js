@@ -19,6 +19,8 @@ const PageBody = () => {
     setColor(selectedColor.hex);
   };
 
+
+
   return (
     <div className="column-container">
       <div className="left-column">
@@ -48,6 +50,15 @@ const PageBody = () => {
               
           </div>
           <div className="selection">
+              
+          </div>
+          <div className="selection hidden">
+              
+          </div>
+          <div className="selection hidden">
+              
+          </div>
+          <div className="selection hidden">
               
           </div>
         </div>
