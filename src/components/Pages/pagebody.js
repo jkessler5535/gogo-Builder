@@ -52,13 +52,22 @@ const PageBody = () => {
           <div className="selection">
               
           </div>
-          <div className="selection hidden">
+          <div className="selection">
               
           </div>
-          <div className="selection hidden">
+          <div className="selection">
               
           </div>
-          <div className="selection hidden">
+          <div className="selection">
+              
+          </div>
+          <div className="selection">
+              
+          </div>
+          <div className="selection">
+              
+          </div>
+          <div className="selection">
               
           </div>
         </div>
