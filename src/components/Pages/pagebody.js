@@ -22,7 +22,7 @@ const PageBody = () => {
 
 
   return (
-    <div className="column-container">
+    <div className="column-container ">
       <div className="left-column">
         <div className="grid">
           <div className="selection">
