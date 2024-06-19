@@ -16,7 +16,7 @@ import SaveIcon from "../logos/save";
 const Builder = () => {
   return (
      <div className="builder">
-        <ul className="container">
+        <ul className="menu">
           <li>
             <a href="https://www.gogopool.com">
               <div className="logo-container">
@@ -34,7 +34,7 @@ const Builder = () => {
             </a>
           </li>
           <li>
-            <a href="https://www.gogopool.com">
+            <a href="https://www.gogopool.com" className="hover">
               <div className="logo-container">
                 <NewGlasses className="logo"/>
               </div>

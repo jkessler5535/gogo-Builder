@@ -35,7 +35,14 @@ header {
   color: #9287BC;
   height: 108px; 
  
-  
+}
+.nav-list {
+ display: flex;
+ 
+}
+
+.nav-list h1 {
+  padding-right:60px;
 }
 
 
@@ -111,6 +118,7 @@ header {
 
 
 .builder li {
+  position: relative;
   display: flex;
   font-family: Poppins;
   font-size: 16px;
@@ -127,6 +135,8 @@ header {
   position: relative;
 
 }
+
+
 
 .builder li a::after{
   content: '';
@@ -565,12 +575,72 @@ footer p {
 
 /* For screens larger than 728px */
 @media (min-width: 728px) {
-  
+
 }
+
+
 /* For Sreens below 768px */
+@media (max-width: 768px) {
+  header{
+    height:110px;
+    width: 100%;
+  }
 
+  .container{
+   max-width: 500px;
 
+  }
+  
+  .nav-list ul{
+    display: none;
+    width: 100%;
+  }
 
+  .nav-list h1{
+    display: flex;
+    margin: 0 auto;
+    padding-right: 0;
+  }
+  .builder ul{
+    border-bottom: none;
+  }
+  
+  .column-container{
+    display: flex;
+    flex-direction: column-reverse;
+    max-width: 650px;
+    margin: 50px auto;
+   
+   
+    
+  }
+  .left-column,
+  .right-column {
+    align-items: center;
+    padding: 0;
+    width: 100%;
+    justify-content: center;
+   
+    
+  }
+  .builder li:last-of-type{
+    display: none;
+  }
+  .d-s-buttonContainer {
+    display: flex;
+    gap: 10px;
+  }
+  .d-s-buttonContainer button{
+    display: flex;
+    background: #48425F;
+    border: none;
+    width: 180px;
+    height: 46px;
+    padding: 11px 16px;
+    border-radius: 8px;
+    
+  }
+}
 /* For screens larger than 1230px */
 @media (min-width: 1230px) {
   .lab-asset__tv {

@@ -2,6 +2,7 @@ import React from 'react';
 
 
 
+
 //Logos
 import Icon from "../logos/gogoIcon";
 import Discord from "../logos/discord-icon";
@@ -12,12 +13,8 @@ const Header = () => {
  return (
     <header>
       <nav className="nav-list container">
+        <h1><a href="/home"><Icon/></a></h1>
         <ul>
-          <li>
-            <a href="/home">
-              <Icon/>
-            </a>
-          </li>
           <li>
             <a href="https://app.gogopool.com/liquid-staking/" >Liquid Stake</a> 
           </li>
