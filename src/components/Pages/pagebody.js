@@ -72,7 +72,7 @@ const PageBody = () => {
           </div>
         </div>
 
-        <div className="color-picker" >
+        <div className="hue-picker" >
           <HuePicker/>
         </div>
       </div>

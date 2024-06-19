@@ -104,7 +104,7 @@ header {
   align-items: center;
   margin: 0 auto;
   justify-content: center;
-  border-bottom: 4px solid #00000033;
+  border-bottom: 5px solid #00000033;
  
 }
 
@@ -124,8 +124,26 @@ header {
 .builder li a{
   display: flex;
   text-decoration: none;
+  position: relative;
 
 }
+
+.builder li a::after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 4px; 
+  background-color: #8D8BFF;
+  position: absolute;
+  bottom: -34px;
+  left: 0;
+  transition: width 0.5s ease; 
+}
+ 
+.builder li a:hover::after{
+  width:120%;
+}
+
 .builder li:nth-last-child(2){
   margin-right: 190px;
 }
@@ -164,11 +182,10 @@ header {
 .column-container{
   display: flex;
   max-width:1280px;
-  min-width: 800px;
-  margin: 0 auto;
-  gap:100px;
-  padding: 50px;
+  margin: 30px auto;
+  gap:75px;
   box-sizing: border-box;
+ 
   
 }
 
@@ -177,7 +194,8 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1;
+  justify-content: center;
+  
   
   
 }
@@ -209,8 +227,7 @@ header {
 .grid::-webkit-scrollbar-thumb {
   background-color: white;
   border-radius: 24px;
-  width: 9px;
-  height: 20px;
+
 
 }
 .grid::-webkit-scrollbar {
@@ -224,6 +241,7 @@ header {
 .selection {
   width: 177px;
   height: 177px;
+  min-width:140px;
   border-radius: 24px;
   background: #48425f;
   border: none;
@@ -243,8 +261,8 @@ header {
   background: linear-gradient(180deg, #48425F 5%, rgba(72, 66, 95, 0) 91.5%);
   box-shadow: 0px 20px 25.2px 0px #0000000D;
 }
-.huePicker{
-  margin:  0 auto;
+.hue-picker{
+  margin-right:120px;
 }
 
 .hue-horizontal{
