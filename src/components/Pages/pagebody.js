@@ -13,13 +13,14 @@ import DownloadIcon from "../logos/download";
 
 
 const PageBody = () => {
+  
   const [color, setColor] = useState('#ff0000');
   
   const handleColorChange = (selectedColor) => {
     setColor(selectedColor.hex);
   };
 
-
+  
 
   return (
     <div className="column-container ">
@@ -67,7 +68,7 @@ const PageBody = () => {
           <div className="selection">
               
           </div>
-          <div className="selection">
+          <div className="selection last-row">
               
           </div>
         </div>
