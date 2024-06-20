@@ -4,8 +4,9 @@ function Avatar() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="476"
-      height="532"
+      width="100%"
+      height="100%"
+      max-height="532px"
       fill="none"
       viewBox="0 0 476 532"
     >
