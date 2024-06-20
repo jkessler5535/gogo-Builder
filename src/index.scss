@@ -573,49 +573,37 @@ footer p {
   font-weight: bold;
 }
 
+/* Styles for iPhone 14 and iPhone 15 Pro Max */
+@media only screen and (max-width: 430px){
 
-/* For screens larger than 728px */
-@media (min-width: 728px) {
-
-}
-
-
-/* For Sreens below 768px */
-@media (max-width: 768px) {
   header{
-    height:110px;
-    width: 100%;
+    height:77px;
   }
 
   .container{
-   max-width: 500px;
+   max-width: 600px;
 
   }
   
   .nav-list ul{
     display: none;
-    width: 100%;
   }
 
   .nav-list h1{
-    display: flex;
     margin: 0 auto;
     padding-right: 0;
   }
+
   .builder li{
     display: none;
   }
  
   
   .column-container{
-    display: flex;
     flex-direction: column-reverse;
-    max-width: 650px;
-    margin: 50px auto;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 0;
+    margin: 35px auto;
+    
+   
   }
   
   .grid{
@@ -628,31 +616,57 @@ footer p {
   }
 
   .avatar-container{
-     position: relative;
      width: 292px;
      height: 292px;
-     align-items: flex-end;
+     align-items: flex-start;
      justify-content: center;
   }
-   
+  
   .builder li:last-of-type{
     display: none;
   }
   .d-s-buttonContainer {
-    display: flex;
     gap: 10px;
   }
   .d-s-buttonContainer button{
-    display: flex;
-    background: #48425F;
-    width: 180px;
+    width: 178px;
     height: 46px;
-    padding: 11px 16px;
-    border-radius: 8px;
+    
+  }
+ 
+  .hue-picker{
+    position: fixed;
+    bottom: 0;
+    background:#242031;
+    height: 77px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+
+  }
+  .hue-horizontal{
+    max-width: 380px;
+    margin: 25px 30px;
+    justify-content: center;
+    align-items: center;
     
   }
 
+  footer{
+    display: none;
+  }
 }
+
+
+
+/* For screens larger than 728px */
+
+
+/* For Sreens below 768px */
+ 
+
+
 /* For screens larger than 1230px */
 @media (min-width: 1230px) {
   .lab-asset__tv {

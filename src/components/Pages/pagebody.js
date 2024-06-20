@@ -80,7 +80,7 @@ const PageBody = () => {
 
       <div className="right-column">
             <div className="avatar-container">
-              <Avatar className="avatar"/>
+              <Avatar/>
             </div>
           <div className="d-s-buttonContainer ">
             <button className="access-bar">
