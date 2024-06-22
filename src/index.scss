@@ -35,8 +35,8 @@ header {
   color: #9287BC;
   height: 108px; 
  
- 
 }
+
 
 .nav-list {
  display: flex;
@@ -211,6 +211,7 @@ header {
   flex-direction: column;
   align-items: center;
  
+ 
 }
 .right-column{
   gap:20px;
@@ -246,8 +247,6 @@ header {
 .grid::-webkit-scrollbar {
   display: none;
 
-
-  
 }
 
 
@@ -259,7 +258,6 @@ header {
   background: #48425f;
   border: none;
  
-  
 }
 
   .selection:first-child{
@@ -273,10 +271,7 @@ header {
 .selection:nth-last-child(-n+3){
   background: linear-gradient(180deg, #48425F 5%, rgba(72, 66, 95, 0) 91.5%);
   box-shadow: 0px 20px 25.2px 0px #0000000D;
-}
-.last-row.fixed-style {
-  box-shadow: 0px 20px 25.2px 0px #0000000D;
-  background-color: #f7f7f7;
+
 }
 .hue-picker{
   margin-right:120px;
@@ -342,11 +337,6 @@ footer p {
 
  
 }
-
-
-
-
-
 
 
 /*
@@ -585,21 +575,21 @@ footer p {
 
   header{
     height:77px;
-  }
-
-  .container{
-   max-width: 600px;
-
+  
   }
   
-  .nav-list ul{
-    display: none;
-  }
+  .container{
+   max-width: 700px;
 
+  }
+ 
   .nav-list h1{
     margin: 0 auto;
     padding-right: 0;
     
+  }
+  .nav-list ul{
+    display: none;
   }
 
   .builder li{
@@ -609,15 +599,18 @@ footer p {
   
   .column-container{
     flex-direction: column-reverse;
-    margin: 35px auto;
-    
+    padding: 35px 50px 0;
    
+    
   }
   
   .grid{
     grid-template-columns: repeat(2, 1fr);
     overflow: auto;
-  
+    gap:22px;
+    
+   
+    
   }
   .grid::-webkit-scrollbar {
     width: 0;
@@ -655,8 +648,8 @@ footer p {
 
   }
   .hue-horizontal{
-    max-width: 380px;
-    margin: 25px 30px;
+    width: 375px;
+    margin: 30px 0 0 20px;
     justify-content: center;
     align-items: center;
     
@@ -673,8 +666,15 @@ footer p {
 
 
 /* For Sreens below 768px */
+ @media screen and (max-width: 768px){
+  .column-container{
+    flex-direction: column-reverse;
+    margin: 0;
+    padding: 0;
+  
+   }
+  
  
-
 
 /* For screens larger than 1230px */
 @media (min-width: 1230px) {
