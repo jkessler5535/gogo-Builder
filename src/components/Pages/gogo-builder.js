@@ -86,6 +86,7 @@ const AvatarBuilder = (downloadAvatar) => {
   ? React.cloneElement(glassesOptions[glassesIndex], { color: colors.glasses }) 
   : null;
 
+  
 
   return (
     <div className="flex gogo-builder">

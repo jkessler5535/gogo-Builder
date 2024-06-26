@@ -1,33 +1,49 @@
-import React, { useState } from "react";
+import React from "react";
 import { HuePicker } from 'react-color';
 
 
-
+import Hat1 from "../hats/hat-1";
+import Hat2 from "../hats/hat-2";
+import Hat3 from "../hats/hat-3";
+import Hat4 from "../hats/hat-4";
+import Hat5 from "../hats/hat-5";
+import Hat6 from "../hats/hat-6";
+import Hat7 from "../hats/hat-7";
 
 //Logos
-import NewHat2 from "../logos/NewHat2";
+
 import Avatar from "../logos/avatar";
 import ShareIcon from "../logos/share";
 import DownloadIcon from "../logos/download";
 
 
 
+
 const PageBody = () => {
-  
-  const [color, setColor] = useState('#ff0000');
-  
-  const handleColorChange = (selectedColor) => {
-    setColor(selectedColor.hex);
-  };
-
-  
-
   return (
     <div className="column-container ">
       <div className="left-column">
         <div className="grid">
           <div className="selection">
-              <NewHat2/>
+        
+          </div>
+          <div className="selection">
+          
+          </div>
+          <div className="selection">
+         
+          </div>
+          <div className="selection">
+          
+          </div>
+          <div className="selection">
+          
+          </div>
+          <div className="selection">
+          
+          </div>
+          <div className="selection">
+          
           </div>
           <div className="selection">
               
@@ -53,24 +69,7 @@ const PageBody = () => {
           <div className="selection">
               
           </div>
-          <div className="selection">
-              
-          </div>
-          <div className="selection">
-              
-          </div>
-          <div className="selection">
-              
-          </div>
-          <div className="selection">
-              
-          </div>
-          <div className="selection">
-              
-          </div>
-          <div className="selection last-row">
-              
-          </div>
+          
         </div>
 
         <div className="hue-picker" >

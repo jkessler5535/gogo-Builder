@@ -23,8 +23,8 @@ function App() {
   return (
     <div>
       <Header/>
-      <BuilderDash/>
-      <PageBody/>
+      <BuilderDash  />
+      <PageBody />
       <Footer/>
     </div>
  );

@@ -118,56 +118,55 @@ header {
   border-bottom: 5px solid #00000033;
  
 }
+.builder li{
+  list-style: none;
+}
 
 
-
-.builder li {
+.builder li button{
   position: relative;
   display: flex;
   font-family: Poppins;
-  font-size: 16px;
+  font-size: 16px 25px;
+  margin:16px;
   font-weight: 500;
   line-height: 24px;
   align-items: center;
-  padding: 40px 28px 30px;
-  color: #FFFFFF;
-}
+  padding: 16px;
+  border:none;
+  background-color: transparent;
+  
 
-.builder li a{
-  display: flex;
-  text-decoration: none;
-  position: relative;
 
 }
 
-
-
-.builder li a::after{
+.builder li button::after{
   content: '';
   display: block;
   width: 0;
   height: 4px; 
   background-color: #8D8BFF;
   position: absolute;
-  bottom: -34px;
+  bottom: -20px;
   left: 0;
   transition: width 0.5s ease; 
 }
  
-.builder li a:hover::after{
-  width:120%;
+.builder li button:hover::after{
+  width:100%;
 }
 
 .builder li:nth-last-child(2){
   margin-right: 190px;
+  
 }
 
 .builder li:last-of-type {
   display: flex;
-  padding: 11px 16px;
+  padding: 11px 20px;
   border-radius: 8px;
   background: #48425F;
-  text-wrap: nowrap;
+  flex-wrap: nowrap;
  
 
 }
@@ -185,10 +184,10 @@ header {
 .text-container{
   display: flex;
   align-items: center;
-  color: white;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
+  color: white;
 }
 
 // Pages Body //
@@ -594,14 +593,13 @@ footer p {
 
   .builder li{
     display: none;
+
   }
  
-  
   .column-container{
     flex-direction: column-reverse;
     padding: 35px 50px 0;
    
-    
   }
   
   .grid{
@@ -666,15 +664,14 @@ footer p {
 
 
 /* For Sreens below 768px */
- @media screen and (max-width: 768px){
+@media only screen and (max-width: 768px) {
   .column-container{
     flex-direction: column-reverse;
-    margin: 0;
+    width: 100%;
     padding: 0;
-  
-   }
-  
- 
+    margin: 0;
+  }
+}
 
 /* For screens larger than 1230px */
 @media (min-width: 1230px) {

@@ -1,8 +1,6 @@
 import React from 'react';
 
 
-
-
 //Logos
 
 import NewTshirt from "../logos/new-tshirt";
@@ -18,52 +16,52 @@ const Builder = () => {
      <div className="builder">
         <ul className="menu">
           <li>
-            <a href="https://www.gogopool.com">
+            <button>
               <div className="logo-container">
                 <NewTshirt className="logo" />
               </div>
               <div className="text-container">Shirts</div>
-            </a>
+            </button>
           </li>
           <li>
-            <a href="https://www.gogopool.com">
-              <div className="logo-container">
-                <NewHat className="logo" />
-              </div>
-              <div className="text-container">Hats</div>
-            </a>
+            <button>
+                <div className="logo-container">
+                  <NewHat className="logo" />
+                </div>
+                <div className="text-container">Hats</div>
+            </button> 
           </li>
           <li>
-            <a href="https://www.gogopool.com" className="hover">
+            <button>
               <div className="logo-container">
                 <NewGlasses className="logo"/>
               </div>
               <div className="text-container">Eyewear</div>
-            </a>
+            </button>
           </li>
           <li>
-            <a href="https://www.gogopool.com">
+            <button>
               <div className="logo-container">
                 <NewHeadphones className="logo"/>
               </div>
               <div className="text-container">Earwear</div>
-            </a>
+            </button>
           </li>
           <li>
-            <a href="https://www.gogopool.com">
+            <button>
               <div className="logo-container">
                 <NewJacket className="logo"/>
               </div>
               <div className="text-container">Outwear</div>
-            </a>
+            </button>
           </li>
           <li>
-            <a href="https://www.gogopool.com">
+            <button>
               <div className="logo-container">
                 <NewAcess className="logo"/>
               </div>
               <div className="text-container">Acessories</div>
-            </a>
+            </button>
           </li>
           <li className="save-btn">
             <a href="https://www.gogopool.com">
@@ -75,6 +73,6 @@ const Builder = () => {
           </li>
         </ul>
       </div>
-);
+  );
 }
 export default Builder;
