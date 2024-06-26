@@ -6,7 +6,7 @@ import "./index.scss";
 //Pages
 import Header from "./components/Pages/header.js";
 import BuilderDash from "./components/Pages/builder-dash.js"
-import PageBody from "./components/Pages/pagebody.js";
+import GogoBuilder2 from "./components/Pages/gogo-builder2.js";
 import Footer from "./components/Pages/footer.js";
 
 
@@ -24,7 +24,7 @@ function App() {
     <div>
       <Header/>
       <BuilderDash  />
-      <PageBody />
+      <GogoBuilder2/>
       <Footer/>
     </div>
  );

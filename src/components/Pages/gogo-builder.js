@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ColorPicker from "./color-picker";
 
 import Hat1 from "../hats/hat-1";
@@ -33,6 +33,11 @@ import  NoneIcon from "../assets/icons/none-icon.svg";
 
 //Lab Assets
 import Platform from "../assets/lab-assets/platform.png";
+
+
+
+
+
 
 const partIcons = {
   hat: <HatIcon />,
@@ -120,23 +125,9 @@ const AvatarBuilder = (downloadAvatar) => {
             </motion.button>
           ))}
         </div>
-        <div className="selected-part-controller">
-          {selectedPart === "hat" && (
-            <div className="hat-options">
-              {hatOptions.map((Hat, index) => (
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  key={index}
-                  onClick={() => setHatIndex(index)}
-                  className={hatIndex === index ? "active-button" : ""}
-                >
-                  {React.cloneElement(Hat, { color: colors.hat })}
-                </motion.button>
-              ))}
-            </div>
-          )}
-
+       
+          
+        <div>
           {selectedPart === "body" && (
             <div className="body-options">
               {bodyOptions.map((Body, index) => (

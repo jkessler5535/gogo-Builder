@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import { HuePicker } from 'react-color';
+import {motion} from 'framer-motion';
 
 
 import Hat1 from "../hats/hat-1";
@@ -19,67 +20,54 @@ import DownloadIcon from "../logos/download";
 
 
 
-const PageBody = () => {
+const GogoBuilder2 = () => {
+  const hatOptions = [<Hat1 />, <Hat2 />, <Hat3 />, <Hat4 />, <Hat5 />, <Hat6 />, <Hat7 />];
+
+  const [selectedPart, setSelectedPart] = useState("hat");
+
+  const [colors, setColors] = useState({
+    hat: "#000"
+
+  });
+  const [hatIndex, setHatIndex] = useState(0);
+
+  const handleColorChange = (colorHex) => {
+    setColors({ ...colors, [selectedPart]: colorHex });
+  };
+
+  const currentHat = React.cloneElement(hatOptions[hatIndex], {
+    color: colors.hat,
+  });
+
   return (
     <div className="column-container ">
-      <div className="left-column">
-        <div className="grid">
-          <div className="selection">
-        
-          </div>
-          <div className="selection">
+        <div className="left-column selected-part-controller">
+          {selectedPart === "hat" && (
+            <div className="hat-options grid">
+              {hatOptions.map((Hat, index) => (
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  key={index}
+                  onClick={() => setHatIndex(index)}
+                  className={hatIndex === index ? "active-button" : ""}
+                >
+                  {React.cloneElement(Hat, { color: colors.hat })}
+                </motion.button>
+              ))}
+            </div>
           
-          </div>
-          <div className="selection">
-         
-          </div>
-          <div className="selection">
-          
-          </div>
-          <div className="selection">
-          
-          </div>
-          <div className="selection">
-          
-          </div>
-          <div className="selection">
-          
-          </div>
-          <div className="selection">
-              
-          </div>
-          <div className="selection">
-              
-          </div>
-          <div className="selection">
-              
-          </div>
-          <div className="selection">
-              
-          </div>
-          <div className="selection">
-              
-          </div>
-          <div className="selection">
-              
-          </div>
-          <div className="selection">
-              
-          </div>
-          <div className="selection">
-              
-          </div>
-          
-        </div>
-
+          )}
         <div className="hue-picker" >
           <HuePicker/>
         </div>
       </div>
+     
 
 
       <div className="right-column">
             <div className="avatar-container">
+              {currentHat}
               <Avatar/>
             </div>
           <div className="d-s-buttonContainer ">
@@ -106,4 +94,4 @@ const PageBody = () => {
 );
 }
 
-export default PageBody;
+export default GogoBuilder2;

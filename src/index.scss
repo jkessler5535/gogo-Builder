@@ -248,18 +248,24 @@ header {
 
 }
 
-
-.selection {
+.selected-part-controller {
+  button{
   width: 177px;
   height: 177px;
   min-width:140px;
   border-radius: 24px;
   background: #48425f;
   border: none;
- 
+  svg{
+   width: 100%;
+   height: 100%;
+  }
+ }
 }
 
-  .selection:first-child{
+
+
+  .button:first-child{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -267,7 +273,7 @@ header {
     box-shadow: 0px 0px 22.9px 0px #8D8BFF;
 }
 
-.selection:nth-last-child(-n+3){
+.button:nth-last-child(-n+3){
   background: linear-gradient(180deg, #48425F 5%, rgba(72, 66, 95, 0) 91.5%);
   box-shadow: 0px 20px 25.2px 0px #0000000D;
 
@@ -388,7 +394,7 @@ footer p {
 //
 
 
-
+/*
 .gogo-belt {
 	z-index: 6;
 	left: -10px;
@@ -491,83 +497,7 @@ footer p {
   padding: 8px;
 }
 */
-.part-selection {
-	display: flex;
-	flex-direction: column;
-  gap: 20px;
-	height: 100%;
-	position: fixed;
-	left: 0;
-	border-right: 1px solid #000;
-	background: #824AF6;
-	box-shadow: 10px 0px 26px 0px rgba(0, 0, 0, 0.25);
-	padding: 1.5em;
-	button {
-		filter: drop-shadow(0px 14px 17px rgba(0, 0, 0, 0.25));
-		border-radius: 16px;
-		background: linear-gradient(180deg, #B288FF 0%, #9C67FF 100%);
-		width: 88px;
-		height: 88px;
-		border: none;
-    &:hover {
-      cursor: pointer;
-    }
-	}
-	button.active-button {
-		border-radius: 16px;
-		border: 1px solid #5E26D3;
-		background: #713DDC;
-		box-shadow: 0px 6px 15px 0px rgba(87, 48, 174, 0.80) inset;
-	}
-}
 
-
-
-
-// Lab Assets
-.lab-asset {
-  position: absolute;
-}
-
-.lab-asset__platform {
-  z-index: 2;
-  max-width: 1380px;
-  bottom: -523px;
-  left: -220px;
-}
-
-
-.lab-asset__tv  {
-  max-width: 700px;
-  width: 100%;
-  left: 290px;
-  z-index: 1;
-  display: none;
-  top: 100px;
-}
-
-.lab-asset__gen  {
-  max-width: 662px;
-  width: 100%;
-  right: 210px;
-  z-index: 1;
-  display: none;
-  top: 250px;
-}
-
-.lab-asset_panels {
-  width: 100%;
-  z-index: 0;
-}
-
-.btn {
-  border-radius: 48px;
-  background-color: #49E988;
-  color: #000;
-  border: none;
-  padding: 6px 20px;
-  font-weight: bold;
-}
 
 /* Styles for iPhone 14 and iPhone 15 Pro Max */
 @media only screen and (max-width: 430px){
