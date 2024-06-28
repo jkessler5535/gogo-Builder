@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { HuePicker } from 'react-color';
 import {motion} from 'framer-motion';
+import BuilderDash from './builder-dash.js';
 
 
 import Hat1 from "../hats/hat-1";
@@ -40,8 +41,10 @@ const GogoBuilder2 = () => {
   });
 
   return (
+  <>
+    <BuilderDash/>
     <div className="column-container ">
-        <div className="left-column selected-part-controller">
+      <div className="left-column selected-part-controller">
           {selectedPart === "hat" && (
             <div className="hat-options grid">
               {hatOptions.map((Hat, index) => (
@@ -90,6 +93,7 @@ const GogoBuilder2 = () => {
           </div>
       </div>
     </div>
+  </>
       
 );
 }
