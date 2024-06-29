@@ -11,12 +11,16 @@ import NewJacket from "../logos/new-jacket";
 import NewAcess from "../logos/new-acess";
 import SaveIcon from "../logos/save";
 
-const Builder = () => {
+const Builder = ({ onSelectPart }) => {
+  const handleButtonClick = (part) => {
+    onSelectPart(part);
+  }
+
   return (
      <div className="builder">
         <ul className="menu">
           <li>
-            <button>
+            <button className="shirt-btn" onClick={() => handleButtonClick('body')}>
               <div className="logo-container">
                 <NewTshirt className="logo" />
               </div>
@@ -24,7 +28,8 @@ const Builder = () => {
             </button>
           </li>
           <li>
-            <button>
+            <button className="hat-btn" onClick={() =>
+            handleButtonClick('hat')}>
                 <div className="logo-container">
                   <NewHat className="logo" />
                 </div>
@@ -32,7 +37,7 @@ const Builder = () => {
             </button> 
           </li>
           <li>
-            <button>
+            <button className="glasses-btn" onClick={() => handleButtonClick('glasses')}>
               <div className="logo-container">
                 <NewGlasses className="logo"/>
               </div>
@@ -40,7 +45,8 @@ const Builder = () => {
             </button>
           </li>
           <li>
-            <button>
+            <button className="head-btn"
+            onClick={() => handleButtonClick('head')}>
               <div className="logo-container">
                 <NewHeadphones className="logo"/>
               </div>
@@ -48,7 +54,7 @@ const Builder = () => {
             </button>
           </li>
           <li>
-            <button>
+            <button className="jacket-btn">
               <div className="logo-container">
                 <NewJacket className="logo"/>
               </div>
@@ -56,7 +62,7 @@ const Builder = () => {
             </button>
           </li>
           <li>
-            <button>
+            <button className="belt-btn" onClick={() =>     handleButtonClick('belt')}>
               <div className="logo-container">
                 <NewAcess className="logo"/>
               </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import FooterIcon from "../logos/footerIcon";
+import FooterIcon from "../logos/footerIcon.js";
 
 
 const Footer = () => {

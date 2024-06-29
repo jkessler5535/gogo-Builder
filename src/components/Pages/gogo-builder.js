@@ -35,10 +35,6 @@ import  NoneIcon from "../assets/icons/none-icon.svg";
 import Platform from "../assets/lab-assets/platform.png";
 
 
-
-
-
-
 const partIcons = {
   hat: <HatIcon />,
   body: <BodyIcon />,
@@ -179,6 +175,7 @@ const AvatarBuilder = (downloadAvatar) => {
               ))}
             </div>
           )}
+
           {selectedPart === "glasses" && (
             <div className="glasses-options">
               {glassesOptions.map((Glasses, index) => (
@@ -197,6 +194,7 @@ const AvatarBuilder = (downloadAvatar) => {
               ))}
             </div>
           )}
+          
         </div>
         <div className="color-picker">
           <ColorPicker
