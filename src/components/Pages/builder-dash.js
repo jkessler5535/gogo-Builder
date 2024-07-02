@@ -54,7 +54,8 @@ const Builder = ({ onSelectPart }) => {
             </button>
           </li>
           <li>
-            <button className="jacket-btn">
+            <button className="outwear-btn"
+            onClick={() => handleButtonClick('outwear')}>
               <div className="logo-container">
                 <NewJacket className="logo"/>
               </div>
@@ -62,7 +63,7 @@ const Builder = ({ onSelectPart }) => {
             </button>
           </li>
           <li>
-            <button className="belt-btn" onClick={() =>     handleButtonClick('belt')}>
+            <button className="belt-btn" onClick={() =>   handleButtonClick('belt')}>
               <div className="logo-container">
                 <NewAcess className="logo"/>
               </div>
