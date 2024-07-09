@@ -9,6 +9,7 @@ function Avatar() {
       max-height="532px"
       fill="none"
       viewBox="0 0 476 532"
+      className="custom-avatar"
     >
       <g clipPath="url(#clip0_1_81)">
         <path

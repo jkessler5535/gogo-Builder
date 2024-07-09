@@ -23,7 +23,6 @@ import Glasses1 from "../glasses/glasses-1";
 import Glasses2 from "../glasses/glasses-2";
 import Glasses3 from "../glasses/glasses-3";
 
-import Head1 from "../heads/head-1";
 import Belt1 from "../belt/belt-1";
 import Headphones1 from "../headphones/headphones-1";
 
@@ -92,16 +91,19 @@ const outwearOptions = [
   const [beltIndex, setBeltIndex] = useState(0);
   const [outwearIndex, setOutwearIndex] = useState(0);
 
-
+ 
+  /*
   const [colors, setColors] = useState({
     hat: "#000",
-    body: "#000",
     glasses: "#000",
     body: "#000",
     head: "#000",
     belt: "#000",
     outwear: "#000",
   });
+
+
+  /*
 
   const onSelectPart = (part) => {
     setSelectedPart({ part });
@@ -110,6 +112,8 @@ const outwearOptions = [
   const handleColorChange = (colorHex) => {
     setColors({ ...colors, [selectedPart]: colorHex });
   };
+
+ */
 
   const currentHat = React.cloneElement(hatOptions[hatIndex], {
     color: colors.hat,
@@ -148,6 +152,7 @@ const outwearOptions = [
 
       <div className="column-container ">
         <div className="left-column selected-part-controller">
+        
           {selectedPart === "body" && (
             <div className="body-options grid">
               {bodyOptions.map((Body, index) => (
@@ -241,6 +246,7 @@ const outwearOptions = [
                   onClick={() => setBeltIndex(index)}
                   className={beltIndex === index ? "active-button" : ""}
                 >
+                
                   {React.cloneElement(Belt, { color: colors.belt })}
                 </motion.button>
               ))}
@@ -258,12 +264,8 @@ const outwearOptions = [
 
         <div className="right-column">
           <div className="avatar-container selected-hat selected-body current-glasses current-head">
-            {currentHat}
-            {currentBody}
-            {currentGlasses}
-            {currentHead}
-            {currentBelt}
-            <Avatar />
+          {currentHat}
+            <Avatar/>
           </div>
           <div className="d-s-buttonContainer ">
             <button className="access-bar">
@@ -274,7 +276,7 @@ const outwearOptions = [
                 <p className="d-s-text">Download Art</p>
               </div>
             </button>
-            <button className="access-bar hi">
+            <button className="access-bar">
               <div className="logo-container share-btn">
                 <ShareIcon className="logo " />
               </div>
