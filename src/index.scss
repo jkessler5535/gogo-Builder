@@ -290,56 +290,10 @@ header {
   width:550px;
   margin: 0 auto;
 
-}
-.custom-avatar{
-  position: relative;
-  width: 600px;
-  height: 600px;
-  padding-top:34px;
+
 
  }
-
- .gogo-hat {
-	z-index: 10;
-  top: -25px;
-  animation: headBreathing 4s infinite;
- }
- .gogo-c {
-  width: 100%;
-  height: 100%;
-  
-}
-.hat-options {
-  .position-left{
-    transform: scaleX(-1) rotate(10deg);
-  }
-  .gogo-hat {
-    top: 30px;
-
-  }
-  #gogo-helmet {
-    left: 5px;
-    top: 15px;
-  }
-  .gogo-bear-helmet {
-    top: 7px;
-    left: 7px;
-  }
-}
-.body-options {
-  .gogo-body {
-    top: -40px;
-  }
-}
-.belt-options {
-  .gogo-belt {
-    top: -50px;
-  }
-}
-
-
-
-.avatar-container {
+ .avatar-container {
   position: relative;
   width:589px;
   height: 589px;
@@ -356,6 +310,7 @@ header {
 .d-s-buttonContainer {
   display: flex;
   gap: 20px;
+  
 }
 
 .d-s-buttonContainer button{
@@ -394,7 +349,49 @@ footer p {
 
 
 
+ /*
+ .gogo-hat {
+	z-index: 10;
+  top: -25px;
+  animation: headBreathing 4s infinite;
+ }
+ .gogo-c {
+  width: 100%;
+  height: 100%;
+  
+}
+.hat-options {
+  .position-left{
+    transform: scaleX(-1) rotate(10deg);
+  }
+  .gogo-hat {
+    top: 30px;
+
+  }
+  #gogo-helmet {
+    left: 5px;
+    top: 15px;
+  }
+  .gogo-bear-helmet {
+    top: 7px;
+    left: 7px;
+  }
+}
+.body-options {
+  .gogo-body {
+    top: -40px;
+  }
+}
+.belt-options {
+  .gogo-belt {
+    top: -50px;
+  }
+}
+
 /*
+
+
+
 .gogo-builder{
   z-index: 2;
 }
@@ -411,11 +408,6 @@ footer p {
   top: 54px;
 }
 
-.avatar-only {
-  position: relative;
-	width: 600px;
-	height: 600px;
-}
 .gogo-c {
 	position: absolute;
 }
@@ -430,7 +422,7 @@ footer p {
   top: -20px;
 }
 
-//*
+
 
 // @keyframes headBreathing {
 //   0%, 100% {
