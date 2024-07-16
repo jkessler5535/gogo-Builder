@@ -8,6 +8,7 @@ function Icon() {
       height="600"
       fill="none"
       viewBox="0 0 600 600"
+      
     >
       <g clipPath="url(#clip0_1393_339)">
         <path

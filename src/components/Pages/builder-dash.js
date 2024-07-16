@@ -20,7 +20,7 @@ const Builder = ({ onSelectPart }) => {
      <div className="builder">
         <ul className="menu">
           <li>
-            <button className="shirt-btn" onClick={() => handleButtonClick('body')}>
+            <button className="shirt-btn" onClick={() => onSelectPart('body')}>
               <div className="logo-container">
                 <NewTshirt className="logo" />
               </div>
@@ -29,7 +29,7 @@ const Builder = ({ onSelectPart }) => {
           </li>
           <li>
             <button className="hat-btn" onClick={() =>
-            handleButtonClick('hat')}>
+            onSelectPart('hat')}>
                 <div className="logo-container">
                   <NewHat className="logo" />
                 </div>
@@ -37,7 +37,7 @@ const Builder = ({ onSelectPart }) => {
             </button> 
           </li>
           <li>
-            <button className="glasses-btn" onClick={() => handleButtonClick('glasses')}>
+            <button className="glasses-btn" onClick={() => onSelectPart('glasses')}>
               <div className="logo-container">
                 <NewGlasses className="logo"/>
               </div>
@@ -46,7 +46,7 @@ const Builder = ({ onSelectPart }) => {
           </li>
           <li>
             <button className="head-btn"
-            onClick={() => handleButtonClick('head')}>
+            onClick={() => onSelectPart('head')}>
               <div className="logo-container">
                 <NewHeadphones className="logo"/>
               </div>
@@ -55,7 +55,7 @@ const Builder = ({ onSelectPart }) => {
           </li>
           <li>
             <button className="outwear-btn"
-            onClick={() => handleButtonClick('outwear')}>
+            onClick={() => onSelectPart('outwear')}>
               <div className="logo-container">
                 <NewJacket className="logo"/>
               </div>
@@ -63,7 +63,7 @@ const Builder = ({ onSelectPart }) => {
             </button>
           </li>
           <li>
-            <button className="belt-btn" onClick={() =>   handleButtonClick('belt')}>
+            <button className="belt-btn" onClick={() =>   onSelectPart('belt')}>
               <div className="logo-container">
                 <NewAcess className="logo"/>
               </div>

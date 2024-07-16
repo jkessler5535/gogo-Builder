@@ -7,7 +7,7 @@ function Belt1({ color }) {
       height="600"
       viewBox="0 0 600 600"
       fill="none"
-      className="gogo-c gogo-belt gogo-tool"
+      className="gogo-c gogo-belt"
     >
       <g
         stroke="#221F20"

@@ -106,121 +106,39 @@ const outwearOptions = [
   });
 
 
-  
+  //Conditional statement to render the currently select Part
 
   const onSelectPart = (part) => {
-    setSelectedPart( part );
+    setSelectedPart(part);
+    switch (part) {
+      case "hat":
+        setHatIndex(0); 
+        break;
+      case "body":
+        setBodyIndex(0); 
+        break;
+      case "glasses":
+        setGlassesIndex(0); 
+        break;
+      case "head":
+        setHeadIndex(0); 
+        break;
+      case "belt":
+        setBeltIndex(0); 
+        break;
+      case "outwear":
+        setOutwearIndex(0); 
+        break;
+        default:
+        break;
+    }
   };
 
-  const handleColorChange = (colorHex) => {
+   // Handler to handle color change for selected part
+   const handleColorChange = (colorHex, part) => {
     setColors({ ...colors, [selectedPart]: colorHex });
   };
 
- 
-
-  //Conditional stetement to render the currently select Part
-  const renderCurrentPart = () => {
-    switch (selectedPart) {
-      case "body":
-        return (
-          <div className="body-options grid">
-            {bodyOptions.map((Body, index) => (
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                key={index}
-                onClick={() => setBodyIndex(index)}
-                className={bodyIndex === index ? "active-button" : ""}
-              >
-                {React.cloneElement(Body, { color: colors.body })}
-              </motion.button>
-            ))}
-          </div>
-        );
-      case "hat":
-        return (
-          <div className="hat-options grid">
-            {hatOptions.map((Hat, index) => (
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                key={index}
-                onClick={() => setHatIndex(index)}
-                className={hatIndex === index ? "active-button" : ""}
-              >
-                {React.cloneElement(Hat, { color: colors.hat })}
-              </motion.button>
-            ))}
-          </div>
-        );
-      case "head":
-        return (
-          <div className="head-options grid">
-            {headOptions.map((Head, index) => (
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                key={index}
-                onClick={() => setHeadIndex(index)}
-                className={headIndex === index ? "active-button" : ""}
-              >
-                {React.cloneElement(Head, { color: colors.head })}
-              </motion.button>
-            ))}
-          </div>
-        );
-      case "glasses":
-        return (
-          <div className="glasses-options grid">
-            {glassesOptions.map((Glasses, index) => (
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                key={index}
-                onClick={() => setGlassesIndex(index)}
-                className={glassesIndex === index ? "active-button" : ""}
-              >
-                {React.cloneElement(Glasses, { color: colors.glasses })}
-              </motion.button>
-            ))}
-          </div>
-        );
-      case "outwear":
-        return (
-          <div className="outwear-options grid">
-            {outwearOptions.map((Outwear, index) => (
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                key={index}
-                onClick={() => setOutwearIndex(index)}
-                className={outwearIndex === index ? "active-button" : ""}
-              >
-                {React.cloneElement(Outwear, { color: colors.outwear })}
-              </motion.button>
-            ))}
-          </div>
-        );
-      case "belt":
-        return (
-          <div className="belt-options grid">
-            {beltOptions.map((Belt, index) => (
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                key={index}
-                onClick={() => setBeltIndex(index)}
-                className={beltIndex === index ? "active-button" : ""}
-              >
-                {React.cloneElement(Belt, { color: colors.belt })}
-              </motion.button>
-            ))}
-          </div>
-        );
-      default:
-        return null;
-    }
-  };
 
 
   
@@ -249,37 +167,141 @@ const outwearOptions = [
    ? React.cloneElement(outwearOptions[outwearIndex], { color: colors.outwear})
    : null;
   */
+   const renderCurrentPart = () => {
+    switch (selectedPart) {
+      case "hat":
+        return (
+          <div className="hat-options grid">
+            {hatOptions.map((Hat, index) => (
+              <motion.button
+                key={index}
+                onClick={() => setHatIndex(index)}
+                className={hatIndex === index ? "active-button" : ""}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                {React.cloneElement(Hat, { color: colors.hat })}
+              </motion.button>
+            ))}
+          </div>
+        );
+      case "body":
+        return (
+          <div className="body-options grid">
+            {bodyOptions.map((Body, index) => (
+              <motion.button
+                key={index}
+                onClick={() => setBodyIndex(index)}
+                className={bodyIndex === index ? "active-button" : ""}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                {React.cloneElement(Body, { color: colors.body })}
+              </motion.button>
+            ))}
+          </div>
+        );
+      case "glasses":
+        return (
+          <div className="glasses-options grid">
+            {glassesOptions.map((Glasses, index) => (
+              <motion.button
+                key={index}
+                onClick={() => setGlassesIndex(index)}
+                className={glassesIndex === index ? "active-button" : ""}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                {React.cloneElement(Glasses, { color: colors.glasses })}
+              </motion.button>
+            ))}
+          </div>
+        );
+      case "head":
+        return (
+          <div className="head-options grid">
+            {headOptions.map((Head, index) => (
+              <motion.button
+                key={index}
+                onClick={() => setHeadIndex(index)}
+                className={headIndex === index ? "active-button" : ""}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                {React.cloneElement(Head, { color: colors.head })}
+              </motion.button>
+            ))}
+          </div>
+        );
+      case "belt":
+        return (
+          <div className="belt-options grid">
+            {beltOptions.map((Belt, index) => (
+              <motion.button
+                key={index}
+                onClick={() => setBeltIndex(index)}
+                className={beltIndex === index ? "active-button" : ""}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                {React.cloneElement(Belt, { color: colors.belt })}
+              </motion.button>
+            ))}
+          </div>
+        );
+      case "outwear":
+        return (
+          <div className="outwear-options grid">
+            {outwearOptions.map((Outwear, index) => (
+              <motion.button
+                key={index}
+                onClick={() => setOutwearIndex(index)}
+                className={outwearIndex === index ? "active-button" : ""}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                {React.cloneElement(Outwear, { color: colors.outwear })}
+              </motion.button>
+            ))}
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
+  
+
   
   return (
     <>
       <BuilderDash
         onSelectPart={onSelectPart}
-        selectHat={() => setSelectedPart("hat")}
-        selectBody={() => setSelectedPart("body")}
-        selectHead={() => setSelectedPart("head")}
-        selectOutwear={() => setSelectedPart("outwear")}
-        selectBelt={() => setSelectedPart("belt")} />
+        selectHat={() => onSelectPart("hat")}
+        selectBody={() => onSelectPart("body")}
+        selectHead={() => onSelectPart("head")}
+        selectOutwear={() => onSelectPart("outwear")}
+        selectBelt={() => onSelectPart("belt")} />
 
       <div className="column-container ">
         <div className="left-column selected-part-controller">
           {renderCurrentPart()}
         
           <div className="hue-picker">
-            <HuePicker />
+            <HuePicker onChange={(color) => handleColorChange(color.hex, onSelectPart)} />
           </div>
         </div>
 
 
 
         <div className="right-column">
-          <div className="avatar-container selected-hat selected-body current-glasses current-head">
-          {selectedPart === "hat" && React.cloneElement(hatOptions[hatIndex], { color: colors.hat })}
-          {selectedPart === "body" && React.cloneElement(bodyOptions[bodyIndex], { color: colors.body })}
-          {selectedPart === "glasses" && React.cloneElement(glassesOptions[glassesIndex], { color: colors.glasses })}
-          {selectedPart === "head" && React.cloneElement(headOptions[headIndex], { color: colors.head })}
-          {selectedPart === "belt" && React.cloneElement(beltOptions[beltIndex], { color: colors.belt })}
-          {selectedPart === "outwear" && React.cloneElement(outwearOptions[outwearIndex], { color: colors.outwear })}
-          <Avatar/>
+          <div className="avatar-container current-hat current-body current-glasses current-head">
+          {React.cloneElement(hatOptions[hatIndex], {  color: colors.hat })}
+            {React.cloneElement(bodyOptions[bodyIndex], { color: colors.body })}
+            {React.cloneElement(glassesOptions[glassesIndex], { color: colors.glasses })}
+            {React.cloneElement(headOptions[headIndex], { color: colors.head })}
+            {React.cloneElement(beltOptions[beltIndex], { color: colors.belt })}
+            {React.cloneElement(outwearOptions[outwearIndex], { color: colors.outwear })}
+            <Avatar/>
           </div>
 
           <div className="d-s-buttonContainer ">

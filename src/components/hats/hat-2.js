@@ -7,8 +7,8 @@ function Hat2({ color }) {
     height={600}
     viewBox="0 0 600 600"
     fill="none"
-    className="gogo-c gogo-hat"
-    id="gogo-helmet"
+    className="gogo-hat"
+    
   >
     <g clipPath="url(#a)">
       <path

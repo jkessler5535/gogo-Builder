@@ -295,22 +295,37 @@ header {
  }
  .avatar-container {
   position: relative;
-  width:589px;
-  height: 589px;
+  width:620px;
+  height: 620px;
   border-radius: 35px;
   background-color: #FFD089;
   box-shadow: 0px 30px 24.5px 0px #0000000D;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding-top:34px;
+  overflow: hidden;
   
 }
+
+.custom-avatar{
+  position: absolute;
+  z-index: 1;
+  padding-top:34px;
+}
+.gogo-c{
+  position: absolute;
+}
+.gogo-hat {
+  z-index:4;
+  left:0;
+}
+
+
 
 .d-s-buttonContainer {
   display: flex;
   gap: 20px;
-  
+
 }
 
 .d-s-buttonContainer button{
@@ -348,13 +363,14 @@ footer p {
 }
 
 
-
+ 
+ 
  /*
  .gogo-hat {
 	z-index: 10;
   top: -25px;
   animation: headBreathing 4s infinite;
- }
+}
  .gogo-c {
   width: 100%;
   height: 100%;
