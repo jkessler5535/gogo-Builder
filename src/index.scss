@@ -306,21 +306,17 @@ header {
   overflow: hidden;
   
 }
+.avatar-container .gogo-c {
+  position: absolute;
+}
 
 .custom-avatar{
   position: absolute;
   z-index: 1;
   padding-top:34px;
+  display: none;
+ 
 }
-.gogo-c{
-  position: absolute;
-}
-.gogo-hat {
-  z-index:4;
-  left:0;
-}
-
-
 
 .d-s-buttonContainer {
   display: flex;

@@ -86,7 +86,7 @@ const outwearOptions = [
 
   //State to track selected part and its index
 
-  const [selectedPart, setSelectedPart] = useState("");
+  const [selectedPart, setSelectedPart] = useState("hat");
   const [hatIndex, setHatIndex] = useState(0);
   const [bodyIndex, setBodyIndex] = useState(0);
   const [glassesIndex, setGlassesIndex] = useState(0);
