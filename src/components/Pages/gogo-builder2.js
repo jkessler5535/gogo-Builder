@@ -59,15 +59,15 @@ function GogoBuilder2() {
 ];
 
 const outwearOptions = [
-  <Headphones1/>,
-  <Headphones1/>,
-  <Headphones1/>,
-  <Headphones1/>,
-  <Headphones1/>,
-  <Headphones1/>,
-  <Headphones1/>,
-  <Headphones1/>,
-  <Headphones1/>,
+  <null/>,
+  <null/>,
+  <null/>,
+  <null/>,
+  <null/>,
+  <null/>,
+  <null/>,
+  <null/>,
+  <null/>,
 
 ];
 
@@ -86,7 +86,7 @@ const outwearOptions = [
 
   //State to track selected part and its index
 
-  const [selectedPart, setSelectedPart] = useState("hat");
+  const [selectedPart, setSelectedPart] = useState("body");
   const [hatIndex, setHatIndex] = useState(0);
   const [bodyIndex, setBodyIndex] = useState(0);
   const [glassesIndex, setGlassesIndex] = useState(0);
@@ -140,33 +140,6 @@ const outwearOptions = [
   };
 
 
-
-  
- /*
-  const currentHat = React.cloneElement(hatOptions[hatIndex], {
-    color: colors.hat,
-  });
-
-  const currentBody = React.cloneElement(bodyOptions[bodyIndex], {
-    color: colors.body,
-  });
-
-  const currentGlasses = glassesOptions[glassesIndex]
-    ? React.cloneElement(glassesOptions[glassesIndex], { color: colors.glasses })
-    : null;
-
-    const currentHead = headOptions[headIndex]
-    ? React.cloneElement(headOptions[headIndex], { color: colors.head })
-    : null;
-
-  const currentBelt = beltOptions[beltIndex]
-    ? React.cloneElement(beltOptions[beltIndex], { color: colors.belt })
-    : null;
-
-  const currentOutwear = outwearOptions [outwearIndex]
-   ? React.cloneElement(outwearOptions[outwearIndex], { color: colors.outwear})
-   : null;
-  */
    const renderCurrentPart = () => {
     switch (selectedPart) {
       case "hat":
