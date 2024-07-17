@@ -135,8 +135,8 @@ const outwearOptions = [
   };
 
    // Handler to handle color change for selected part
-   const handleColorChange = (colorHex, part) => {
-    setColors({ ...colors, [selectedPart]: colorHex });
+   const handleColorChange = (color) => {
+    setColors({ ...colors, [selectedPart]: color.hex });
   };
 
 
@@ -287,8 +287,8 @@ const outwearOptions = [
           {renderCurrentPart()}
         
           <div className="hue-picker">
-            <HuePicker onChange={(color) => handleColorChange(color.hex, onSelectPart)} />
-          </div>
+          <HuePicker color={colors[selectedPart]} onChange={handleColorChange} />
+         </div>
         </div>
 
 
