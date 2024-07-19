@@ -58,11 +58,11 @@ const AvatarBuilder = (downloadAvatar) => {
     glasses: "#000",
   });
 
-  const [hatIndex, setHatIndex] = useState(0);
-  const [bodyIndex, setBodyIndex] = useState(0);
-  const [headIndex, setHeadIndex] = useState(0);
-  const [beltIndex, setBeltIndex] = useState(0);
-  const [glassesIndex, setGlassesIndex] = useState(0);
+  const [hatIndex, setHatIndex] = useState(-1);
+  const [bodyIndex, setBodyIndex] = useState(-1);
+  const [headIndex, setHeadIndex] = useState(-1);
+  const [beltIndex, setBeltIndex] = useState(-1);
+  const [glassesIndex, setGlassesIndex] = useState(-1);
 
   const handleColorChange = (colorHex) => {
     setColors({ ...colors, [selectedPart]: colorHex });

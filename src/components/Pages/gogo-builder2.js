@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import { HuePicker } from 'react-color';
 import {motion} from 'framer-motion';
 import BuilderDash from './builder-dash.js';
+import Avatar from './avatar.js';
+
 
 
 import Hat1 from "../hats/hat-1";
@@ -11,6 +13,7 @@ import Hat4 from "../hats/hat-4";
 import Hat5 from "../hats/hat-5";
 import Hat6 from "../hats/hat-6";
 import Hat7 from "../hats/hat-7";
+
 
 import Body1 from "../bodies/body-1";
 import Body2 from "../bodies/body-2";
@@ -27,17 +30,14 @@ import Belt1 from "../belt/belt-1";
 import Headphones1 from "../headphones/headphones-1";
 
 //Logos
-
-import Avatar from "../logos/avatar";
 import ShareIcon from "../logos/share";
 import DownloadIcon from "../logos/download";
 
-//Icons
+
 
 
 
 function GogoBuilder2() {
-
   const hatOptions = [<Hat1 />, <Hat2 />, <Hat3 />, <Hat4 />, <Hat5 />, <Hat6 />, <Hat7 />, <Hat7 />, <Hat7/>];
 
   const bodyOptions = [<Body1 />, <Body2 />, <Body3 />, <Body4 />, <Body5 />, <Body6 />, <Body6 />, <Body6 />,<Body6 />];
@@ -85,14 +85,14 @@ const outwearOptions = [
 
 
   //State to track selected part and its index
-
   const [selectedPart, setSelectedPart] = useState("body");
-  const [hatIndex, setHatIndex] = useState(0);
-  const [bodyIndex, setBodyIndex] = useState(0);
-  const [glassesIndex, setGlassesIndex] = useState(0);
-  const [headIndex, setHeadIndex] = useState(0);
-  const [beltIndex, setBeltIndex] = useState(0);
-  const [outwearIndex, setOutwearIndex] = useState(0);
+
+  const [hatIndex, setHatIndex] = useState(-1);
+  const [bodyIndex, setBodyIndex] = useState(-1);
+  const [glassesIndex, setGlassesIndex] = useState(-1);
+  const [headIndex, setHeadIndex] = useState(-1);
+  const [beltIndex, setBeltIndex] = useState(-1);
+  const [outwearIndex, setOutwearIndex] = useState(-1);
 
  
   //State to manage colors for each part
@@ -104,6 +104,14 @@ const outwearOptions = [
     belt: "#000",
     outwear: "#000",
   });
+
+    
+
+  // Handler to handle color change for selected part
+  const handleColorChange = (color) => {
+    setColors({ ...colors, [selectedPart]: color.hex });
+  };
+
 
 
   //Conditional statement to render the currently select Part
@@ -134,12 +142,7 @@ const outwearOptions = [
     }
   };
 
-   // Handler to handle color change for selected part
-   const handleColorChange = (color) => {
-    setColors({ ...colors, [selectedPart]: color.hex });
-  };
-
-
+  
    const renderCurrentPart = () => {
     switch (selectedPart) {
       case "hat":
@@ -267,15 +270,16 @@ const outwearOptions = [
 
 
         <div className="right-column">
-          <div className="avatar-container current-hat current-body current-glasses current-head">
-          {React.cloneElement(hatOptions[hatIndex], {  color: colors.hat })}
-            {React.cloneElement(bodyOptions[bodyIndex], { color: colors.body })}
-            {React.cloneElement(glassesOptions[glassesIndex], { color: colors.glasses })}
-            {React.cloneElement(headOptions[headIndex], { color: colors.head })}
-            {React.cloneElement(beltOptions[beltIndex], { color: colors.belt })}
-            {React.cloneElement(outwearOptions[outwearIndex], { color: colors.outwear })}
-            <Avatar/>
-          </div>
+        <div className="avatar-container current-hat   current-body current-glasses current-head">
+          {hatIndex !== -1 && React.cloneElement(hatOptions[hatIndex], { color: colors.hat })}
+          {bodyIndex !== -1 && React.cloneElement(bodyOptions[bodyIndex], { color: colors.body })}
+          {glassesIndex !== -1 && React.cloneElement(glassesOptions[glassesIndex], { color: colors.glasses })}
+          {headIndex !== -1 && React.cloneElement(headOptions[headIndex], { color: colors.head })}
+          {beltIndex !== -1 && React.cloneElement(beltOptions[beltIndex], { color: colors.belt })}
+          {outwearIndex !== -1 && React.cloneElement(outwearOptions[outwearIndex], { color: colors.outwear })}
+          <Avatar/>
+        </div>
+
 
           <div className="d-s-buttonContainer ">
             <button className="access-bar">

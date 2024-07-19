@@ -303,19 +303,11 @@ header {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  overflow: hidden;
   
 }
+
 .avatar-container .gogo-c {
   position: absolute;
-}
-
-.custom-avatar{
-  position: absolute;
-  z-index: 1;
-  padding-top:34px;
-  display: none;
- 
 }
 
 .d-s-buttonContainer {
