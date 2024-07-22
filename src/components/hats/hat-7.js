@@ -9,6 +9,7 @@ function Hat7({ color }) {
       fill="none"
       viewBox="0 0 600 600"
       className=" gogo-hat gogo-c"
+      id="gogo-cubs-helmet"
     >
       <g clipPath="url(#clip0_1620_389)">
         <path

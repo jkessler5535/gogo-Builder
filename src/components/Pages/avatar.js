@@ -9,12 +9,12 @@ import AvatarEyes from "../../assets/avatar-parts/avatar-eyes.js";
 import AvatarHat from "../../assets/avatar-parts/avatar-hat.js";
 import AvatarHead from "../../assets/avatar-parts/avatar-head.js";
 
-const Avatar = () => {
+const Avatar = ({ showHat, hatColor}) => {
   return (
     <div>
       <AvatarBody  />
       <AvatarHead  />
-      <AvatarHat />
+      {showHat && <AvatarHat color={hatColor} />}
       <AvatarEyes />
       <AvatarBrows  />
       <AvatarEars  />

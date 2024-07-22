@@ -7,7 +7,7 @@ function Hat6({ color }) {
     height="600"
     fill="none"
     viewBox="0 0 600 600"
-    className=" gogo-hat gogo-c"
+    className="gogo-hat gogo-c gogo-cap"
   >
     <path
       fill={color}

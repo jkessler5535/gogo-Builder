@@ -90,6 +90,7 @@ const outwearOptions = [
   const [headIndex, setHeadIndex] = useState(-1);
   const [beltIndex, setBeltIndex] = useState(-1);
   const [outwearIndex, setOutwearIndex] = useState(-1);
+ 
 
  
   //State to manage colors for each part
@@ -117,22 +118,22 @@ const outwearOptions = [
     setSelectedPart(part);
     switch (part) {
       case "hat":
-        setHatIndex(0); 
+        setHatIndex(-1); 
         break;
       case "body":
-        setBodyIndex(0); 
+        setBodyIndex(-1); 
         break;
       case "glasses":
-        setGlassesIndex(0); 
+        setGlassesIndex(-1); 
         break;
       case "head":
-        setHeadIndex(0); 
+        setHeadIndex(-1); 
         break;
       case "belt":
-        setBeltIndex(0); 
+        setBeltIndex(-1); 
         break;
       case "outwear":
-        setOutwearIndex(0); 
+        setOutwearIndex(-1); 
         break;
         default:
         break;
@@ -268,6 +269,7 @@ const outwearOptions = [
 
         <div className="right-column">
         <div className="avatar-container current-hat   current-body current-glasses current-head">
+        {hatIndex === -1 && <Avatar showHat={true} hatColor={colors.hat} />}
           {hatIndex !== -1 && React.cloneElement(hatOptions[hatIndex], { color: colors.hat })}
           {bodyIndex !== -1 && React.cloneElement(bodyOptions[bodyIndex], { color: colors.body })}
           {glassesIndex !== -1 && React.cloneElement(glassesOptions[glassesIndex], { color: colors.glasses })}

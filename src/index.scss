@@ -263,6 +263,7 @@ header {
   svg{
    width: 100%;
    height: 100%;
+   
   }
  }
 }
@@ -307,6 +308,7 @@ header {
 
 }
 
+
 .avatar-container{
  .gogo-c {
   position: absolute;
@@ -318,16 +320,31 @@ header {
  
 .gogo-left{
   transform: scaleX(-1) rotate(15deg);
-}
+ }
+
 
 .avatar-container
- .gogo-hat{
+ .gogo-hat {
   position: absolute;
   z-index: 5;
   top:-51px;
   width: 135%;
   height: 135%;
+  
 }
+#gogo-helmet {
+ right: -178px;
+
+}
+
+.gogo-cap {
+  right: -170px;
+}
+.gogo-cubs-helmet {
+  top: 7px;
+  left: 7px;
+}
+
 
 .avatar-svg{
   position: absolute;
