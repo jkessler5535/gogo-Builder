@@ -34,9 +34,6 @@ import ShareIcon from "../logos/share";
 import DownloadIcon from "../logos/download";
 
 
-
-
-
 function GogoBuilder2() {
   const hatOptions = [<Hat1 />, <Hat2 />, <Hat3 />, <Hat4 />, <Hat5 />, <Hat6 />, <Hat7 />, <Hat7 />, <Hat7/>];
 
@@ -86,7 +83,7 @@ const outwearOptions = [
 
   //State to track selected part and its index
   const [selectedPart, setSelectedPart] = useState("body");
-
+ 
   const [hatIndex, setHatIndex] = useState(-1);
   const [bodyIndex, setBodyIndex] = useState(-1);
   const [glassesIndex, setGlassesIndex] = useState(-1);
@@ -263,7 +260,7 @@ const outwearOptions = [
           {renderCurrentPart()}
         
           <div className="hue-picker">
-          <HuePicker color={colors[selectedPart]} onChange={handleColorChange} />
+          <HuePicker color={colors[selectedPart]} onChange={handleColorChange}  />
          </div>
         </div>
 
@@ -307,3 +304,5 @@ const outwearOptions = [
 }
 
 export default GogoBuilder2;
+
+

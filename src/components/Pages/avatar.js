@@ -12,12 +12,12 @@ import AvatarHead from "../../assets/avatar-parts/avatar-head.js";
 const Avatar = () => {
   return (
     <div>
-      <AvatarBody className="avatar-body" />
-      <AvatarHead className="avatar-head" />
-      <AvatarHat className="avatar-hat" />
-      <AvatarEyes className="avatar-eyes" />
-      <AvatarBrows className="avatar-brows" />
-      <AvatarEars  className="avatar-ears" />
+      <AvatarBody  />
+      <AvatarHead  />
+      <AvatarHat />
+      <AvatarEyes />
+      <AvatarBrows  />
+      <AvatarEars  />
     </div>
   );
 }
