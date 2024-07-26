@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-
+import CustomAlert from '../CustomAlert';
 
 //Logos
 
@@ -12,11 +12,12 @@ import NewAcess from "../logos/new-acess";
 import SaveIcon from "../logos/save";
 
 const Builder = ({ onSelectPart, onSave }) => {
-  const [saveMessage, setSaveMessage] = useState("");
+  const [alertMessage, setAlertMessage] = useState('');
 
   const handleSave = () => {
-    onSave(); // Call the save function
-    alert('Saved!'); // Set the save message
+    onSave();
+    setAlertMessage('Saved!'); 
+   
     
    
   };
@@ -88,6 +89,7 @@ const Builder = ({ onSelectPart, onSave }) => {
             </button>
           </li>
         </ul>
+        <CustomAlert message={alertMessage} onClose={() => setAlertMessage('')} />
       </div>
   );
 }

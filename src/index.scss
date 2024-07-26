@@ -431,24 +431,49 @@ footer p {
   border-radius: 4px;
 }
 
+//Custom Saved alert box
 
 
+.custom-alert {
+  position: fixed;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 300px;
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 1000; 
+}
 
-/* Modal buttons styles */
-.copy-btn, .close-btn {
-  background-color: #007bff;
-  color: white;
+.custom-alert-content {
+  background-color: #48425F; 
+  color: #fff; 
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.custom-alert p {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.custom-alert button {
+  background-color: #8D8BFF; 
+  color: #fff; 
   border: none;
   padding: 10px 20px;
-  margin: 5px;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
+
 }
 
-.copy-btn:hover, .close-btn:hover {
-  background-color: #0056b3;
+.custom-alert button:hover {
+  background-color: #6b63d4; /* Darker button color on hover */
 }
-
 
 
  
