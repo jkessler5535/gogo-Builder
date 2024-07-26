@@ -1,10 +1,18 @@
 import React from 'react';
 
-function Body2({ color }) {
+function Body2({ color, size }) {
+  const bodySizes = {
+    normal: 600,
+    small: 300,
+    medium: 400,
+    large: 700,
+
+  };
+
   return (
     <svg
-      width="600"
-      height="600"
+      width={bodySizes[size] || 600}
+      height={bodySizes[size] || 600}
       fill="none"
       viewBox="0 0 600 600"
       className="gogo-c gogo-body"

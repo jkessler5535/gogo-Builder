@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 
 //Logos
@@ -11,7 +11,16 @@ import NewJacket from "../logos/new-jacket";
 import NewAcess from "../logos/new-acess";
 import SaveIcon from "../logos/save";
 
-const Builder = ({ onSelectPart }) => {
+const Builder = ({ onSelectPart, onSave }) => {
+  const [saveMessage, setSaveMessage] = useState("");
+
+  const handleSave = () => {
+    onSave(); // Call the save function
+    alert('Saved!'); // Set the save message
+    
+   
+  };
+
   const handleButtonClick = (part) => {
     onSelectPart(part);
   }
@@ -71,12 +80,12 @@ const Builder = ({ onSelectPart }) => {
             </button>
           </li>
           <li className="save-btn">
-            <a href="https://www.gogopool.com">
+            <button onClick={handleSave}>
               <div className="logo-container">
-                <SaveIcon className="logo"/>
+                <SaveIcon className="logo" />
               </div>
               <div className="text-container">Save Progress</div>
-            </a>
+            </button>
           </li>
         </ul>
       </div>

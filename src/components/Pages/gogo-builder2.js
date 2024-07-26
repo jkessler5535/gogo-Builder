@@ -83,7 +83,8 @@ const outwearOptions = [
 
   //State to track selected part and its index
   const [selectedPart, setSelectedPart] = useState("body");
- 
+  const [bodyOptionSelected, setBodyOptionSelected] = useState(false);
+
   const [hatIndex, setHatIndex] = useState(-1);
   const [bodyIndex, setBodyIndex] = useState(-1);
   const [glassesIndex, setGlassesIndex] = useState(-1);
@@ -104,16 +105,29 @@ const outwearOptions = [
   });
 
     
+  // State to manage body size
+  const [bodySize, setBodySize] = useState("normal");
+ 
+  //State for modal
+  const [modalVisible, setModalVisible] = useState(false);
+  const [shareableLink, setShareableLink] = useState('');
+
 
   // Handler to handle color change for selected part
   const handleColorChange = (color) => {
     setColors({ ...colors, [selectedPart]: color.hex });
   };
 
+ 
 
+   // Function to handle selection of glasses option
+   const handleGlassesOptionSelect = (index) => {
+    setGlassesIndex(index);
+  };
+  
+ 
 
-  //Conditional statement to render the currently select Part
-
+  
   const onSelectPart = (part) => {
     setSelectedPart(part);
     switch (part) {
@@ -122,6 +136,8 @@ const outwearOptions = [
         break;
       case "body":
         setBodyIndex(-1); 
+        setBodyOptionSelected(false);
+        setBodySize("small");
         break;
       case "glasses":
         setGlassesIndex(-1); 
@@ -243,13 +259,56 @@ const outwearOptions = [
         return null;
     }
   };
-  
 
+  const saveAvatar = () =>{
+    const avatarState = {
+      hatIndex,
+      bodyIndex,
+      glassesIndex,
+      headIndex,
+      beltIndex,
+      outwearIndex,
+      colors
+    };
+    console.log("Avatar saved:", avatarState);
+  }
+
+  const shareAvatar = () => {
+    const avatarState = {
+      hatIndex,
+      bodyIndex,
+      glassesIndex,
+      headIndex,
+      beltIndex,
+      outwearIndex,
+      colors
+    };
+    const base64 = btoa(JSON.stringify(avatarState));
+    const shareableLink = `${window.location.origin}/share?data=${base64}`;
+    setShareableLink(shareableLink);
+    setModalVisible(true);
+
+  };
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(shareableLink).then(() => {
+      alert("Link copied to clipboard!");
+    });
+  };
+
+
+
+  const closeModal = () => {
+    setModalVisible(false);
+  };
+
+ 
   
   return (
     <>
       <BuilderDash
         onSelectPart={onSelectPart}
+        onSave={saveAvatar}
         selectHat={() => onSelectPart("hat")}
         selectBody={() => onSelectPart("body")}
         selectHead={() => onSelectPart("head")}
@@ -270,13 +329,25 @@ const outwearOptions = [
         <div className="right-column">
         <div className="avatar-container current-hat   current-body current-glasses current-head">
         {hatIndex === -1 && <Avatar showHat={true} hatColor={colors.hat} />}
+        {glassesIndex === -1 && <Avatar showGlasses={true} glassesColor={colors.glasses} />}
+        {bodyIndex === -1 && <Avatar showBody={true} 
+        bodyColor={colors.body} />}
+        
+        
           {hatIndex !== -1 && React.cloneElement(hatOptions[hatIndex], { color: colors.hat })}
           {bodyIndex !== -1 && React.cloneElement(bodyOptions[bodyIndex], { color: colors.body })}
           {glassesIndex !== -1 && React.cloneElement(glassesOptions[glassesIndex], { color: colors.glasses })}
           {headIndex !== -1 && React.cloneElement(headOptions[headIndex], { color: colors.head })}
           {beltIndex !== -1 && React.cloneElement(beltOptions[beltIndex], { color: colors.belt })}
           {outwearIndex !== -1 && React.cloneElement(outwearOptions[outwearIndex], { color: colors.outwear })}
-          <Avatar/>
+          <Avatar
+               showHat={hatIndex === -1} // Show hat only if no hat option is selected
+               hatColor={colors.hat}
+               showEyes={glassesIndex === -1} // Hide eyes only if glasses are selected
+               showGlasses={glassesIndex !== -1}
+               glassesColor={colors.glasses}
+            />
+
         </div>
 
 
@@ -289,8 +360,8 @@ const outwearOptions = [
                 <p className="d-s-text">Download Art</p>
               </div>
             </button>
-            <button className="access-bar">
-              <div className="logo-container share-btn">
+            <button className="access-bar share-btn" onClick={shareAvatar}>
+              <div className="logo-container ">
                 <ShareIcon className="logo " />
               </div>
               <div className="text-container share-btn">
@@ -300,6 +371,28 @@ const outwearOptions = [
           </div>
         </div>
       </div>
+
+      {modalVisible && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h2>Share Your Avatar</h2>
+            <p>Here is your shareable link:</p>
+            <input 
+              type="text" 
+              value={shareableLink} 
+              readOnly 
+              onClick={(e) => e.target.select()}
+              className="modal-input"
+            />
+            <button className="copy-btn" onClick={copyToClipboard}>
+              Copy Link
+            </button>
+            <button className="close-btn" onClick={closeModal}>
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </>
 
   );
