@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import CustomAlert from '../CustomAlert';
+import TemporaryAlert from '../TempAlert';
 
 //Logos
 
@@ -12,13 +12,11 @@ import NewAcess from "../logos/new-acess";
 import SaveIcon from "../logos/save";
 
 const Builder = ({ onSelectPart, onSave }) => {
-  const [alertMessage, setAlertMessage] = useState('');
+  const [showAlert, setShowAlert] = useState(false);
 
   const handleSave = () => {
     onSave();
-    setAlertMessage('Saved!'); 
-   
-    
+    setShowAlert(true);
    
   };
 
@@ -87,9 +85,15 @@ const Builder = ({ onSelectPart, onSave }) => {
               </div>
               <div className="text-container">Save Progress</div>
             </button>
+            {showAlert && (
+              <TemporaryAlert
+                message="Saved!"
+                onClose={() => setShowAlert(false)}
+            />
+             )}
           </li>
         </ul>
-        <CustomAlert message={alertMessage} onClose={() => setAlertMessage('')} />
+        
       </div>
   );
 }
