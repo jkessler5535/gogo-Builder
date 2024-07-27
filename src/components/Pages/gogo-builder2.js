@@ -103,21 +103,34 @@ const outwearOptions = [
     outwear: "#000",
   });
 
- const avatarRef = useRef(null);
 
- const downloadAvatar = () => {
-  if (avatarRef.current) {
-    html2canvas(avatarRef.current, { scale: 2 }).then((canvas) => { 
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [shareableLink, setShareableLink] = useState('');
+  const [imagePreview, setImagePreview] = useState('');
+  
+
+  const avatarRef = useRef(null);
+
+ const downloadAvatar = async () => {
+  setIsProcessing(true);  
+  try {
+    if (avatarRef.current) {
+      const canvas = await html2canvas(avatarRef.current, { scale: 2, useCORS: true });
       const link = document.createElement('a');
       link.href = canvas.toDataURL('image/png');
       link.download = 'avatar.png';
       link.click();
-    })
-    .catch((error) => console.error('Error generating image:', error));
-  } else {
-    console.error('Avatar reference is null');
+    } else {
+      console.error('Avatar reference is null');
+    }
+  } catch (error) {
+    console.error('Error capturing avatar:', error);
+  } finally {
+    setIsProcessing(false);  
   }
 };
+
 
 
 const saveAvatar = () =>{
@@ -133,15 +146,15 @@ const saveAvatar = () =>{
   console.log("Avatar saved:", avatarState);
 }
 
-const shareAvatar = () => {
-  if (avatarRef.current) {
-    html2canvas(avatarRef.current, { scale: 2 }).then((canvas) => {
+const shareAvatar = async () => {
+  setIsProcessing(true); 
+  try {
+    if (avatarRef.current) {
+      const canvas = await html2canvas(avatarRef.current, { scale: 2, useCORS: true });
       const imageBase64 = canvas.toDataURL('image/png');
-      
-      // Base64 encode the image data (note: URL-safe Base64 encoding might be required)
+
       const base64Image = encodeURIComponent(imageBase64);
-  
-      // Capture configuration data
+
       const avatarState = {
         hatIndex,
         bodyIndex,
@@ -149,18 +162,28 @@ const shareAvatar = () => {
         headIndex,
         beltIndex,
         outwearIndex,
-        colors
+        colors,
       };
       const base64Config = encodeURIComponent(btoa(JSON.stringify(avatarState)));
-      
-      // Create the shareable link
+
       const shareableLink = `${window.location.origin}/share?image=${base64Image}&config=${base64Config}`;
-      
-      // Set the generated link and show modal
+
+      //set the generated link and image
       setShareableLink(shareableLink);
+      setImagePreview(imageBase64);
       setModalVisible(true);
-    }).catch(error => console.error('Error generating image:', error));
+    } else {
+      console.error('Avatar reference is null');
+    }
+  } catch (error) {
+    console.error('Error capturing avatar for sharing:', error);
+  } finally {
+    setIsProcessing(false); 
   }
+};
+
+const closeModal = () => {
+  setModalVisible(false);
 };
 
 
@@ -171,15 +194,6 @@ const copyToClipboard = () => {
 };
 
 
-
-const closeModal = () => {
-  setModalVisible(false);
-};
-
- 
-  //State for modal
-  const [modalVisible, setModalVisible] = useState(false);
-  const [shareableLink, setShareableLink] = useState('');
 
 
   // Handler to handle color change for selected part
@@ -393,7 +407,8 @@ const closeModal = () => {
         <div className="modal-overlay">
           <div className="modal-content">
             <h2>Share Your Avatar</h2>
-            <p>Here is your shareable link:</p>
+            <p>Here is your shareable Avatar:</p>
+            {imagePreview && <img src={imagePreview} alt="Avatar Preview" className="modal-preview" />}
             <input 
               type="text" 
               value={shareableLink} 
