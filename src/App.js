@@ -1,4 +1,6 @@
-import React from "react";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; 
+import SharePage from './components/sharePage';
 import "./index.scss";
 
 
@@ -14,12 +16,17 @@ import Footer from "./components/Pages/footer.js";
 
 function App() {
   return (
-    <div>
-      <Header/>
-      <GogoBuilder2/>
-      <Footer/>
-    </div>
- );
+    <Router>
+      <div>
+        <Header />
+        <Routes>
+          <Route path="/" element={<GogoBuilder2 />} />
+          <Route path="/share" element={<SharePage />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
+  );
 }
 
 export default App;

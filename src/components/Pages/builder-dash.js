@@ -20,10 +20,7 @@ const Builder = ({ onSelectPart, onSave }) => {
    
   };
 
-  const handleButtonClick = (part) => {
-    onSelectPart(part);
-  }
-
+  
   return (
      <div className="builder">
         <ul className="menu">

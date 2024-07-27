@@ -1,8 +1,9 @@
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
 import { HuePicker } from 'react-color';
 import {motion} from 'framer-motion';
 import BuilderDash from './builder-dash.js';
 import Avatar from './avatar.js';
+import html2canvas from 'html2canvas';
 
 
 
@@ -83,8 +84,6 @@ const outwearOptions = [
 
   //State to track selected part and its index
   const [selectedPart, setSelectedPart] = useState("body");
-  const [bodyOptionSelected, setBodyOptionSelected] = useState(false);
-
   const [hatIndex, setHatIndex] = useState(-1);
   const [bodyIndex, setBodyIndex] = useState(-1);
   const [glassesIndex, setGlassesIndex] = useState(-1);
@@ -104,9 +103,79 @@ const outwearOptions = [
     outwear: "#000",
   });
 
-    
-  // State to manage body size
-  const [bodySize, setBodySize] = useState("normal");
+ const avatarRef = useRef(null);
+
+ const downloadAvatar = () => {
+  if (avatarRef.current) {
+    html2canvas(avatarRef.current, { scale: 2 }).then((canvas) => { 
+      const link = document.createElement('a');
+      link.href = canvas.toDataURL('image/png');
+      link.download = 'avatar.png';
+      link.click();
+    })
+    .catch((error) => console.error('Error generating image:', error));
+  } else {
+    console.error('Avatar reference is null');
+  }
+};
+
+
+const saveAvatar = () =>{
+  const avatarState = {
+    hatIndex,
+    bodyIndex,
+    glassesIndex,
+    headIndex,
+    beltIndex,
+    outwearIndex,
+    colors
+  };
+  console.log("Avatar saved:", avatarState);
+}
+
+const shareAvatar = () => {
+  if (avatarRef.current) {
+    html2canvas(avatarRef.current, { scale: 2 }).then((canvas) => {
+      const imageBase64 = canvas.toDataURL('image/png');
+      
+      // Base64 encode the image data (note: URL-safe Base64 encoding might be required)
+      const base64Image = encodeURIComponent(imageBase64);
+  
+      // Capture configuration data
+      const avatarState = {
+        hatIndex,
+        bodyIndex,
+        glassesIndex,
+        headIndex,
+        beltIndex,
+        outwearIndex,
+        colors
+      };
+      const base64Config = encodeURIComponent(btoa(JSON.stringify(avatarState)));
+      
+      // Create the shareable link
+      const shareableLink = `${window.location.origin}/share?image=${base64Image}&config=${base64Config}`;
+      
+      // Set the generated link and show modal
+      setShareableLink(shareableLink);
+      setModalVisible(true);
+    }).catch(error => console.error('Error generating image:', error));
+  }
+};
+
+
+const copyToClipboard = () => {
+  navigator.clipboard.writeText(shareableLink).then(() => {
+    alert("Link copied to clipboard!");
+  });
+};
+
+
+
+const closeModal = () => {
+  setModalVisible(false);
+};
+
  
   //State for modal
   const [modalVisible, setModalVisible] = useState(false);
@@ -118,16 +187,8 @@ const outwearOptions = [
     setColors({ ...colors, [selectedPart]: color.hex });
   };
 
- 
 
-   // Function to handle selection of glasses option
-   const handleGlassesOptionSelect = (index) => {
-    setGlassesIndex(index);
-  };
-  
  
-
-  
   const onSelectPart = (part) => {
     setSelectedPart(part);
     switch (part) {
@@ -136,8 +197,6 @@ const outwearOptions = [
         break;
       case "body":
         setBodyIndex(-1); 
-        setBodyOptionSelected(false);
-        setBodySize("small");
         break;
       case "glasses":
         setGlassesIndex(-1); 
@@ -260,50 +319,8 @@ const outwearOptions = [
     }
   };
 
-  const saveAvatar = () =>{
-    const avatarState = {
-      hatIndex,
-      bodyIndex,
-      glassesIndex,
-      headIndex,
-      beltIndex,
-      outwearIndex,
-      colors
-    };
-    console.log("Avatar saved:", avatarState);
-  }
-
-  const shareAvatar = () => {
-    const avatarState = {
-      hatIndex,
-      bodyIndex,
-      glassesIndex,
-      headIndex,
-      beltIndex,
-      outwearIndex,
-      colors
-    };
-    const base64 = btoa(JSON.stringify(avatarState));
-    const shareableLink = `${window.location.origin}/share?data=${base64}`;
-    setShareableLink(shareableLink);
-    setModalVisible(true);
-
-  };
-
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(shareableLink).then(() => {
-      alert("Link copied to clipboard!");
-    });
-  };
-
-
-
-  const closeModal = () => {
-    setModalVisible(false);
-  };
-
  
-  
+
   return (
     <>
       <BuilderDash
@@ -327,7 +344,7 @@ const outwearOptions = [
 
 
         <div className="right-column">
-        <div className="avatar-container current-hat   current-body current-glasses current-head">
+        <div className="avatar-container current-hat   current-body current-glasses current-head" ref={avatarRef}>
         {hatIndex === -1 && <Avatar showHat={true} hatColor={colors.hat} />}
         {glassesIndex === -1 && <Avatar showGlasses={true} glassesColor={colors.glasses} />}
         {bodyIndex === -1 && <Avatar showBody={true} 
@@ -352,7 +369,7 @@ const outwearOptions = [
 
 
           <div className="d-s-buttonContainer ">
-            <button className="access-bar">
+            <button className="access-bar" onClick={downloadAvatar}>
               <div className="logo-container">
                 <DownloadIcon className="logo d-s-logo" />
               </div>
