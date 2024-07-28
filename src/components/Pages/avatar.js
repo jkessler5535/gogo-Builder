@@ -11,7 +11,7 @@ import AvatarHead from "../../assets/avatar-parts/avatar-head.js";
 
 const Avatar = ({ showHat, hatColor, showEyes, showGlasses, glassesColor }) => {
   return (
-    <div >
+    <div className="avatar">
      <AvatarBody/>
      <AvatarHead/>
     {showEyes && <AvatarEyes color={glassesColor} />}

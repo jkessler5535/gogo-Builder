@@ -4,7 +4,7 @@ import {motion} from 'framer-motion';
 import BuilderDash from './builder-dash.js';
 import Avatar from './avatar.js';
 import html2canvas from 'html2canvas';
-
+import LoadingSpinner from '../loadingSpinner.js'; 
 
 
 import Hat1 from "../hats/hat-1";
@@ -36,6 +36,7 @@ import DownloadIcon from "../logos/download";
 
 
 function GogoBuilder2() {
+  
   const hatOptions = [<Hat1 />, <Hat2 />, <Hat3 />, <Hat4 />, <Hat5 />, <Hat6 />, <Hat7 />, <Hat7 />, <Hat7/>];
 
   const bodyOptions = [<Body1 />, <Body2 />, <Body3 />, <Body4 />, <Body5 />, <Body6 />, <Body6 />, <Body6 />,<Body6 />];
@@ -57,15 +58,15 @@ function GogoBuilder2() {
 ];
 
 const outwearOptions = [
-  <null/>,
-  <null/>,
-  <null/>,
-  <null/>,
-  <null/>,
-  <null/>,
-  <null/>,
-  <null/>,
-  <null/>,
+  <div/>,
+  <div/>,
+  <div/>,
+  <div/>,
+  <div/>,
+  <div/>,
+  <div/>,
+  <div/>,
+  <div/>,
 
 ];
 
@@ -116,43 +117,46 @@ const outwearOptions = [
   setIsProcessing(true);  
   try {
     if (avatarRef.current) {
-      const canvas = await html2canvas(avatarRef.current, { scale: 2, useCORS: true });
+      const canvas = await html2canvas(avatarRef.current, { scale: 2,
+      useCORS: true
+     });
       const link = document.createElement('a');
       link.href = canvas.toDataURL('image/png');
       link.download = 'avatar.png';
       link.click();
     } else {
       console.error('Avatar reference is null');
+     }
+    } catch (error) {
+      console.error('Error capturing avatar:', error);
+    } finally {
+      setIsProcessing(false);
     }
-  } catch (error) {
-    console.error('Error capturing avatar:', error);
-  } finally {
-    setIsProcessing(false);  
-  }
-};
-
-
-
-const saveAvatar = () =>{
-  const avatarState = {
-    hatIndex,
-    bodyIndex,
-    glassesIndex,
-    headIndex,
-    beltIndex,
-    outwearIndex,
-    colors
   };
-  console.log("Avatar saved:", avatarState);
-}
+  
+
+
+  const saveAvatar = () => {
+    console.log("Avatar saved:", {
+        hatIndex,
+        bodyIndex,
+        glassesIndex,
+        headIndex,
+        beltIndex,
+        outwearIndex,
+        colors,
+    });
+  };
 
 const shareAvatar = async () => {
   setIsProcessing(true); 
   try {
     if (avatarRef.current) {
-      const canvas = await html2canvas(avatarRef.current, { scale: 2, useCORS: true });
+      const canvas = await html2canvas(avatarRef.current, { scale: 2,
+      useCORS: true,
+      logging:false
+    });
       const imageBase64 = canvas.toDataURL('image/png');
-
       const base64Image = encodeURIComponent(imageBase64);
 
       const avatarState = {
@@ -172,15 +176,16 @@ const shareAvatar = async () => {
       setShareableLink(shareableLink);
       setImagePreview(imageBase64);
       setModalVisible(true);
-    } else {
-      console.error('Avatar reference is null');
+      } else {
+        console.error('Avatar reference is null');
+      }
+    } catch (error) {
+      console.error('Error capturing avatar for sharing:', error);
+    } finally {
+      setIsProcessing(false);
     }
-  } catch (error) {
-    console.error('Error capturing avatar for sharing:', error);
-  } finally {
-    setIsProcessing(false); 
-  }
-};
+  };
+  
 
 const closeModal = () => {
   setModalVisible(false);
@@ -357,14 +362,13 @@ const copyToClipboard = () => {
 
 
 
-        <div className="right-column">
+      <div className="right-column">
+        {isProcessing && <LoadingSpinner />}
         <div className="avatar-container current-hat   current-body current-glasses current-head" ref={avatarRef}>
         {hatIndex === -1 && <Avatar showHat={true} hatColor={colors.hat} />}
         {glassesIndex === -1 && <Avatar showGlasses={true} glassesColor={colors.glasses} />}
         {bodyIndex === -1 && <Avatar showBody={true} 
         bodyColor={colors.body} />}
-        
-        
           {hatIndex !== -1 && React.cloneElement(hatOptions[hatIndex], { color: colors.hat })}
           {bodyIndex !== -1 && React.cloneElement(bodyOptions[bodyIndex], { color: colors.body })}
           {glassesIndex !== -1 && React.cloneElement(glassesOptions[glassesIndex], { color: colors.glasses })}
@@ -372,18 +376,18 @@ const copyToClipboard = () => {
           {beltIndex !== -1 && React.cloneElement(beltOptions[beltIndex], { color: colors.belt })}
           {outwearIndex !== -1 && React.cloneElement(outwearOptions[outwearIndex], { color: colors.outwear })}
           <Avatar
-               showHat={hatIndex === -1} // Show hat only if no hat option is selected
-               hatColor={colors.hat}
-               showEyes={glassesIndex === -1} // Hide eyes only if glasses are selected
-               showGlasses={glassesIndex !== -1}
-               glassesColor={colors.glasses}
+               showBody={glassesIndex === -1}
+               showHat={hatIndex === -1} 
+               showEyes={glassesIndex === -1} 
+               showGlasses={glassesIndex === -1}
+              
             />
 
         </div>
 
 
           <div className="d-s-buttonContainer ">
-            <button className="access-bar" onClick={downloadAvatar}>
+            <button className="access-bar download-btn" onClick={downloadAvatar}>
               <div className="logo-container">
                 <DownloadIcon className="logo d-s-logo" />
               </div>
