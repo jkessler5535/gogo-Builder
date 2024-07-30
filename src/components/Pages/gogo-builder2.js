@@ -107,34 +107,11 @@ const outwearOptions = [
 
   const [isProcessing, setIsProcessing] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
-  const [shareableLink, setShareableLink] = useState('');
+  const [shareableLink, setShareableLink] = useState('http://default-link.com');
   const [imagePreview, setImagePreview] = useState('');
   
 
   const avatarRef = useRef(null);
-
- const downloadAvatar = async () => {
-  setIsProcessing(true);  
-  try {
-    if (avatarRef.current) {
-      const canvas = await html2canvas(avatarRef.current, { scale: 2,
-      useCORS: true
-     });
-      const link = document.createElement('a');
-      link.href = canvas.toDataURL('image/png');
-      link.download = 'avatar.png';
-      link.click();
-    } else {
-      console.error('Avatar reference is null');
-     }
-    } catch (error) {
-      console.error('Error capturing avatar:', error);
-    } finally {
-      setIsProcessing(false);
-    }
-  };
-  
-
 
   const saveAvatar = () => {
     console.log("Avatar saved:", {
@@ -148,34 +125,61 @@ const outwearOptions = [
     });
   };
 
-const shareAvatar = async () => {
-  setIsProcessing(true); 
-  try {
-    if (avatarRef.current) {
-      const canvas = await html2canvas(avatarRef.current, { scale: 2,
-      useCORS: true,
-      logging:false
-    });
-      const imageBase64 = canvas.toDataURL('image/png');
-      const base64Image = encodeURIComponent(imageBase64);
 
-      const avatarState = {
-        hatIndex,
-        bodyIndex,
-        glassesIndex,
-        headIndex,
-        beltIndex,
-        outwearIndex,
-        colors,
-      };
-      const base64Config = encodeURIComponent(btoa(JSON.stringify(avatarState)));
+  const downloadAvatar = async () => {
+    console.log("Download button clicked");
+    setIsProcessing(true);  
+    try {
+      if (avatarRef.current) {
+        await new Promise((resolve) => setTimeout(resolve, 100)); 
+  
+        console.log("Capturing avatar"); 
+        const canvas = await html2canvas(avatarRef.current, { scale: 2, useCORS: true });
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL('image/png');
+        link.download = 'avatar.png';
+        link.click();
+      } else {
+        console.error('Avatar reference is null');
+      }
+    } catch (error) {
+      console.error('Error capturing avatar:', error);
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+  
+  
 
-      const shareableLink = `${window.location.origin}/share?image=${base64Image}&config=${base64Config}`;
-
-      //set the generated link and image
-      setShareableLink(shareableLink);
-      setImagePreview(imageBase64);
-      setModalVisible(true);
+  const shareAvatar = async () => {
+    console.log("Share button clicked");
+    setIsProcessing(true); 
+    try {
+      if (avatarRef.current) {
+        await new Promise((resolve) => setTimeout(resolve, 100)); 
+  
+        console.log("Capturing avatar for sharing");
+        const canvas = await html2canvas(avatarRef.current, { scale: 2, useCORS: true });
+        const imageBase64 = canvas.toDataURL('image/png');
+        const base64Image = encodeURIComponent(imageBase64);
+  
+        const avatarState = {
+          hatIndex,
+          bodyIndex,
+          glassesIndex,
+          headIndex,
+          beltIndex,
+          outwearIndex,
+          colors,
+        };
+        const base64Config = encodeURIComponent(btoa(JSON.stringify(avatarState)));
+  
+        const shareableLink = `${window.location.origin}/share?image=${base64Image}&config=${base64Config}`;
+  
+        // Set the generated link and image
+        setShareableLink(shareableLink);
+        setImagePreview(imageBase64);
+        setModalVisible(true);
       } else {
         console.error('Avatar reference is null');
       }
@@ -187,6 +191,9 @@ const shareAvatar = async () => {
   };
   
 
+
+  
+
 const closeModal = () => {
   setModalVisible(false);
 };
@@ -195,6 +202,8 @@ const closeModal = () => {
 const copyToClipboard = () => {
   navigator.clipboard.writeText(shareableLink).then(() => {
     alert("Link copied to clipboard!");
+  }).catch(error => {
+    console.error("Error copying link:", error);
   });
 };
 
@@ -376,10 +385,11 @@ const copyToClipboard = () => {
           {beltIndex !== -1 && React.cloneElement(beltOptions[beltIndex], { color: colors.belt })}
           {outwearIndex !== -1 && React.cloneElement(outwearOptions[outwearIndex], { color: colors.outwear })}
           <Avatar
-               showBody={glassesIndex === -1}
-               showHat={hatIndex === -1} 
-               showEyes={glassesIndex === -1} 
-               showGlasses={glassesIndex === -1}
+                 showBody={bodyIndex === -1}
+                 showHat={hatIndex === -1}
+                 showGlasses={glassesIndex === -1}
+                 showEyes={glassesIndex === -1}
+                 
               
             />
 
@@ -387,7 +397,7 @@ const copyToClipboard = () => {
 
 
           <div className="d-s-buttonContainer ">
-            <button className="access-bar download-btn" onClick={downloadAvatar}>
+            <button className="access-bar download-btn"    onClick={downloadAvatar}>
               <div className="logo-container">
                 <DownloadIcon className="logo d-s-logo" />
               </div>
@@ -420,10 +430,10 @@ const copyToClipboard = () => {
               onClick={(e) => e.target.select()}
               className="modal-input"
             />
-            <button className="copy-btn" onClick={copyToClipboard}>
+            <button className="copy-btn modal-btns" onClick={copyToClipboard}>
               Copy Link
             </button>
-            <button className="close-btn" onClick={closeModal}>
+            <button className="close-btn modal-btns" onClick={closeModal}>
               Close
             </button>
           </div>

@@ -15,9 +15,10 @@ const Builder = ({ onSelectPart, onSave }) => {
   const [showAlert, setShowAlert] = useState(false);
 
   const handleSave = () => {
-    onSave();
-    setShowAlert(true);
-   
+    if (onSave) {
+   onSave();
+   }
+   setShowAlert(true);
   };
 
   
