@@ -113,12 +113,25 @@ header h1 a{
 
 /* Hamburger menu styles */
 .hamburger-menu {
-  display: none;
+  display: none; 
   font-size: 24px;
-  background: none;
-  border: none;
-  color: #9287BC;
   cursor: pointer;
+  color: #9287BC;
+  padding: 10px;
+}
+
+.nav-list.show {
+  display: flex;
+  flex-direction: column; 
+  position: absolute;
+  top: 108px; 
+  left: 0;
+  right: 0;
+  background-color: #242031;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+  padding: 20px;
+  gap: 15px; 
 }
 
 
@@ -128,6 +141,7 @@ header h1 a{
   max-width: 100%;
   display: flex;
   align-items: center;
+  z-index:2px;
  
 }
 
@@ -270,13 +284,12 @@ header h1 a{
   padding:  0 20px 20px;
   align-items: center;
   overflow-y: scroll;
-  scrollbar-width: 6px;
+  scrollbar-width: 4px;
   scrollbar-color: white #00000033;
   scroll-margin-left: 35px;
 
 
 }
-
 
 .grid::-webkit-scrollbar-thumb {
   background-color: white;
@@ -352,15 +365,11 @@ header h1 a{
  .gogo-c {
   position: absolute;
   width: 100%;
-  height: 100%;
  
  
  }
 }
  
-.gogo-left{
-  transform: scaleX(-1) rotate(15deg);
- }
 
 
 .avatar-container
@@ -374,18 +383,11 @@ header h1 a{
 .avatar-container .gogo-hat {
   position: absolute;
   z-index: 10;
-  top:-51px;
-  width: 135%;
-  height: 135%;
-  
+  top:6.9em;
+  left: 30px;
+ 
  }
 
- .avatar-container #gogo-helmet {
- position: absolute;
- right: -178px;
- z-index: 10;
-
-}
 
 .avatar-container .gogo-cap {
   position: absolute;
@@ -393,18 +395,14 @@ header h1 a{
   z-index: 10;
 }
 
-.avatar-container #gogo-cubs-helmet {
-  position: absolute;
-  right: -172px;
-  z-index: 10;
-}
-
 .avatar-container .gogo-glasses {
   position: absolute;
-  z-index: 10;
-  top: 67px;
-  left: 100px;
+  z-index: 11;
+  
+  
  }
+
+ 
 
 
 .d-s-buttonContainer {
@@ -467,7 +465,8 @@ footer p {
 
 
 .modal-content {
-  background: white;
+  position: relative;
+  background-color: white;
   padding: 20px;
   border-radius: 8px;
   width: 400px;
@@ -488,8 +487,8 @@ footer p {
   max-width: 100%;
   height: auto;
   margin: 20px 0;
-}
 
+}
 
 .modal-btns{
   margin:5px;
@@ -865,19 +864,35 @@ footer p {
   }
 }
 
-/* For screens larger than 1230px */
-@media (min-width: 1230px) {
-  .lab-asset__tv {
-    left: 0px;
+@media (min-width:430px) and  (max-width: 768px) {
+  .hamburger-menu{
+    display: none;
   }
-  .lab-asset__gen {
-    right: 0px;
+  .nav-list {
+    display: none; 
+    z-index: 10;
   }
 }
 
-@media (min-width: 1900px) {
-  .gogo-comp-holder {
-    top: 54px;
+
+
+  
+
+@media (max-width: 430px) { /* Mobile screens */
+  .nav-list.show {
+    top: 90px; /* Adjust based on header height */
+    width: 100%; /* Full width */
+  }
+  .nav-list {
+    display: none; /* Hide the navigation list by default */
+  }
+
+  .nav-list a {
+    font-size: 10px; /* Smaller font size */
+  }
+
+  .hamburger-menu {
+    font-size: 18px; /* Adjust size for mobile */
   }
 }
 

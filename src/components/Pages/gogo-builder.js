@@ -20,7 +20,7 @@ import Glasses1 from "../glasses/glasses-1";
 import Glasses2 from "../glasses/glasses-2";
 import Glasses3 from "../glasses/glasses-3";
 
-import Head1 from "../heads/head-1";
+import Head1 from "../scarf/scarf1";
 import Belt1 from "../belt/belt-1";
 import { motion } from "framer-motion";
 

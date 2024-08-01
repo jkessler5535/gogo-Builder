@@ -12,55 +12,60 @@ import Hat2 from "../hats/hat-2";
 import Hat3 from "../hats/hat-3";
 import Hat4 from "../hats/hat-4";
 import Hat5 from "../hats/hat-5";
-import Hat6 from "../hats/hat-6";
-import Hat7 from "../hats/hat-7";
+
 
 
 import Body1 from "../bodies/body-1";
 import Body2 from "../bodies/body-2";
-import Body3 from "../bodies/body-3";
-import Body4 from "../bodies/body-4";
-import Body5 from "../bodies/body-5";
-import Body6 from "../bodies/body-6";
+
+
+import Beard1 from "../hair/beard-1.js";
+import Hair1 from "../hair/hair-1.js";
+import Hair2 from "../hair/hair-2.js";
 
 import Glasses1 from "../glasses/glasses-1";
 import Glasses2 from "../glasses/glasses-2";
 import Glasses3 from "../glasses/glasses-3";
 
-import Belt1 from "../belt/belt-1";
+import Mask1 from "../masks/mask-1";
+
+
 import Headphones1 from "../headphones/headphones-1";
 
 //Logos
 import ShareIcon from "../logos/share";
 import DownloadIcon from "../logos/download";
+import Scarf1 from "../scarf/scarf1.js";
 
 
 function GogoBuilder2() {
   
-  const hatOptions = [<Hat1 />, <Hat2 />, <Hat3 />, <Hat4 />, <Hat5 />, <Hat6 />, <Hat7 />, <Hat7 />, <Hat7/>];
+  const hatOptions = [<Hat1/>, <Hat2/>, <Hat3/>, <Hat4/>, <Hat5/>, <div/>, <div/>, <div/>, <div/>];
 
-  const bodyOptions = [<Body1 />, <Body2 />, <Body3 />, <Body4 />, <Body5 />, <Body6 />, <Body6 />, <Body6 />,<Body6 />];
+  const bodyOptions = [<Body1 />, <Body2 />, <div />, <div />, <div />, <div />, <div />, <div />,<div/>];
+
+
 
   const glassesOptions = [<Glasses1 />, <Glasses2 />, <Glasses3 />, <Glasses3 />, <Glasses3 />, <Glasses3 />,
     <Glasses3 />,<Glasses3 />,<Glasses3 />
   ];
 
-  const headOptions = [
-  <Headphones1/>,
-  <Headphones1/>,
-  <Headphones1/>,
-  <Headphones1/>,
-  <Headphones1/>,
-  <Headphones1/>,
-  <Headphones1/>,
-  <Headphones1/>,
-  <Headphones1/>
+  const ScarfOptions = [
+  <Scarf1/>,
+  <div/>,
+  <div/>,
+  <div/>,
+  <div/>,
+  <div/>,
+  <div/>,
+  <div/>,
+  <div/>
 ];
 
-const outwearOptions = [
-  <div/>,
-  <div/>,
-  <div/>,
+const hairOptions = [
+  <Beard1/>,
+  <Hair1/>,
+  <Hair2/>,
   <div/>,
   <div/>,
   <div/>,
@@ -70,16 +75,16 @@ const outwearOptions = [
 
 ];
 
-  const beltOptions = [
-     <Belt1 />,
-     <Belt1 />,
-     <Belt1 />,
-     <Belt1 />,
-     <Belt1 />,
-     <Belt1 />,
-     <Belt1 />,
-     <Belt1 />,
-     <Belt1 />,
+  const MaskOptions = [
+     <Mask1 />,
+     <div />,
+     <div />,
+     <div />,
+     <div />,
+     <div />,
+     <div />,
+     <div />,
+     <div />,
     ];
 
 
@@ -88,9 +93,9 @@ const outwearOptions = [
   const [hatIndex, setHatIndex] = useState(-1);
   const [bodyIndex, setBodyIndex] = useState(-1);
   const [glassesIndex, setGlassesIndex] = useState(-1);
-  const [headIndex, setHeadIndex] = useState(-1);
-  const [beltIndex, setBeltIndex] = useState(-1);
-  const [outwearIndex, setOutwearIndex] = useState(-1);
+  const [scarfIndex, setScarfIndex] = useState(-1);
+  const [maskIndex, setMaskIndex] = useState(-1);
+  const [hairIndex, setHairIndex] = useState(-1);
  
 
  
@@ -99,9 +104,9 @@ const outwearOptions = [
     hat: "#000",
     glasses: "#000",
     body: "#000",
-    head: "#000",
-    belt: "#000",
-    outwear: "#000",
+    hair: "#000",
+    mask: "#000",
+    scarf: "#000",
   });
 
 
@@ -118,9 +123,9 @@ const outwearOptions = [
         hatIndex,
         bodyIndex,
         glassesIndex,
-        headIndex,
-        beltIndex,
-        outwearIndex,
+        hairIndex,
+        scarfIndex,
+        maskIndex,
         colors,
     });
   };
@@ -167,9 +172,9 @@ const outwearOptions = [
           hatIndex,
           bodyIndex,
           glassesIndex,
-          headIndex,
-          beltIndex,
-          outwearIndex,
+          hairIndex,
+          scarfIndex,
+          maskIndex,
           colors,
         };
         const base64Config = encodeURIComponent(btoa(JSON.stringify(avatarState)));
@@ -229,14 +234,14 @@ const copyToClipboard = () => {
       case "glasses":
         setGlassesIndex(-1); 
         break;
-      case "head":
-        setHeadIndex(-1); 
+      case "hair":
+        setHairIndex(-1); 
         break;
-      case "belt":
-        setBeltIndex(-1); 
+      case "scarf":
+        setScarfIndex(-1); 
         break;
-      case "outwear":
-        setOutwearIndex(-1); 
+      case "mask":
+        setMaskIndex(-1); 
         break;
         default:
         break;
@@ -294,50 +299,50 @@ const copyToClipboard = () => {
             ))}
           </div>
         );
-      case "head":
+      case "hair":
         return (
-          <div className="head-options grid">
-            {headOptions.map((Head, index) => (
+          <div className="hair-options grid">
+            {hairOptions.map((Hair, index) => (
               <motion.button
                 key={index}
-                onClick={() => setHeadIndex(index)}
-                className={headIndex === index ? "active-button" : ""}
+                onClick={() => setHairIndex(index)}
+                className={hairIndex === index ? "active-button" : ""}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                {React.cloneElement(Head, { color: colors.head })}
+                {React.cloneElement(Hair, { color: colors.hair })}
               </motion.button>
             ))}
           </div>
         );
-      case "belt":
+      case "scarf":
         return (
-          <div className="belt-options grid">
-            {beltOptions.map((Belt, index) => (
+          <div className="scarf-options grid">
+            {ScarfOptions.map((Scarf, index) => (
               <motion.button
                 key={index}
-                onClick={() => setBeltIndex(index)}
-                className={beltIndex === index ? "active-button" : ""}
+                onClick={() => setScarfIndex(index)}
+                className={scarfIndex === index ? "active-button" : ""}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                {React.cloneElement(Belt, { color: colors.belt })}
+                {React.cloneElement(Scarf, { color: colors.scarf })}
               </motion.button>
             ))}
           </div>
         );
-      case "outwear":
+      case "mask":
         return (
-          <div className="outwear-options grid">
-            {outwearOptions.map((Outwear, index) => (
+          <div className="mask-options grid">
+            {MaskOptions.map((Mask, index) => (
               <motion.button
                 key={index}
-                onClick={() => setOutwearIndex(index)}
-                className={outwearIndex === index ? "active-button" : ""}
+                onClick={() => setMaskIndex(index)}
+                className={maskIndex === index ? "active-button" : ""}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                {React.cloneElement(Outwear, { color: colors.outwear })}
+                {React.cloneElement(Mask, { color: colors.mask })}
               </motion.button>
             ))}
           </div>
@@ -356,9 +361,9 @@ const copyToClipboard = () => {
         onSave={saveAvatar}
         selectHat={() => onSelectPart("hat")}
         selectBody={() => onSelectPart("body")}
-        selectHead={() => onSelectPart("head")}
-        selectOutwear={() => onSelectPart("outwear")}
-        selectBelt={() => onSelectPart("belt")} />
+        selectHair={() => onSelectPart("hair")}
+        selectScarf={() => onSelectPart("scarf")}
+        selectMask={() => onSelectPart("mask")} />
 
       <div className="column-container ">
         <div className="left-column selected-part-controller">
@@ -373,7 +378,7 @@ const copyToClipboard = () => {
 
       <div className="right-column">
         {isProcessing && <LoadingSpinner />}
-        <div className="avatar-container current-hat   current-body current-glasses current-head" ref={avatarRef}>
+        <div className="avatar-container current-hat   current-body current-glasses current-hair current-scarf current-mask" ref={avatarRef}>
         {hatIndex === -1 && <Avatar showHat={true} hatColor={colors.hat} />}
         {glassesIndex === -1 && <Avatar showGlasses={true} glassesColor={colors.glasses} />}
         {bodyIndex === -1 && <Avatar showBody={true} 
@@ -381,9 +386,9 @@ const copyToClipboard = () => {
           {hatIndex !== -1 && React.cloneElement(hatOptions[hatIndex], { color: colors.hat })}
           {bodyIndex !== -1 && React.cloneElement(bodyOptions[bodyIndex], { color: colors.body })}
           {glassesIndex !== -1 && React.cloneElement(glassesOptions[glassesIndex], { color: colors.glasses })}
-          {headIndex !== -1 && React.cloneElement(headOptions[headIndex], { color: colors.head })}
-          {beltIndex !== -1 && React.cloneElement(beltOptions[beltIndex], { color: colors.belt })}
-          {outwearIndex !== -1 && React.cloneElement(outwearOptions[outwearIndex], { color: colors.outwear })}
+          {hairIndex !== -1 && React.cloneElement(hairOptions[hairIndex], { color: colors.hair })}
+          {scarfIndex !== -1 && React.cloneElement(ScarfOptions[scarfIndex], { color: colors.scarf })}
+          {maskIndex !== -1 && React.cloneElement(MaskOptions[maskIndex], { color: colors.mask })}
           <Avatar
                  showBody={bodyIndex === -1}
                  showHat={hatIndex === -1}

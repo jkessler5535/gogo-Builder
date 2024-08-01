@@ -51,25 +51,25 @@ const Builder = ({ onSelectPart, onSave }) => {
             </button>
           </li>
           <li>
-            <button className="head-btn"
-            onClick={() => onSelectPart('head')}>
+            <button className="hair-btn"
+            onClick={() => onSelectPart('hair')}>
               <div className="logo-container">
                 <NewHeadphones className="logo"/>
               </div>
-              <div className="text-container">Earwear</div>
+              <div className="text-container">Hair</div>
             </button>
           </li>
           <li>
-            <button className="outwear-btn"
-            onClick={() => onSelectPart('outwear')}>
+            <button className="scarf-btn"
+            onClick={() => onSelectPart('scarf')}>
               <div className="logo-container">
                 <NewJacket className="logo"/>
               </div>
-              <div className="text-container">Outwear</div>
+              <div className="text-container">Scarf</div>
             </button>
           </li>
           <li>
-            <button className="belt-btn" onClick={() =>   onSelectPart('belt')}>
+            <button className="mask-btn" onClick={() =>   onSelectPart('mask')}>
               <div className="logo-container">
                 <NewAcess className="logo"/>
               </div>
