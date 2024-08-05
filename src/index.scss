@@ -366,7 +366,6 @@ header h1 a{
   position: absolute;
   width: 100%;
  
- 
  }
 }
  
@@ -383,9 +382,12 @@ header h1 a{
 .avatar-container .gogo-hat {
   position: absolute;
   z-index: 10;
-  top:6.9em;
-  left: 30px;
+  top: -7px;
+  left: 1px;
  
+ }
+ .avatar-container .gogo-cap{
+  left: -1px;
  }
 
 

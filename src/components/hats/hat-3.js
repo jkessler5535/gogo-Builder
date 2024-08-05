@@ -8,6 +8,7 @@ function Hat3() {
       height="600"
       fill="none"
       viewBox="0 0 600 600"
+      className="gogo-c gogo-cap"
     >
       <path
         fill="#A8A6A6"

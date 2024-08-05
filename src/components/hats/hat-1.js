@@ -8,6 +8,7 @@ function Hat1() {
       height="600"
       fill="none"
       viewBox="0 0 600 600"
+      className="gogo-hat gogo-c"
     >
       <g clipPath="url(#clip0_565_459)">
         <path

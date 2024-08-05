@@ -8,6 +8,8 @@ function Hat5() {
       height="600"
       fill="none"
       viewBox="0 0 600 600"
+      className="gogo-hat gogo-c"
+
     >
       <path
         fill="#636363"
