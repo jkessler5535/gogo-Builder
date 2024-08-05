@@ -8,7 +8,7 @@ function Hat4() {
       height="600"
       fill="none"
       viewBox="0 0 600 600"
-      className="gogo-hat gogo-c"
+      className="gogo-hat-hair gogo-c"
     >
       <path
         fill="#5B5B5B"

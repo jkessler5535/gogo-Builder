@@ -388,6 +388,11 @@ header h1 a{
  }
  .avatar-container .gogo-cap{
   left: -1px;
+  z-index: 10;
+ }
+ .avatar-container .gogo-hat-hair{
+  z-index:10;
+  left: 2px;
  }
 
 
