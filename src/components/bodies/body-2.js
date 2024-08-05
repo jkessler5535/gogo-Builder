@@ -8,6 +8,7 @@ function Body2() {
       height="600"
       fill="none"
       viewBox="0 0 600 600"
+      className="gogo-body gogo-c"
     >
       <path
         fill="#413F42"

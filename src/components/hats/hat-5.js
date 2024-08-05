@@ -8,7 +8,7 @@ function Hat5() {
       height="600"
       fill="none"
       viewBox="0 0 600 600"
-      className="gogo-hat gogo-c"
+      className="gogo-backwards-hat gogo-c"
 
     >
       <path

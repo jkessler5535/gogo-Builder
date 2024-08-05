@@ -8,6 +8,7 @@ function Beard1() {
       height="600"
       fill="none"
       viewBox="0 0 600 600"
+      className="gogo-c gogo-hair"
     >
       <g clipPath="url(#clip0_582_35)">
         <path

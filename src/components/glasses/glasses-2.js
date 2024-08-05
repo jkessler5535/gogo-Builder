@@ -8,7 +8,7 @@ function Glasses2({ color }) {
       height="600"
       fill="none"
       viewBox="0 0 600 600"
-      className="gogo-c gogo-glasses"
+      className="gogo-c gogo-glasses-white"
     >
       <g clipPath="url(#clip0_1393_382)">
         <path

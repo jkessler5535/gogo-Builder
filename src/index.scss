@@ -356,6 +356,7 @@ header h1 a{
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   
 
 }
@@ -381,34 +382,66 @@ header h1 a{
 
 .avatar-container .gogo-hat {
   position: absolute;
-  z-index: 10;
+  z-index: 11;
   top: -7px;
   left: 1px;
  
  }
  .avatar-container .gogo-cap{
+  position:absolute;
   left: -1px;
-  z-index: 10;
+  z-index: 11;
  }
  .avatar-container .gogo-hat-hair{
+  z-index:11;
+  left: 2px;
+  position: absolute;
+ }
+
+ .avatar-container .gogo-backwards-hat {
+  position:absolute;
+  z-index: 11;
+
+ }
+ .avatar-container .gogo-body {
+  position:absolute;
+  z-index: 10;
+ }
+ 
+ .avatar-container .gogo-glasses{
+  position: absolute;
+  top:-4px;
+  z-index: 11;
+}
+.avatar-container .gogo-glasses-white{
+  position: absolute;
+  top: 62px;
+  left: 101px;
+  z-index: 11;
+}
+.avatar-container .gogo-hair{
+  position: absolute;
+  z-index: 10;
+  top:32px;
+
+}
+.avatar-container .gogo-hair-face {
+  z-index:10;
+  top: 12px;
+}
+.avatar-container .gogo-hair-black{
   z-index:10;
   left: 2px;
- }
 
-
-.avatar-container .gogo-cap {
-  position: absolute;
-  right: -170px;
-  z-index: 10;
 }
-
-.avatar-container .gogo-glasses {
-  position: absolute;
-  z-index: 11;
-  
-  
- }
-
+.avatar-container .gogo-scarf{
+  z-index: 10;
+  bottom: -3px;
+}
+.avatar-container .gogo-mask{
+  z-index: 10;
+  bottom: -3.2px;
+}
  
 
 

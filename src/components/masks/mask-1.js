@@ -8,6 +8,7 @@ function Mask1() {
       height="600"
       fill="none"
       viewBox="0 0 600 600"
+      className=" gogo-c gogo-mask"
     >
       <path
         fill="#fff"
