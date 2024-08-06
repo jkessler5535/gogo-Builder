@@ -25,11 +25,9 @@ body {
 header {
   display: flex;
   align-items: center;
-  margin: 0 auto;
   background-color: #242031;
   color: #9287BC;
   height: 108px;
-  padding: 0 20px; 
   box-sizing: border-box;
   width: 100%;
   
@@ -43,14 +41,11 @@ header {
 }
 .nav ul {
   list-style: none;
-  
-  
 }
 
 .nav-list{
   display: flex;
   align-items: center;
-  
 
 }
 
@@ -72,22 +67,14 @@ header h1 a{
 
 }
 
-.nav-list li:not(.social-btn):nth-last-child(3) {
-  margin-right: 370px;
-}
 
 .nav-list li:not(.social-btn) {
-  margin-right: 90px; 
+  margin-right: 80px; 
 }
 
 
 .nav-list li.social-btn {
   margin-right: 20px;
-}
-
-.nav-list li.social-btn:last-child {
-  margin-right: 0; 
-  
 }
 
 
@@ -98,6 +85,9 @@ header h1 a{
   border-radius: 8px;
   padding:10px;
 
+}
+.nav-list li:nth-last-child(3){
+  margin-right: 385px;
 }
 
 
@@ -169,8 +159,17 @@ header h1 a{
   transition: color 0.3s ease, background-color 0.3s ease;
   cursor: pointer;
 
-
 }
+ .builder li .save-btn {
+  display: flex;
+  border-radius: 8px;
+  background-color:  #48425F;
+  padding: 11px 16px;
+
+  
+ 
+}
+
 
 .builder li:not(:last-child) button::after{
   content: '';
@@ -189,29 +188,21 @@ header h1 a{
 .builder li button:hover::after{
   width:115%;
 }
+
 .builder li:nth-last-child(2) {
   margin-right: 140px; 
   padding: 0;
 }
 
 
-.save-btn {
-  display: flex;
-  border-radius: 8px;
-  background-color:  #48425F;
-  padding: 11px 16px;
-
-  
- 
-}
-
 .download-btn:hover,
+.builder li .save-btn:hover,
 .share-btn:hover{
   background-color: #6F6A84;
   transition: background-color 0.3s ease; 
   cursor: pointer;
 }
-.save-btn, .download-btn, .share-btn {
+ .download-btn, .share-btn {
   position: relative;
   z-index: 12; 
 }
@@ -279,7 +270,7 @@ header h1 a{
   overflow-y: scroll;
   scrollbar-width: 4px;
   scrollbar-color: white #00000033;
-  scroll-margin-left: 35px;
+ 
 
 
 }
