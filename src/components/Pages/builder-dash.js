@@ -81,7 +81,7 @@ const Builder = ({ onSelectPart, onSave }) => {
               <div className="logo-container">
                 <SaveIcon className="logo" />
               </div>
-              <div className="text-container">Save Progress</div>
+              <div className="text-container white-space">Save Progress</div>
             </button>
             {showAlert && (
               <TemporaryAlert

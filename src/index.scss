@@ -30,17 +30,21 @@ header {
   height: 108px;
   box-sizing: border-box;
   width: 100%;
+ 
   
  
 }
 .nav {
   display: flex;
   margin: 0 auto;
+  padding: 25px;
+  align-items: center;
 
   
 }
 .nav ul {
   list-style: none;
+  
 }
 
 .nav-list{
@@ -75,6 +79,10 @@ header h1 a{
 
 .nav-list li.social-btn {
   margin-right: 20px;
+  
+}
+.white-space{
+  white-space: nowrap;
 }
 
 
@@ -166,8 +174,7 @@ header h1 a{
   background-color:  #48425F;
   padding: 11px 16px;
 
-  
- 
+
 }
 
 
@@ -868,9 +875,24 @@ footer p {
   header{
     width: 100%;
   }
-  header .save-btn{
+
+  .nav .hamburger-menu{
+    display: block;
+  }
+
+  .nav-list li{
+    display:none;
+  }
+
+  .nav-list li.social-btn{
     display: none;
   }
+
+  .builder li .save-btn{
+    display: none;
+    
+  }
+
   .column-container{
     display: flex;
     max-width: none;
@@ -880,6 +902,7 @@ footer p {
     flex-direction: column-reverse;
     justify-content: center;
   }
+
   .left-column, .right-column{
     width: 100%;
     align-items: center;
@@ -895,9 +918,12 @@ footer p {
   .right-column{
     flex-direction: column-reverse;
 
-  
  }
-}
+ .right-column li.save-btn{
+  display: block;
+  }
+ }
+
 
 
 
