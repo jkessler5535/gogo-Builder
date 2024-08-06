@@ -19,12 +19,6 @@ body {
  
 
 }
-.container {
-  max-width: 1728px; 
-  margin: 0 auto; 
-  align-items: center;
-  
-}
 
 // Styles for Header and Navbar //
 
@@ -38,7 +32,7 @@ header {
   padding: 0 20px; 
   box-sizing: border-box;
   width: 100%;
-  max-width: 100%; 
+  
  
 }
 .nav {
@@ -83,12 +77,12 @@ header h1 a{
 }
 
 .nav-list li:not(.social-btn) {
-  margin-right: 70px; 
+  margin-right: 90px; 
 }
 
 
 .nav-list li.social-btn {
-  margin-right: 18px;
+  margin-right: 20px;
 }
 
 .nav-list li.social-btn:last-child {
@@ -138,7 +132,6 @@ header h1 a{
 //BuilderDash Styles
 
 .builder {
-  max-width: 100%;
   display: flex;
   align-items: center;
   z-index:2px;
@@ -157,7 +150,7 @@ header h1 a{
 
 .builder li{
   list-style: none;
-  margin: 8px;
+ 
 }
 
 
@@ -166,7 +159,7 @@ header h1 a{
   display: flex;
   font-family: Poppins;
   font-size: 16px;
-  margin: 23px;
+  margin:  20px 35px;
   font-weight: 500;
   line-height: 24px;
   align-items: center;
@@ -186,7 +179,7 @@ header h1 a{
   height: 3px; 
   background-color: #8D8BFF;
   position: absolute;
-  bottom: -35px;
+  bottom: -38px;
   left: 0;
   transition: width 0.5s ease; 
 }
@@ -197,22 +190,22 @@ header h1 a{
   width:115%;
 }
 .builder li:nth-last-child(2) {
-  margin-right: 135px; 
+  margin-right: 140px; 
+  padding: 0;
 }
 
 
 .save-btn {
   display: flex;
   border-radius: 8px;
-  padding: 1px 0.25px;
-  background: #48425F;
-  flex-wrap: nowrap;
-  margin: 0;
+  background-color:  #48425F;
+  padding: 11px 16px;
+
+  
  
 }
-.builder li:last-of-type:hover,
+
 .download-btn:hover,
-.save-btn:hover,
 .share-btn:hover{
   background-color: #6F6A84;
   transition: background-color 0.3s ease; 
@@ -252,7 +245,7 @@ header h1 a{
   flex-direction: row;
   max-width:1280px;
   margin: 0 auto;
-  gap:75px;
+  gap:40px;
   padding: 30px;
   
  
@@ -277,10 +270,10 @@ header h1 a{
 
 
 .grid{
-  height: 589px;
+  height: 610px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  gap: 18px;
   padding:  0 20px 20px;
   align-items: center;
   overflow-y: scroll;
@@ -321,14 +314,6 @@ header h1 a{
 
 
 
-  .button:first-child{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid #8D8BFF;
-    box-shadow: 0px 0px 22.9px 0px #8D8BFF;
-}
-
 .button:nth-last-child(-n+3){
   background: linear-gradient(180deg, #48425F 5%, rgba(72, 66, 95, 0) 91.5%);
   box-shadow: 0px 20px 25.2px 0px #0000000D;
@@ -357,6 +342,7 @@ header h1 a{
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  box-sizing: border-box;
   
 
 }
@@ -790,9 +776,14 @@ footer p {
     height:77px;
   
   }
+  .hamburgur-menu .nav-list{
+    z-index: 10;
+  }
   
   .container{
    max-width: 700px;
+   align-items: center;
+   padding: 8px;
 
   }
  
@@ -800,16 +791,17 @@ footer p {
     margin: 0 auto;
     padding-right: 0;
     
+  
   }
-  .nav-list ul{
+  .menu li{
     display: none;
   }
 
-  .builder li{
+  .social-btns {
     display: none;
-
   }
- 
+  
+
   .column-container{
     flex-direction: column-reverse;
     padding: 35px 50px 0;
@@ -820,6 +812,7 @@ footer p {
     grid-template-columns: repeat(2, 1fr);
     overflow: auto;
     gap:22px;
+    overflow: visible;
     
    
     
@@ -835,7 +828,13 @@ footer p {
      justify-content: center;
      padding-top: 34px;
   }
-  
+  .avatar-container svg{
+    position: relative;
+
+  }
+  .avatar-container .gogo-c{
+    position: absolute;
+  }
   .builder li:last-of-type{
     display: none;
   }
@@ -875,86 +874,60 @@ footer p {
 
 
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
+  header{
     width: 100%;
-    background-color: #333;
-    position: absolute;
-    top: 60px;
-    left: 0;
   }
-
-  .navbar a {
-    margin: 10px 0;
-  }
-
-  .hamburger-menu {
-    display: block;
-  }
-}
-
-
-/* For Sreens below 768px */
-@media only screen and (max-width: 768px) {
-  .column-container{
-    flex-direction: column-reverse;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-  }
-}
-
-@media (min-width:430px) and  (max-width: 768px) {
-  .hamburger-menu{
+  header .save-btn{
     display: none;
+  }
+  .column-container{
+    display: flex;
+    max-width: none;
+    width: 100%;
+    margin:0;
+    padding: 0;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .left-column, .right-column{
+    width: 100%;
+    align-items: center;
+    margin: 0 auto;
+    
+  }
+  .avatar-container{
+    max-width:none;
+    width: 433px;
+    height: 433px;
+  }
+  
+  .right-column{
+    flex-direction: column-reverse;
+
+  
+ }
+}
+
+
+
+
+
+/*
+@media (max-width: 430px){
+  .nav-list.show {
+    top: 90px; 
+    width: 100%; 
+    z-index: 10;
   }
   .nav-list {
     display: none; 
-    z-index: 10;
-  }
-}
-
-
-
-  
-
-@media (max-width: 430px) { /* Mobile screens */
-  .nav-list.show {
-    top: 90px; /* Adjust based on header height */
-    width: 100%; /* Full width */
-  }
-  .nav-list {
-    display: none; /* Hide the navigation list by default */
   }
 
   .nav-list a {
-    font-size: 10px; /* Smaller font size */
-  }
-
+    font-size: 10px; 
   .hamburger-menu {
-    font-size: 18px; /* Adjust size for mobile */
+    font-size: 18px; 
   }
 }
 
-/* 
-
-// .scan-line {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   height: 5px; /* Adjust to the desired thickness of the scan line */
-//   background: rgba(0, 221, 255, 0.6); /* Blue semi-transparent */
-//   pointer-events: none; /* So it doesn't interfere with any interactive elements */
-//   transform: translateY(-100%); /* Initially hide the scan line above the container */
-//   animation: scan 2s linear infinite; /* 2 seconds for each scan, adjust as needed */
-// }
-
-// @keyframes scan {
-//   0%, 100% {
-//     transform: translateY(-10%);
-//   }
-//   50% {
-//     transform: translateY(110%);
-//   }
-// }
+*/

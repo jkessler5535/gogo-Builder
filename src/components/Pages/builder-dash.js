@@ -76,8 +76,8 @@ const Builder = ({ onSelectPart, onSave }) => {
               <div className="text-container">Acessories</div>
             </button>
           </li>
-          <li className="save-btn">
-            <button onClick={handleSave}>
+          <li>
+            <button onClick={handleSave}  className="save-btn">
               <div className="logo-container">
                 <SaveIcon className="logo" />
               </div>
