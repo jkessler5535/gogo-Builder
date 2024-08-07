@@ -8,6 +8,7 @@ function SaveIcon() {
       height="24"
       fill="none"
       viewBox="0 0 24 24"
+      className="save-icon"
     >
       <path
         fill="#fff"
