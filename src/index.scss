@@ -52,6 +52,9 @@ header {
   align-items: center;
 
 }
+.nav .saved{
+  display: none;
+}
 
 header h1 a{
   margin-right: 45px;
@@ -186,11 +189,10 @@ header h1 a{
   height: 3px; 
   background-color: #8D8BFF;
   position: absolute;
-  bottom: -38px;
+  bottom: -36px;
   left: 0;
   transition: width 0.5s ease; 
 }
- 
 
 
 .builder li button:hover::after{
@@ -876,7 +878,6 @@ footer p {
   header{
     width: 100%;
     height: 76.5px;
-   
   }
   
   .nav{
@@ -889,28 +890,30 @@ footer p {
     
   }
 
-  .nav .hamburger-menu{
+  .nav .hamburger-menu {
     display: block;
     position: absolute;
-    left: -160px;
+    width:21.33px;
+    left: -205px;
+    top: -7px;
   }
    
   .nav-list li{
     display:none;
   }
+  .nav .saved{
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 460px;
+    
+  }
+ 
 
   .nav-list li.social-btn{
     display: none;
   }
-  .menu li {
-    display:none;
-  }
 
-  .right-column li .save-btn{
-    display: block;
-    
-  }
- 
   .column-container{
     display: flex;
     max-width: 100%;
@@ -920,25 +923,47 @@ footer p {
    
   }
 
-  .left-column,
-   .right-column{
-    width: 100%;
-    align-items: center;
-    
-  }
 
   .avatar-container{
     max-width:none;
     width: 433px;
     height: 433px;
   }
-  
+
   .right-column,
   .left-column{
     flex-direction: column-reverse;
+    width: 100%;
+    align-items: center;
 
   }
+  .hue-picker{
+    margin-bottom: 65px
+  }
+  .right-column{
+    position: relative;
+  }
+  .builder .menu {
+    position: absolute;
+    top: 710px; 
+    left: 0;
+    margin: 0 auto;
+  
+    
+ }
+ .builder .menu li{
+  padding: 2px;
+ }
+
+ .builder li .save-btn {
+  display: none;
+ }
+ .builder li:nth-last-child(2) {
+  display: none;
 }
+}
+  
+
 
 
 
@@ -962,5 +987,4 @@ footer p {
     font-size: 18px; 
   }
 }
-
-*/
+  */

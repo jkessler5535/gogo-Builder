@@ -13,6 +13,7 @@ import SaveIcon from "../logos/save";
 
 const Builder = ({ onSelectPart, onSave }) => {
   const [showAlert, setShowAlert] = useState(false);
+ 
 
   const handleSave = () => {
     if (onSave) {
@@ -23,7 +24,7 @@ const Builder = ({ onSelectPart, onSave }) => {
 
   
   return (
-     <div className="builder">
+     <div className="builder ">
         <ul className="menu">
           <li>
             <button className="shirt-btn" onClick={() => onSelectPart('body')}>
@@ -91,7 +92,6 @@ const Builder = ({ onSelectPart, onSave }) => {
              )}
           </li>
         </ul>
-        
       </div>
   );
 }

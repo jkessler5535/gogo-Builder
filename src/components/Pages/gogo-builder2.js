@@ -13,7 +13,14 @@ import Hat3 from "../hats/hat-3";
 import Hat4 from "../hats/hat-4";
 import Hat5 from "../hats/hat-5";
 
-
+//Icons imported from builder.js
+import NewTshirt from "../logos/new-tshirt";
+import NewHat from "../logos/new-hat";
+import NewGlasses from "../logos/new-glasses";
+import NewHeadphones from "../logos/new-headphones";
+import NewJacket from "../logos/new-jacket";
+import NewAcess from "../logos/new-acess";
+import SaveIcon from "../logos/save";
 
 import Body1 from "../bodies/body-1";
 import Body2 from "../bodies/body-2";
@@ -38,7 +45,10 @@ import DownloadIcon from "../logos/download";
 import Scarf1 from "../scarf/scarf1.js";
 
 
+
 function GogoBuilder2() {
+  const avatarRef = useRef(null);
+
   
   const hatOptions = [<Hat1/>, <Hat2/>, <Hat3/>, <Hat4/>, <Hat5/>, <div/>, <div/>, <div/>, <div/>];
 
@@ -115,8 +125,6 @@ const hairOptions = [
   const [shareableLink, setShareableLink] = useState('http://default-link.com');
   const [imagePreview, setImagePreview] = useState('');
   
-
-  const avatarRef = useRef(null);
 
   const saveAvatar = () => {
     console.log("Avatar saved:", {
@@ -366,7 +374,7 @@ const copyToClipboard = () => {
         selectMask={() => onSelectPart("mask")} />
 
       <div className="column-container ">
-        <div className="left-column selected-part-controller">
+        <div className="left-column selected-part-controller" >
           {renderCurrentPart()}
         
           <div className="hue-picker">

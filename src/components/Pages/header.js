@@ -8,6 +8,9 @@ import Icon from "../logos/gogoIcon";
 import Discord from "../logos/discord-icon";
 import Twitter from "../logos/twitter-icon";
 
+//Icon
+import SaveIcon from "../logos/save";
+
 
 
 
@@ -23,6 +26,7 @@ const Header = () => {
           <div className="hamburger-menu" onClick={toggleNavbar}>
             ☰
           </div>
+          <SaveIcon/>
           <ul className={`nav-list ${isOpen ? 'show' : ''}`}>
           <li>
             <a href="https://app.gogopool.com/liquid-staking/">Liquid Stake</a>
