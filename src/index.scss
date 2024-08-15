@@ -943,6 +943,11 @@ footer p {
   .right-column{
     position: relative;
   }
+  .d-s-buttonContainer button{
+    position: relative;
+    right: 80px;
+  }
+  
   .builder .menu {
     position: absolute;
     top: 710px; 
@@ -956,8 +961,11 @@ footer p {
  }
 
  .builder li .save-btn {
-  display: none;
+  position: absolute;
+  top: -622px;
+  right: 52px;
  }
+
  .builder li:nth-last-child(2) {
   display: none;
 }

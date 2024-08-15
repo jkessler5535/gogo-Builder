@@ -13,14 +13,7 @@ import Hat3 from "../hats/hat-3";
 import Hat4 from "../hats/hat-4";
 import Hat5 from "../hats/hat-5";
 
-//Icons imported from builder.js
-import NewTshirt from "../logos/new-tshirt";
-import NewHat from "../logos/new-hat";
-import NewGlasses from "../logos/new-glasses";
-import NewHeadphones from "../logos/new-headphones";
-import NewJacket from "../logos/new-jacket";
-import NewAcess from "../logos/new-acess";
-import SaveIcon from "../logos/save";
+
 
 import Body1 from "../bodies/body-1";
 import Body2 from "../bodies/body-2";
@@ -36,8 +29,6 @@ import Glasses3 from "../glasses/glasses-3";
 
 import Mask1 from "../masks/mask-1";
 
-
-import Headphones1 from "../headphones/headphones-1";
 
 //Logos
 import ShareIcon from "../logos/share";
