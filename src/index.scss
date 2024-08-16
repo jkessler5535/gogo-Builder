@@ -937,14 +937,17 @@ footer p {
   }
 
   .column-container{
+    position: relative;
     max-width: 100%;
     flex-direction: column-reverse;
     justify-content: center;
+    
    
   }
 
   .avatar-container{
     max-width:none;
+    top:30px;
     width: 433px;
     height: 433px;
   }
@@ -954,13 +957,15 @@ footer p {
     flex-direction: column-reverse;
     width: 100%;
     align-items: center;
+    
 
   }
-  .hue-picker{
-    margin-bottom: 65px
+  .hue-horizontal{
+    top: 28px;
   }
-  .right-column{
-    position: relative;
+  .hue-picker{
+    margin-bottom: 75px
+  
   }
   .d-s-buttonContainer button{
     position: relative;
@@ -969,7 +974,7 @@ footer p {
   
   .builder .menu {
     position: absolute;
-    top: 710px; 
+    top: 730px; 
     left: 0;
     margin: 0 auto;
   
@@ -981,7 +986,7 @@ footer p {
 
  .builder li .save-btn {
   position: absolute;
-  top: -622px;
+  top: -642px;
   right: 52px;
  }
 
