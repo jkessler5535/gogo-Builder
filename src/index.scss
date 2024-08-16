@@ -111,19 +111,6 @@ header h1 a{
   padding: 10px;
 }
 
-.nav-list.show {
-  display: flex;
-  flex-direction: column; 
-  position: absolute;
-  top: 108px; 
-  left: 0;
-  right: 0;
-  background-color: #242031;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
-  padding: 20px;
-  gap: 15px; 
-}
 
 
 //BuilderDash Styles
@@ -885,20 +872,57 @@ footer p {
     flex-direction: row-reverse;
     padding: 0 20px;
     
-    
+
   }
+  .nav-list li:nth-last-child(3){
+    margin-right:75px;
+
+  }
+  
 
   .nav .hamburger-menu {
     display: block;
     position: absolute;
-    width:21.33px;
+    cursor: pointer;
     left: -205px;
     top: -7px;
+   
   }
    
-  .nav-list li{
-    display:none;
+  .nav-list {
+   display: none;
+  
   }
+  
+  .nav-list.show{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: -227px;
+    top: 61px;
+    padding-bottom: 30px;
+    background-color: #242031;
+    width: 764px;
+    z-index: 1100;
+    
+  }
+  
+  .nav-list li {
+    margin: 15px 35px;
+    padding: 5px;
+  
+  }
+  .nav-list  a {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500; 
+    
+  }
+
+  .nav-list a:hover {
+    color: #9287BC; 
+  }
+
   .nav .saved{
     display: block;
     position: absolute;
@@ -918,7 +942,6 @@ footer p {
     justify-content: center;
    
   }
-
 
   .avatar-container{
     max-width:none;
