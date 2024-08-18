@@ -50,6 +50,9 @@ header {
 .nav .saved{
   display: none;
 }
+.custom-dropdown{
+  display: none;
+}
 
 header h1 a{
   margin-right: 45px;
@@ -817,6 +820,7 @@ footer p {
   .builder li{
     display: none;
   }
+ 
 
   /* Dropdown Menu Styles*/
 
@@ -937,9 +941,16 @@ footer p {
     
 
   }
+  .nav h1 a{
+    width: 83.4px;
+    height:74.32px;
+  }
   .nav-list li:nth-last-child(3){
     margin-right:75px;
 
+  }
+  .custom-dropdown{
+    display: none;
   }
   
 
@@ -947,9 +958,9 @@ footer p {
     display: block;
     position: absolute;
     cursor: pointer;
-    left: -205px;
-    top: -7px;
-   
+    left: -285px;
+    top: 9px;
+
   }
    
   .nav-list {
@@ -989,8 +1000,8 @@ footer p {
   .nav .saved{
     display: block;
     position: absolute;
-    top: 12px;
-    left: 460px;
+    top: 28px;
+    left: 430px;
     
   }
  
@@ -1021,15 +1032,20 @@ footer p {
     width: 100%;
     align-items: center;
     
+  }
+  
+  .hue-picker{
+    margin-right: 0;
+    margin-bottom: 75px;
+    width: 100%;
+    display: flex;
 
   }
   .hue-horizontal{
     top: 28px;
-  }
-  .hue-picker{
-    margin-right: 0;
-    margin-bottom: 75px;
-  
+    left: 45px;
+    width: 617px;
+    height:17px;
   }
   .d-s-buttonContainer button{
     position: relative;
