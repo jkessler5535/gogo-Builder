@@ -118,9 +118,18 @@ header h1 a{
 .builder {
   display: flex;
   align-items: center;
-  z-index:2px;
+  z-index: 2;
  
 }
+.builder .menu{
+  display: flex;
+  align-items: center;
+  margin: 20px auto;
+  justify-content: flex-start;
+  border-bottom: 5px solid #00000033;
+  padding: 0;
+}
+
 
 .builder ul{
   display: flex;
@@ -136,7 +145,6 @@ header h1 a{
   list-style: none;
  
 }
-
 
 .builder li button{
   position: relative;
@@ -311,8 +319,6 @@ header h1 a{
   margin: 0 auto;
   cursor: pointer;
 
-
-
  }
  .avatar-container {
   position: relative;
@@ -438,16 +444,34 @@ header h1 a{
   
 }
 
-footer {
+.IamTheFoot {
   background-color: #2B2739;
   color: #fff;
   width: 100%;
-  bottom: 0;
-  display: flex;
-  align-items: center;
   padding: 22px 24px;
-  justify-content: center;
+  text-align: center; 
+  margin-top: auto; 
+  box-sizing: border-box;
+    
 }
+.IamTheFoot p{
+  margin: 0;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+ 
+}
+  
+  .footer-img{
+    font-size: 20px; 
+    padding: 0 6px;
+  
+   
+  }
+  
+
 
 footer p {
   margin: 0 auto;
@@ -759,118 +783,71 @@ footer p {
 
 
 /* Styles for iPhone 14 and iPhone 15 Pro Max */
-@media only screen and (max-width: 430px){
-
+@media only screen and (min-device-width: 430px) and (max-device-width: 430px) and (-webkit-device-pixel-ratio: 3){
   header{
+    max-width: 430px;
     height:77px;
-  
-  }
-  .hamburgur-menu .nav-list{
-    z-index: 10;
-  }
-  
-  .container{
-   max-width: 700px;
-   align-items: center;
-   padding: 8px;
 
   }
- 
-  .nav-list h1{
+  .nav-list li{
+    display: none;
+  }
+    .nav li.social-btn  {
+    display: none;
+  }
+  .nav h1 a{
+    width: 106px;
+    height:21px;
+    align-content: center;
     margin: 0 auto;
-    padding-right: 0;
-    
+    justify-content: center;
+    box-sizing: border-box;
   
-  }
-  .menu li{
-    display: none;
-  }
-
-  .social-btns {
-    display: none;
-  }
-  
-
+ }
   .column-container{
     flex-direction: column-reverse;
-    padding: 35px 50px 0;
-   
+    max-width: 430px;
   }
-  
+  .avatar-container{
+    max-width:292px;
+    height: 292px;
+  }
+
   .grid{
     grid-template-columns: repeat(2, 1fr);
-    overflow: auto;
-    gap:22px;
-    overflow: visible;
-    
-   
-    
   }
-  .grid::-webkit-scrollbar {
-    width: 0;
-  }
-
-  .avatar-container{
-     width: 292px;
-     height: 292px;
-     align-items: flex-start;
-     justify-content: center;
-     padding-top: 34px;
-  }
-  .avatar-container svg{
-    position: relative;
-
-  }
-  .avatar-container .gogo-c{
-    position: absolute;
-  }
-  .builder li:last-of-type{
-    display: none;
-  }
-  .d-s-buttonContainer {
-    gap: 10px;
-  }
-  .d-s-buttonContainer button{
+  .d-s-buttonContainer button {
     width: 178px;
     height: 46px;
-    
   }
- 
   .hue-picker{
-    position: fixed;
-    bottom: 0;
-    background:#242031;
-    height: 77px;
     width: 100%;
-    margin: 0;
-    padding: 0;
-
+    display: flex;
+    margin-right: 0;
 
   }
   .hue-horizontal{
-    width: 375px;
-    margin: 30px 0 0 20px;
-    justify-content: center;
-    align-items: center;
+    width: 380px;
     
-  }
-
-  footer{
-    display: none;
+   
   }
 }
 
 
 
-@media (max-width: 768px) {
+
+@media (min-width: 600px) and (max-width: 768px) {
   header{
     height: 76.5px;
+    width: 100%;
+    display: flex;
   }
   
   .nav{
     position: relative;
     flex-direction: row-reverse;
     padding: 0 20px;
+   
     
 
   }
@@ -902,7 +879,7 @@ footer p {
     top: 61px;
     padding-bottom: 30px;
     background-color: #242031;
-    width: 764px;
+    max-width: 100%;
     z-index: 1100;
     
   }
@@ -964,7 +941,8 @@ footer p {
     top: 28px;
   }
   .hue-picker{
-    margin-bottom: 75px
+    margin-right: 0;
+    margin-bottom: 75px;
   
   }
   .d-s-buttonContainer button{
@@ -992,31 +970,5 @@ footer p {
 
  .builder li:nth-last-child(2) {
   display: none;
+ }
 }
-}
-  
-
-
-
-
-
-
-
-/*
-@media (max-width: 430px){
-  .nav-list.show {
-    top: 90px; 
-    width: 100%; 
-    z-index: 10;
-  }
-  .nav-list {
-    display: none; 
-  }
-
-  .nav-list a {
-    font-size: 10px; 
-  .hamburger-menu {
-    font-size: 18px; 
-  }
-}
-  */

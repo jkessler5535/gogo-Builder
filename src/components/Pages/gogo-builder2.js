@@ -99,6 +99,7 @@ const hairOptions = [
   const [hairIndex, setHairIndex] = useState(-1);
  
 
+
  
   //State to manage colors for each part
   const [colors, setColors] = useState({
@@ -369,7 +370,7 @@ const copyToClipboard = () => {
           {renderCurrentPart()}
         
           <div className="hue-picker">
-          <HuePicker color={colors[selectedPart]} onChange={handleColorChange}  />
+            <HuePicker color={colors[selectedPart]} onChange={handleColorChange}  />
          </div>
         </div>
 
