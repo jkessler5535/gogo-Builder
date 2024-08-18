@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState}  from 'react';
 import TemporaryAlert from '../TempAlert';
 
 //Logos
@@ -13,16 +13,25 @@ import SaveIcon from "../logos/save";
 
 const Builder = ({ onSelectPart, onSave }) => {
   const [showAlert, setShowAlert] = useState(false);
-  
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState('Shirts');
+
+  const handleSelect = (value) => {
+    if (value === 'save') {
+      handleSave();
+    } else {
+      onSelectPart(value);
+      setSelectedOption(value.charAt(0).toUpperCase() + value.slice(1));
+    }
+    setDropdownOpen(false);
+  };
 
   const handleSave = () => {
     if (onSave) {
-   onSave();
-   }
-   setShowAlert(true);
+      onSave();
+    }
+    setShowAlert(true);
   };
-
-  
   
   return (
      <div className="builder">
@@ -93,7 +102,45 @@ const Builder = ({ onSelectPart, onSave }) => {
              )}
           </li>
       </ul>
+
+      <div className={`custom-dropdown ${dropdownOpen ? 'open' : ''}`} onClick={() => setDropdownOpen(!dropdownOpen)}>
+        <div className="selected-option">
+          <NewTshirt className="dropdown-icon" /> 
+          {selectedOption}
+        </div>
+        <div className="dropdown-arrow"></div>
+        
+      
+        <div className="dropdown-menu">
+          <div className="dropdown-item" onClick={() => handleSelect('body')}>
+            <NewTshirt className="dropdown-icon" />
+            Shirts
+          </div>
+          <div className="dropdown-item" onClick={() => handleSelect('hat')}>
+            <NewHat className="dropdown-icon" />
+            Hats
+          </div>
+          <div className="dropdown-item" onClick={() => handleSelect('glasses')}>
+            <NewGlasses className="dropdown-icon" />
+            Eyewear
+          </div>
+          <div className="dropdown-item" onClick={() => handleSelect('hair')}>
+            <NewHeadphones className="dropdown-icon" />
+            Hair
+          </div>
+          <div className="dropdown-item" onClick={() => handleSelect('scarf')}>
+            <NewJacket className="dropdown-icon" />
+            Scarf
+          </div>
+          <div className="dropdown-item" onClick={() => handleSelect('mask')}>
+            <NewAcess className="dropdown-icon" />
+            Accessories
+          </div>
+        </div>
+      </div>
     </div>
+
+
   );
 }
 export default Builder;
