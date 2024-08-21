@@ -4,9 +4,9 @@ import FooterIcon from "../logos/footerIcon.js";
 
 const Footer = () => {
   return (
-    <footer className="IamTheFoot">
+    <div className="IamTheFoot">
       <p>Brought to you by<span className="footer-img"><FooterIcon/></span> GoGoPool</p>
-    </footer>
+    </div>
   );
 }
 

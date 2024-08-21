@@ -365,7 +365,7 @@ const copyToClipboard = () => {
         selectScarf={() => onSelectPart("scarf")}
         selectMask={() => onSelectPart("mask")} />
 
-      <div className="column-container ">
+      <div className="column-container main-content">
         <div className="left-column selected-part-controller" >
           {renderCurrentPart()}
         

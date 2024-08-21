@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 
 
-
-
 //Logos
 import Icon from "../logos/gogoIcon";
 import Discord from "../logos/discord-icon";
