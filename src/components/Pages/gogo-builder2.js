@@ -37,6 +37,7 @@ import Scarf1 from "../scarf/scarf1.js";
 
 
 
+
 function GogoBuilder2() {
   const avatarRef = useRef(null);
 
@@ -419,6 +420,7 @@ const copyToClipboard = () => {
               </div>
             </button>
           </div>
+          <div className="custom-dropdown"></div>
         </div>
       </div>
 

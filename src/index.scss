@@ -59,6 +59,9 @@ header h1 a{
   display: flex;
   align-items: center;
 }
+.nav-list{
+  display: flex;
+}
 
 .nav-list a {
   display: flex;
@@ -119,6 +122,7 @@ header h1 a{
 //BuilderDash Styles
 
 .builder {
+  position: relative;
   display: flex;
   align-items: center;
   z-index: 2;
@@ -448,6 +452,70 @@ header h1 a{
   z-index: 10; 
   
 }
+//Custom dropdown
+.builder .custom-dropdown{
+  display: none;
+  position: absolute;
+  top: 430px;
+  left: 20px;
+  align-items: center;
+  background-color: #48425F;
+  color: #fff;
+  border-radius: 1px;
+  padding: 10px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  width: 380px;
+  height:48px;
+  z-index: 1000;
+ 
+ 
+}
+.selected-option {
+  flex-grow: 1;
+  display: flex;
+  align-items:center;
+}
+.dropdown-arrow{
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #fff;
+  margin-left: 10px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #242031;
+  color: #fff;
+  border-radius: 8px;
+  width: 100%;
+  z-index: 10;
+  border: 1px solid #fff;
+}
+
+.custom-dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 11px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+}
+
+.dropdown-item:hover {
+  background-color: #6F6A84;
+}
+
+//Dropdown menu ends//
+
 
 .IamTheFoot {
   position: relative;
@@ -779,20 +847,70 @@ header h1 a{
     height:77px;
     width: 100%;
   }
-  .nav .hamburger-menu{
-    display: block;
-    position: absolute;
-    left: 12px;
-  }
   .nav .saved {
     display: block;
     position: absolute;
     right: 18px;
   }
   
-  .nav-list{
+  .builder li:nth-last-child(2) {
+    margin-right: 0; 
+  }
+  
+  //Hamburger Menu
+  .nav .hamburger-menu{
+    display: block;
+    position: absolute;
+    left: 12px;
+  }
+  .custom-dropdown{
     display: none;
   }
+  
+  .nav-list{
+    display: none;
+  
+  }
+  .nav-list li:not(.social-btn) {
+    margin-right: 0; 
+  }
+  .nav-list.show{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 0px;
+    top: 61px;
+    padding-bottom: 30px;
+    background-color: #242031;
+    width:100%;
+    max-width: 100%;
+    z-index: 1100;
+    
+  }
+  
+  .nav-list li {
+    margin: 15px 0;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+    
+   
+  
+  }
+  .nav-list  a {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500; 
+    display: block;
+   
+    
+  }
+
+  .nav-list a:hover {
+    color: #9287BC; 
+  }
+  
   .nav li.social-btn {
     display: none;
   }
@@ -803,75 +921,14 @@ header h1 a{
     margin: 0 auto;
     justify-content: center;
   }
-
-  // Dropdown Menu //
-
   .builder li{
     display: none;
   }
-  .custom-dropdown{
-    position: absolute;
-    top: 510px;
-    left:28px;
+  .builder .custom-dropdown{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #48425F;
-    color: #fff;
-    border-radius: 1px;
-    padding: 10px;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    width: 380px;
-    height:48px;
-    z-index: 1000;
-   
-   
+  
   }
-  .selected-option {
-    flex-grow: 1;
-    display: flex;
-    align-items:center;
-  }
-  .dropdown-arrow{
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid #fff;
-    margin-left: 10px;
-  }
-
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #242031;
-    color: #fff;
-    border-radius: 8px;
-    width: 100%;
-    z-index: 10;
-    border: 1px solid #fff;
-  }
-
-  .custom-dropdown.open .dropdown-menu {
-    display: block;
-  }
-
-  .dropdown-item {
-    display: flex;
-    align-items: center;
-    padding: 11px 16px;
-    cursor: pointer;
-    border-bottom: 1px solid #ccc;
-  }
-
-  .dropdown-item:hover {
-    background-color: #6F6A84;
-  }
-
-  //Dropdown menu ends//
+  
 
   .column-container{
     flex-direction: column-reverse;

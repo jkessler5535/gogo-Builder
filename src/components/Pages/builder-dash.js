@@ -13,6 +13,7 @@ import SaveIcon from "../logos/save";
 
 const Builder = ({ onSelectPart, onSave }) => {
   const [showAlert, setShowAlert] = useState(false);
+ 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState('Shirts');
 
@@ -25,6 +26,7 @@ const Builder = ({ onSelectPart, onSave }) => {
     }
     setDropdownOpen(false);
   };
+  
 
   const handleSave = () => {
     if (onSave) {
@@ -103,12 +105,12 @@ const Builder = ({ onSelectPart, onSave }) => {
           </li>
       </ul>
 
-      <div className={`custom-dropdown ${dropdownOpen ? 'open' : ''}`} onClick={() => setDropdownOpen(!dropdownOpen)}>
-        <div className="selected-option">
-          <NewTshirt className="dropdown-icon" /> 
-          {selectedOption}
-        </div>
-        <div className="dropdown-arrow"></div>
+    <div className={`custom-dropdown ${dropdownOpen ? 'open' : ''}`} onClick={() => setDropdownOpen(!dropdownOpen)}>
+          <div className="selected-option">
+            <NewTshirt className="dropdown-icon" /> 
+            {selectedOption}
+          </div>
+          <div className="dropdown-arrow"></div>
         
       
         <div className="dropdown-menu">
@@ -137,10 +139,8 @@ const Builder = ({ onSelectPart, onSave }) => {
             Accessories
           </div>
         </div>
-      </div>
     </div>
-
-
+  </div>
   );
 }
 export default Builder;
