@@ -856,18 +856,13 @@ header {
   //Hamburger styles
   .navbar  .hamburger-menu {
     display: block;
-    position: absolute;
     cursor: pointer;
-    left: -280px;
-    top: 9px;
+    
   }
     
   .nav-list.show{
     display: flex;
     flex-direction: column;
-    position: absolute;
-    left: -227px;
-    top: 61px;
     padding-bottom: 30px;
     background-color: #242031;
     max-width: 100%;
@@ -899,8 +894,7 @@ header {
   }
   .navbar .saved{
     display: block;
-    position: relative;
-    right: -280px;
+   
   }
   .navbar li{
     display: none;

@@ -20,10 +20,10 @@ const Header = () => {
   return (
     <header>
       <nav className="navbar">
-        <h1><a href="/home"><Icon/></a></h1>
           <div className="hamburger-menu" onClick={toggleNavbar}>
             ☰
           </div>
+          <h1><a href="/home"><Icon/></a></h1>
           <SaveIcon/>
           <ul className={`nav-list ${isOpen ? 'show' : ''}`}>
           <li>
