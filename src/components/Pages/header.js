@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <header>
-      <nav className="nav">
+      <nav className="navbar">
         <h1><a href="/home"><Icon/></a></h1>
           <div className="hamburger-menu" onClick={toggleNavbar}>
             ☰

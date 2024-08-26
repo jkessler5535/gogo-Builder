@@ -36,7 +36,7 @@ const Builder = ({ onSelectPart, onSave }) => {
   };
   
   return (
-     <div className="builder">
+    <div className="builder">
       <ul className="menu">
           <li>
             <button className="shirt-btn" onClick={() => onSelectPart('body')}>

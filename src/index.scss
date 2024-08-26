@@ -25,19 +25,22 @@ header {
   height: 108px;
   box-sizing: border-box;
   width: 100%;
+
  
   
  
 }
-.nav {
+.navbar {
+  position: relative;
   display: flex;
   margin: 0 auto;
   padding: 25px;
   align-items: center;
+  
 
   
 }
-.nav ul {
+.navbar ul {
   list-style: none;
   
 }
@@ -47,14 +50,14 @@ header {
   align-items: center;
 
 }
-.nav .saved{
+.navbar .saved{
   display: none;
 }
 .custom-dropdown{
   display: none;
 }
 
-header h1 a{
+.navbar h1 a{
   margin-right: 45px;
   display: flex;
   align-items: center;
@@ -125,32 +128,30 @@ header h1 a{
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
   z-index: 2;
+ 
  
 }
 .builder .menu{
   display: flex;
   align-items: center;
   margin: 20px auto;
-  justify-content: flex-start;
+  justify-content: center;
   border-bottom: 5px solid #00000033;
-  padding: 0;
-}
-
-
-.builder ul{
-  display: flex;
-  align-items: center;
-  margin: 20px auto;
-  justify-content: flex-start;
-  border-bottom: 5px solid #00000033;
-  padding: 0; 
+  flex-wrap: nowrap;
  
+
+
 }
+
 
 .builder li{
   list-style: none;
- 
+  flex: 1;
+  box-sizing: border-box;
+
+  
 }
 
 .builder li button{
@@ -167,6 +168,7 @@ header h1 a{
   color: #fff;
   transition: color 0.3s ease, background-color 0.3s ease;
   cursor: pointer;
+ 
 
 }
  .builder li .save-btn {
@@ -245,12 +247,11 @@ header h1 a{
 
 .column-container{
   display: flex;
+  padding:15px;
   flex-direction: row;
   max-width:1280px;
-  margin: 0 auto ;
+  margin: 0 auto;
   gap:40px;
-  
-  
 
 }
 
@@ -331,8 +332,8 @@ header h1 a{
  .avatar-container {
   position: relative;
   left:10px;
-  width:610px;
-  height: 610px;
+  width:589px;
+  height: 589px;
   border-radius: 35px;
   background-color: #FFD089;
   box-shadow: 0px 30px 24.5px 0px #0000000D;
@@ -353,8 +354,6 @@ header h1 a{
  
  }
 }
- 
-
 
 .avatar-container
 .avatar-svg {
@@ -452,12 +451,13 @@ header h1 a{
   z-index: 10; 
   
 }
-//Custom dropdown
+//Custom dropdown Builder Dash
 .builder .custom-dropdown{
   display: none;
   position: absolute;
   top: 430px;
-  left: 20px;
+  left: 26px;
+  justify-content: center;
   align-items: center;
   background-color: #48425F;
   color: #fff;
@@ -467,9 +467,11 @@ header h1 a{
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
   font-weight: 500;
-  width: 380px;
+  width:100%;
+  max-width: 380px;
   height:48px;
   z-index: 1000;
+  box-sizing: border-box;
  
  
 }
@@ -530,10 +532,11 @@ header h1 a{
 }
 .IamTheFoot p{
   position: absolute;
-  top: 38px;
+  top: 33px;
   color: #fff;
   font-size: 12px;
   margin: 0 auto;
+
 }
 
 .footer-img {
@@ -840,134 +843,134 @@ header h1 a{
 */
 
 
-/* Styles for iPhone 14 and iPhone 15 Pro Max */
-@media (max-width: 480px){
+//Tablet
+@media (max-width: 768px) {
   header{
+    height:74.32px;
+    padding: 22px;
+    box-sizing: border-box;
+  }
+  .navbar{
     position: relative;
-    height:77px;
-    width: 100%;
   }
-  .nav .saved {
+  //Hamburger styles
+  .navbar  .hamburger-menu {
     display: block;
     position: absolute;
-    right: 18px;
+    cursor: pointer;
+    left: -280px;
+    top: 9px;
   }
-  
-  .builder li:nth-last-child(2) {
-    margin-right: 0; 
-  }
-  
-  //Hamburger Menu
-  .nav .hamburger-menu{
-    display: block;
-    position: absolute;
-    left: 12px;
-  }
-  .custom-dropdown{
-    display: none;
-  }
-  
-  .nav-list{
-    display: none;
-  
-  }
-  .nav-list li:not(.social-btn) {
-    margin-right: 0; 
-  }
+    
   .nav-list.show{
     display: flex;
     flex-direction: column;
-    align-items: center;
     position: absolute;
-    left: 0px;
+    left: -227px;
     top: 61px;
     padding-bottom: 30px;
     background-color: #242031;
-    width:100%;
     max-width: 100%;
     z-index: 1100;
     
   }
-  
   .nav-list li {
-    margin: 15px 0;
+    margin: 15px 35px;
     padding: 5px;
-    width: 100%;
-    text-align: center;
-    
-   
   
   }
   .nav-list  a {
     color: #ffffff;
     font-size: 16px;
     font-weight: 500; 
-    display: block;
-   
     
   }
 
   .nav-list a:hover {
     color: #9287BC; 
   }
-  
-  .nav li.social-btn {
-    display: none;
-  }
-  .nav h1 a{
+
+  .navbar h1 a{
+    margin-right:0;
     width: 106px;
-    height:21px;
-    align-content: center;
-    margin: 0 auto;
-    justify-content: center;
+    height: 21px;
+  
+   
   }
-  .builder li{
+  .navbar .saved{
+    display: block;
+    position: relative;
+    right: -280px;
+  }
+  .navbar li{
     display: none;
   }
-  .builder .custom-dropdown{
-    display: flex;
+  .nav-list li:nth-last-child(-n+2){
+    display: none;
+  }
+ 
+  
+  .builder li .save-btn{
+    display: none;
   
   }
+  .builder .menu {
+    position: absolute;
+    top: 660px; 
+    left: 2px;
+    margin:0;
+    justify-content: center;
+    align-items: center;
+ 
+ }
+ 
+ .builder li:nth-last-child(2){
+  display: none;
+
+ }
+ 
+
+ .column-container{
+  position: relative;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  
+ 
+}
+
+.avatar-container{
+  max-width:none;
+  top:30px;
+  width: 433px;
+  height: 433px;
+  margin-bottom: 40px;
+}
+
+.right-column,
+.left-column{
+  flex-direction: column-reverse;
+  width: 100%;
+  align-items: center;
   
 
-  .column-container{
-    flex-direction: column-reverse;
+  }
+  .right-column {
+    flex-direction:column-reverse;
+    margin-top: 30px;
+    gap: 10px;
+  }
+  .left-column{
+    flex-direction:column-reverse;
+    gap: 180px;
+  }
+  .builder li:nth-last-child(2) {
+    margin-right: 0; 
   
   }
-  .left-column,
-  .right-column{
-    width:100%;
-  }
-  .avatar-container{
-    width: 292px;
-    height:292px;
-   
-    }
-    .d-s-buttonContainer{
-      margin-left:0;
-    }
-    .left-column{
-      position: relative;
-      top: 80px;
-    }
-   .grid{
-    grid-template-columns: repeat(2, 1fr);
-    padding:0;
-   }
-   .hue-picker{
-    position: relative;
-    margin-right:0;
-    height: 77px;
-  
-   }
-   .hue-horizontal{
-    width: 370px;
-    cursor: pointer;
-    bottom: -10px;
-    right:20px;
-    
-  }
-  .IamTheFoot{
-    display: none;
-  }
+
+
 }
+
+
+
