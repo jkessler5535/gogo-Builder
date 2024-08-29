@@ -824,10 +824,8 @@ header {
 }
 */
 @media (max-width:480px) {
-  .header{
-    max-width: 100%;
-   
-  
+  header{
+    height: 77px;
   }
   .navbar{
     width: 100%;
@@ -836,8 +834,6 @@ header {
     justify-content:space-between;
     padding:0;
     
- 
-
   }
   .nav-list li:nth-last-child(3){
     margin-right: 0;
@@ -864,27 +860,44 @@ header {
    .builder li{
     display: none;
    }
+   .builder .custom-dropdown{
+    display: flex;
+    width: 380px;
+    position: absolute;
+    top: 450px;
+    left: 30px;
+   }
+   
    .column-container{
     flex-direction: column-reverse;
    }
+   .right-column{
+    margin-top: none;
+    gap: 20px;
+   }
+   .left-column{
+    margin-top: 100px;
+   }
+
    .avatar-container{
     max-width: none;
     width:292px;
     height:292px;
+    
    }
    .d-s-buttonContainer{
+    max-width: 100%;
     align-items: center;
     margin: 0 auto;
    }
    .d-s-buttonContainer button{
-    width: 178px;
+    width: 170px;
     height: 46px;
+    white-space: nowrap;
+ 
     
    }
-   .right-column{
-    margin-top: none;
-   }
-
+   
    .grid{
     grid-template-columns: repeat(2, 1fr);
    }
