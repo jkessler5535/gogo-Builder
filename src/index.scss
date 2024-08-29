@@ -927,8 +927,8 @@ header {
 
 
 
-  /*
-@media (max-width: 725px){
+  
+@media (min-width: 481px) and (max-width: 725px){
   .builder li{
     display: none;
     width: 100%;
@@ -1104,5 +1104,5 @@ header {
   }
 }
 
-*/
+
 
