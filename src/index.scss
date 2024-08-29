@@ -1076,15 +1076,6 @@ header {
   
  
 }
-
-.avatar-container{
-  max-width:none;
-  top:30px;
-  width: 433px;
-  height: 433px;
-  margin-bottom: 40px;
-}
-
 .right-column,
 .left-column{
   flex-direction: column-reverse;
@@ -1100,8 +1091,18 @@ header {
   .left-column{
     gap: 180px;
   
-  
+
   }
+
+ .avatar-container{
+  max-width:none;
+  top:30px;
+  width: 433px;
+  height: 433px;
+  margin-bottom: 40px;
+}
+
+
 }
 
 
