@@ -824,7 +824,8 @@ header {
   padding: 8px;
 }
 */
-@media (max-width:480px) {
+
+@media  (max-width:480px) {
   header{
     height: 77px;
   }
@@ -832,7 +833,7 @@ header {
     width: 100%;
     align-items: center;
     text-align: center;
-    justify-content:space-between;
+    justify-content: space-between;
     padding:0;
     
   }
@@ -880,10 +881,10 @@ header {
     margin-top: 100px;
    }
 
-   .avatar-container{
-    max-width: none;
-    width:292px;
+   .right-column .avatar-container{
+    width: 292px;
     height:292px;
+  
     
    }
    .d-s-buttonContainer{
@@ -1095,7 +1096,6 @@ header {
   }
 
  .avatar-container{
-  max-width:none;
   top:30px;
   width: 433px;
   height: 433px;
