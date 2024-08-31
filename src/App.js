@@ -20,7 +20,7 @@ function App() {
       <div>
         <Header />
         <Routes>
-          <Route path="/home" element={<GogoBuilder2 />} />
+          <Route path="/" element={<GogoBuilder2 />} />
           <Route path="/share" element={<SharePage />} />
         </Routes>
         <Footer />

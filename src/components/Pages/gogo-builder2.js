@@ -420,7 +420,6 @@ const copyToClipboard = () => {
               </div>
             </button>
           </div>
-          <div className="custom-dropdown"></div>
         </div>
       </div>
 
