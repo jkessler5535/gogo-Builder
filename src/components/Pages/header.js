@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import HamburgerMenu from './Hamburger-menu';
 
 
 //Logos
@@ -10,25 +11,35 @@ import Twitter from "../logos/twitter-icon";
 import SaveIcon from "../logos/save";
 
 
-
-
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   const toggleNavbar = () => {
-    console.log('Toggling Navbar', !isOpen);
-   setIsOpen(!isOpen);
+    setIsNavOpen(prevState => !prevState);
   };
+
+  const closeNavbar = () => {
+    setIsNavOpen(false);
+  }
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isNavOpen && !event.target.closest('.navbar')) {
+        closeNavbar();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isNavOpen]);
 
   return (
     <header>
       <nav className="navbar">
-          <div className="hamburger-menu" onClick={toggleNavbar}>
-            ☰
-          </div>
+          <HamburgerMenu isOpen={isNavOpen} onToggle={toggleNavbar}/>
           <h1><a href="/home"><Icon/></a></h1>
           <SaveIcon/>
-          <ul className={`nav-list ${isOpen ? 'show' : ''}`}>
+          <ul className={`nav-list ${isNavOpen ? 'show' : ''}`}>
           <li>
             <a href="https://app.gogopool.com/liquid-staking/">Liquid Stake</a>
           </li>

@@ -117,9 +117,11 @@ header {
 }
 
 
+//Hamburger menu ends//
 
 
-//BuilderDash Styles
+
+//BuilderDash Styles//
 
 .builder {
   position: relative;
@@ -949,10 +951,6 @@ header {
 
 
   @media(min-width:601px) and  (max-width:768px){
-    .nav-list li{
-      display: none;
-    
-    }
     .builder .menu {
       position: absolute;
       top:618px;
@@ -995,9 +993,7 @@ header {
     header{
       width: 100%;
       position: relative;
-    }
-    .nav-list li{
-      display: none;
+    
     }
     .navbar{
       justify-content: space-between;
@@ -1005,44 +1001,51 @@ header {
       padding: 0;
     }
     .navbar .saved,
-    .navbar .hamburger-menu{
+    .hamburger-menu{
       display: block;
     }
-    
-    .nav-list li:nth-last-child(-n+2){
-      display: none;
+    .nav-list {
+      display: none; 
     }
-
-    //Hamburger menu
-    .nav-list .show{
+  
+    .nav-list.show {
       display: flex;
       flex-direction: column;
       align-items: center;
       padding-bottom: 30px;
       position: absolute;
       top: 61px;
-      left: 0;
+      left: 0px;
       background-color: #242031;
-      padding-bottom: 30px;
       width: 100%;
       max-width: 100%;
       z-index: 1100;
-      
     }
-   
-    
     .nav-list  a {
       color: #ffffff;
+      padding:11px 16px;
       font-size: 16px;
       font-weight: 500; 
       display: block;
      
-      
+    }
+
+    .nav-list li:not(.social-btn){
+      margin-right: 0;
+    }
+    .nav-list li.social-btn {
+     display: none;
     }
   
     .nav-list a:hover {
       color: #9287BC; 
     }
+
+    
+    .nav-list li:nth-last-child(-n+2){
+      display: none;
+    }
+
   }
    
 
