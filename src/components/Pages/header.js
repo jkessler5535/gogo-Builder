@@ -15,7 +15,10 @@ import SaveIcon from "../logos/save";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleNavbar = () => setIsOpen(!isOpen);
+  const toggleNavbar = () => {
+    console.log('Toggling Navbar', !isOpen);
+   setIsOpen(!isOpen);
+  };
 
   return (
     <header>

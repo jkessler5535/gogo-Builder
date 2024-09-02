@@ -1,5 +1,5 @@
 import React, {useState}  from 'react';
-import TemporaryAlert from '../TempAlert';
+import SaveButton from './Save-comp';
 
 //Logos
 
@@ -12,15 +12,11 @@ import NewAcess from "../logos/new-acess";
 import SaveIcon from "../logos/save";
 
 const Builder = ({ onSelectPart, onSave }) => {
-  const [showAlert, setShowAlert] = useState(false);
- 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState('Shirts');
 
   const handleSelect = (value) => {
-    if (value === 'save') {
-      handleSave();
-    } else {
+    if (value !== 'save') {
       onSelectPart(value);
       setSelectedOption(value.charAt(0).toUpperCase() + value.slice(1));
     }
@@ -28,12 +24,6 @@ const Builder = ({ onSelectPart, onSave }) => {
   };
   
 
-  const handleSave = () => {
-    if (onSave) {
-      onSave();
-    }
-    setShowAlert(true);
-  };
   
   return (
     <div className="builder">
@@ -90,18 +80,7 @@ const Builder = ({ onSelectPart, onSave }) => {
             </button>
           </li>
           <li>
-            <button onClick={handleSave}  className="save-btn">
-              <div className="logo-container">
-                <SaveIcon className="logo" />
-              </div>
-              <div className="text-container white-space">Save Progress</div>
-            </button>
-            {showAlert && (
-              <TemporaryAlert
-                message="Saved!"
-                onClose={() => setShowAlert(false)}
-            />
-             )}
+            <SaveButton onSave={onSave} />
           </li>
       </ul>
 
