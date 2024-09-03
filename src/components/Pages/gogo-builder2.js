@@ -7,6 +7,7 @@ import html2canvas from 'html2canvas';
 import LoadingSpinner from '../loadingSpinner.js'; 
 
 
+
 import Hat1 from "../hats/hat-1";
 import Hat2 from "../hats/hat-2";
 import Hat3 from "../hats/hat-3";
@@ -41,53 +42,18 @@ import Scarf1 from "../scarf/scarf1.js";
 function GogoBuilder2() {
   const avatarRef = useRef(null);
 
-  
-  const hatOptions = [<Hat1/>, <Hat2/>, <Hat3/>, <Hat4/>, <Hat5/>, <div/>, <div/>, <div/>, <div/>];
+  const hatOptions = [<Hat1 />, <Hat2 />, <Hat3 />, <Hat4 />, <Hat5 />, <div />, <div />, <div />, <div />];
 
-  const bodyOptions = [<Body1 />, <Body2 />, <div />, <div />, <div />, <div />, <div />, <div />,<div/>];
+  const bodyOptions = [<Body1 />, <Body2 />, <div />, <div />, <div />, <div />, <div />, <div />, <div />];
 
+  const glassesOptions = [<Glasses1 />, <Glasses2 />, <Glasses3 />, <Glasses3 />, <Glasses3 />, <Glasses3 />, <Glasses3 />, <Glasses3 />, <Glasses3 />];
 
+  const scarfOptions = [<Scarf1 />, <div />, <div />, <div />, <div />, <div />, <div />, <div />, <div />];
 
-  const glassesOptions = [<Glasses1 />, <Glasses2 />, <Glasses3 />, <Glasses3 />, <Glasses3 />, <Glasses3 />,
-    <Glasses3 />,<Glasses3 />,<Glasses3 />
-  ];
+  const hairOptions = [<Beard1 />, <Hair1 />, <Hair2 />, <div />, <div />, <div />, <div />, <div />, <div />];
 
-  const ScarfOptions = [
-  <Scarf1/>,
-  <div/>,
-  <div/>,
-  <div/>,
-  <div/>,
-  <div/>,
-  <div/>,
-  <div/>,
-  <div/>
-];
-
-const hairOptions = [
-  <Beard1/>,
-  <Hair1/>,
-  <Hair2/>,
-  <div/>,
-  <div/>,
-  <div/>,
-  <div/>,
-  <div/>,
-  <div/>,
-
-];
-
-  const MaskOptions = [
-     <Mask1 />,
-     <div />,
-     <div />,
-     <div />,
-     <div />,
-     <div />,
-     <div />,
-     <div />,
-     <div />,
-    ];
+  const maskOptions = [<Mask1 />, <div />, <div />, <div />, <div />, <div />, <div />, <div />, <div />];
+ 
 
 
   //State to track selected part and its index
@@ -182,7 +148,7 @@ const hairOptions = [
   
         const shareableLink = `${window.location.origin}/share?image=${base64Image}&config=${base64Config}`;
   
-        // Set the generated link and image
+        
         setShareableLink(shareableLink);
         setImagePreview(imageBase64);
         setModalVisible(true);
@@ -221,7 +187,7 @@ const copyToClipboard = () => {
     setColors({ ...colors, [selectedPart]: color.hex });
   };
 
-
+ 
  
   const onSelectPart = (part) => {
     setSelectedPart(part);
@@ -319,7 +285,7 @@ const copyToClipboard = () => {
       case "scarf":
         return (
           <div className="scarf-options grid">
-            {ScarfOptions.map((Scarf, index) => (
+            {scarfOptions.map((Scarf, index) => (
               <motion.button
                 key={index}
                 onClick={() => setScarfIndex(index)}
@@ -335,7 +301,7 @@ const copyToClipboard = () => {
       case "mask":
         return (
           <div className="mask-options grid">
-            {MaskOptions.map((Mask, index) => (
+            {maskOptions.map((Mask, index) => (
               <motion.button
                 key={index}
                 onClick={() => setMaskIndex(index)}
@@ -388,8 +354,8 @@ const copyToClipboard = () => {
           {bodyIndex !== -1 && React.cloneElement(bodyOptions[bodyIndex], { color: colors.body })}
           {glassesIndex !== -1 && React.cloneElement(glassesOptions[glassesIndex], { color: colors.glasses })}
           {hairIndex !== -1 && React.cloneElement(hairOptions[hairIndex], { color: colors.hair })}
-          {scarfIndex !== -1 && React.cloneElement(ScarfOptions[scarfIndex], { color: colors.scarf })}
-          {maskIndex !== -1 && React.cloneElement(MaskOptions[maskIndex], { color: colors.mask })}
+          {scarfIndex !== -1 && React.cloneElement(scarfOptions[scarfIndex], { color: colors.scarf })}
+          {maskIndex !== -1 && React.cloneElement(maskOptions[maskIndex], { color: colors.mask })}
           <Avatar
                  showBody={bodyIndex === -1}
                  showHat={hatIndex === -1}
