@@ -866,7 +866,6 @@ header {
    .left-column{
     border-top: 5px solid #00000033;
     padding-top: 30px;
-  
     position: relative;
     top: 90px;
    }
@@ -874,17 +873,14 @@ header {
    .left-column, .right-column {
     gap: 20px;
    }
+
    .builder .custom-dropdown{
       width: 380px;
       height:48px;
-      top:460px;
+      top:440px;
       left: 42px;
    }
 
-   .avatar-container{
-    margin-top: 30px;
-
-   }
    
    .d-s-buttonContainer{
     max-width: 100%;
@@ -926,12 +922,52 @@ header {
   }
 
  
+  //Breakpoint for resize on hue-picker
+  @media(min-width:601px) and (max-width:648px){
+    .hue-horizontal{
+      width:480px;
+      left:45px;
+    }
+  }
+
+ 
+  //Breakpoint for builder dropdown
   @media(min-width:601px) and (max-width:730px){
     .builder .custom-dropdown{
       width: 444px;
       height:48px;
-      top:710px;
-      left: 90px;
+      top:680px;
+      left: 115px;
+  }
+
+  .column-container{
+    padding:50px;
+    box-sizing: border-box;
+  }
+}
+
+
+
+//Breakpoint for builder full builder menu
+@media(min-width:731px) and (max-width:768px){
+  .builder .menu{
+    position: absolute;
+    top: 630px;
+  }
+  .d-s-buttonContainer{
+    padding-top: 30px;
+  
+  }
+}
+
+
+//Change h1 size for bigger screen
+@media(min-width:601px) and (max-width:768px){
+  .navbar h1 a{
+    width: 106px;
+    height: 21px;
+    margin-left: 50px;
+    
   }
 }
 
@@ -996,22 +1032,19 @@ header {
     .grid{
       margin-top:110px;
      }
-     .d-s-buttonContainer button{
-      margin-top: 30px;
-     }
+    
     }
     
   
 
-
-
-   // tablet
+   // Tablet
    @media(max-width:768px) {
     header{
       height: 77px;
     }
     .navbar{
       justify-content: space-between;
+      width: 100%;
      
     }
 

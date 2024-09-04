@@ -8,6 +8,7 @@ import LoadingSpinner from '../loadingSpinner.js';
 
 
 
+
 import Hat1 from "../hats/hat-1";
 import Hat2 from "../hats/hat-2";
 import Hat3 from "../hats/hat-3";
@@ -41,6 +42,7 @@ import Scarf1 from "../scarf/scarf1.js";
 
 function GogoBuilder2() {
   const avatarRef = useRef(null);
+  
 
   const hatOptions = [<Hat1 />, <Hat2 />, <Hat3 />, <Hat4 />, <Hat5 />, <div />, <div />, <div />, <div />];
 
@@ -66,7 +68,7 @@ function GogoBuilder2() {
   const [hairIndex, setHairIndex] = useState(-1);
  
 
-
+  
  
   //State to manage colors for each part
   const [colors, setColors] = useState({
@@ -161,9 +163,6 @@ function GogoBuilder2() {
       setIsProcessing(false);
     }
   };
-  
-
-
   
 
 const closeModal = () => {
@@ -361,8 +360,6 @@ const copyToClipboard = () => {
                  showHat={hatIndex === -1}
                  showGlasses={glassesIndex === -1}
                  showEyes={glassesIndex === -1}
-                 
-              
             />
 
         </div>
@@ -385,6 +382,7 @@ const copyToClipboard = () => {
                 <p>Share Art</p>
               </div>
             </button>
+           
           </div>
         </div>
       </div>
