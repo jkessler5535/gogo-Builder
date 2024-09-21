@@ -36,6 +36,7 @@ import Mask1 from "../masks/mask-1";
 import ShareIcon from "../logos/share";
 import DownloadIcon from "../logos/download";
 import Scarf1 from "../scarf/scarf1.js";
+import DeleteIcon from "../logos/delete-symbol.js";
 
 
 
@@ -44,7 +45,7 @@ function GogoBuilder2() {
   const avatarRef = useRef(null);
   
 
-  const hatOptions = [<Hat1 />, <Hat2 />, <Hat3 />, <Hat4 />, <Hat5 />, <div />, <div />, <div />, <div />];
+  const hatOptions = [<Hat1 />, <Hat2 />, <Hat3 />, <Hat4 />, <Hat5 />, <div />, <div />, <div />, <DeleteIcon className="delete-icon" /> ];
 
   const bodyOptions = [<Body1 />, <Body2 />, <div />, <div />, <div />, <div />, <div />, <div />, <div />];
 
@@ -75,7 +76,7 @@ function GogoBuilder2() {
     hat: "#000",
     glasses: "#000",
     body: "#000",
-    hair: "#000",
+    hair: "#BFBFBF",
     mask: "#000",
     scarf: "#000",
   });
@@ -222,14 +223,26 @@ const copyToClipboard = () => {
           <div className="hat-options grid">
             {hatOptions.map((Hat, index) => (
               <motion.button
-                key={index}
-                onClick={() => setHatIndex(index)}
-                className={hatIndex === index ? "active-button" : ""}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                {React.cloneElement(Hat, { color: colors.hat })}
-              </motion.button>
+              key={index}
+              onClick={() => {
+                if (index === hatOptions.length - 1) {
+                  // Handle the delete icon click
+                  console.log("Delete action triggered!");
+                  setHatIndex(-1); // Deselect any selected hat
+                } else {
+                  setHatIndex(index);
+                }
+              }}
+              className={hatIndex === index ? "active-button" : ""}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              {index === hatOptions.length - 1 ? (
+                <DeleteIcon className="delete-icon" />
+              ) : (
+                React.cloneElement(Hat, { color: colors.hat })
+              )}
+            </motion.button>
             ))}
           </div>
         );
