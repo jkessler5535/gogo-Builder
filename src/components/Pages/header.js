@@ -41,19 +41,19 @@ const Header = () => {
           <SaveIcon/>
           <ul className={`nav-list ${isNavOpen ? 'show' : ''}`}>
           <li>
-            <a href="https://app.gogopool.com/liquid-staking/">Liquid Stake</a>
+            <a href="https://app.gogopool.com/liquid-staking/"target="_blank" rel="noopener noreferrer" >Liquid Stake</a>
           </li>
           <li>
-            <a href="https://app.gogopool.com/">Validate AVAX</a>
+            <a href="https://app.gogopool.com/" target="_blank" rel="noopener noreferrer">Validate AVAX</a>
           </li>
           <li>
-            <a href="https://docs.gogopool.com/gogopool-primer">Explore Subnets</a>
+            <a href="https://docs.gogopool.com/gogopool-primer" target="_blank" rel="noopener noreferrer">Explore Subnets</a>
           </li>
           <li className="social-btn">
-            <a href="https://discord.com"><Discord/></a>
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer"><Discord/></a>
           </li>
           <li className="social-btn">
-            <a href="https://twitter.com"><Twitter/></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><Twitter/></a>
           </li>
         </ul>
       </nav>
