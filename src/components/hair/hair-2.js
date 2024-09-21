@@ -9,9 +9,10 @@ function Hair2({color}) {
       fill="none"
       viewBox="0 0 600 600"
       className="gogo-c gogo-hair-black"
+      color={color}
     >
       <path
-        fill={color}
+        fill="#BABABA"
         stroke="#000"
         strokeMiterlimit="10"
         strokeWidth="7"

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Hair1() {
+function Hair1({color}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +9,7 @@ function Hair1() {
       fill="none"
       viewBox="0 0 600 600"
       className="gogo-c gogo-hair-face"
+      color={color}
     >
       <path
         fill="#BABABA"

@@ -76,11 +76,22 @@ function GogoBuilder2() {
     hat: "#000",
     glasses: "#000",
     body: "#000",
-    hair: "#BFBFBF",
+    hair: "#BABABA",
     mask: "#000",
     scarf: "#000",
+    Beard:"BABABA",
   });
 
+// State to track colors of the currently selected parts, updated during color selection
+  const [activeColors, setActiveColors] = useState({
+    hat: colors.hat,
+    glasses: colors.glasses,
+    body: colors.body,
+    hair: colors.hair,
+    mask: colors.mask,
+    scarf: colors.scarf,
+  });
+  
 
   const [isProcessing, setIsProcessing] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
@@ -184,8 +195,12 @@ const copyToClipboard = () => {
 
   // Handler to handle color change for selected part
   const handleColorChange = (color) => {
-    setColors({ ...colors, [selectedPart]: color.hex });
+    setActiveColors((prev) => ({
+      ...prev,
+      [selectedPart]: color.hex,
+    }));
   };
+  
 
  
  
@@ -416,12 +431,14 @@ const copyToClipboard = () => {
         {glassesIndex === -1 && <Avatar showGlasses={true} glassesColor={colors.glasses} />}
         {bodyIndex === -1 && <Avatar showBody={true} 
         bodyColor={colors.body} />}
-          {hatIndex !== -1 && React.cloneElement(hatOptions[hatIndex], { color: colors.hat })}
-          {bodyIndex !== -1 && React.cloneElement(bodyOptions[bodyIndex], { color: colors.body })}
-          {glassesIndex !== -1 && React.cloneElement(glassesOptions[glassesIndex], { color: colors.glasses })}
-          {hairIndex !== -1 && React.cloneElement(hairOptions[hairIndex], { color: colors.hair })}
-          {scarfIndex !== -1 && React.cloneElement(scarfOptions[scarfIndex], { color: colors.scarf })}
-          {maskIndex !== -1 && React.cloneElement(maskOptions[maskIndex], { color: colors.mask })}
+         
+        {hatIndex !== -1 && React.cloneElement(hatOptions[hatIndex], { color: activeColors.hat })}
+        {bodyIndex !== -1 && React.cloneElement(bodyOptions[bodyIndex], { color: activeColors.body })}
+        {glassesIndex !== -1 && React.cloneElement(glassesOptions[glassesIndex], { color: activeColors.glasses })}
+        {hairIndex !== -1 && React.cloneElement(hairOptions[hairIndex], { color: activeColors.hair })}
+        {scarfIndex !== -1 && React.cloneElement(scarfOptions[scarfIndex], { color: activeColors.scarf })}
+        {maskIndex !== -1 && React.cloneElement(maskOptions[maskIndex], { color: activeColors.mask })}
+
           <Avatar
                  showBody={bodyIndex === -1}
                  showHat={hatIndex === -1}
