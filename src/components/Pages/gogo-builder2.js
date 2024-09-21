@@ -222,13 +222,12 @@ const copyToClipboard = () => {
         return (
           <div className="hat-options grid">
             {hatOptions.map((Hat, index) => (
-              <motion.button
+            <motion.button
               key={index}
               onClick={() => {
                 if (index === hatOptions.length - 1) {
-                  // Handle the delete icon click
                   console.log("Delete action triggered!");
-                  setHatIndex(-1); // Deselect any selected hat
+                  setHatIndex(-1);
                 } else {
                   setHatIndex(index);
                 }
@@ -236,9 +235,9 @@ const copyToClipboard = () => {
               className={hatIndex === index ? "active-button" : ""}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-            >
+              >
               {index === hatOptions.length - 1 ? (
-                <DeleteIcon className="delete-icon" />
+                <DeleteIcon className="delete-icon"/>
               ) : (
                 React.cloneElement(Hat, { color: colors.hat })
               )}
@@ -251,14 +250,25 @@ const copyToClipboard = () => {
           <div className="body-options grid">
             {bodyOptions.map((Body, index) => (
               <motion.button
-                key={index}
-                onClick={() => setBodyIndex(index)}
-                className={bodyIndex === index ? "active-button" : ""}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+              key={index}
+              onClick={() => {
+                if (index === bodyOptions.length - 1) {
+                  console.log("Delete action triggered!");
+                  setBodyIndex(-1);
+                } else {
+                  setBodyIndex(index);
+                }
+              }}
+              className={bodyIndex === index ? "active-button" : ""}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
               >
-                {React.cloneElement(Body, { color: colors.body })}
-              </motion.button>
+              {index === bodyOptions.length - 1 ? (
+                <DeleteIcon className="delete-icon"/>
+              ) : (
+                React.cloneElement(Body, { color: colors.body })
+              )}
+            </motion.button>
             ))}
           </div>
         );
@@ -267,14 +277,25 @@ const copyToClipboard = () => {
           <div className="glasses-options grid">
             {glassesOptions.map((Glasses, index) => (
               <motion.button
-                key={index}
-                onClick={() => setGlassesIndex(index)}
-                className={glassesIndex === index ? "active-button" : ""}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+              key={index}
+              onClick={() => {
+                if (index === glassesOptions.length - 1) {
+                  console.log("Delete action triggered!");
+                  setGlassesIndex(-1);
+                } else {
+                  setGlassesIndex(index);
+                }
+              }}
+              className={glassesIndex === index ? "active-button" : ""}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
               >
-                {React.cloneElement(Glasses, { color: colors.glasses })}
-              </motion.button>
+              {index === glassesOptions.length - 1 ? (
+                <DeleteIcon className="delete-icon"/>
+              ) : (
+                React.cloneElement(Glasses, { color: colors.glasses })
+              )}
+            </motion.button>
             ))}
           </div>
         );
@@ -283,14 +304,25 @@ const copyToClipboard = () => {
           <div className="hair-options grid">
             {hairOptions.map((Hair, index) => (
               <motion.button
-                key={index}
-                onClick={() => setHairIndex(index)}
-                className={hairIndex === index ? "active-button" : ""}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+              key={index}
+              onClick={() => {
+                if (index === hairOptions.length - 1) {
+                  console.log("Delete action triggered!");
+                  setHairIndex(-1);
+                } else {
+                  setHairIndex(index);
+                }
+              }}
+              className={hairIndex === index ? "active-button" : ""}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
               >
-                {React.cloneElement(Hair, { color: colors.hair })}
-              </motion.button>
+              {index === hairOptions.length - 1 ? (
+                <DeleteIcon className="delete-icon"/>
+              ) : (
+                React.cloneElement(Hair, { color: colors.hair })
+              )}
+            </motion.button>
             ))}
           </div>
         );
@@ -298,15 +330,26 @@ const copyToClipboard = () => {
         return (
           <div className="scarf-options grid">
             {scarfOptions.map((Scarf, index) => (
-              <motion.button
-                key={index}
-                onClick={() => setScarfIndex(index)}
-                className={scarfIndex === index ? "active-button" : ""}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                {React.cloneElement(Scarf, { color: colors.scarf })}
-              </motion.button>
+             <motion.button
+             key={index}
+             onClick={() => {
+               if (index === scarfOptions.length - 1) {
+                 console.log("Delete action triggered!");
+                 setScarfIndex(-1);
+               } else {
+                 setScarfIndex(index);
+               }
+             }}
+             className={scarfIndex === index ? "active-button" : ""}
+             whileHover={{ scale: 1.1 }}
+             whileTap={{ scale: 0.9 }}
+             >
+             {index === scarfOptions.length - 1 ? (
+               <DeleteIcon className="delete-icon"/>
+             ) : (
+               React.cloneElement(Scarf, { color: colors.scarf })
+             )}
+           </motion.button>
             ))}
           </div>
         );
@@ -315,14 +358,25 @@ const copyToClipboard = () => {
           <div className="mask-options grid">
             {maskOptions.map((Mask, index) => (
               <motion.button
-                key={index}
-                onClick={() => setMaskIndex(index)}
-                className={maskIndex === index ? "active-button" : ""}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+              key={index}
+              onClick={() => {
+                if (index === maskOptions.length - 1) {
+                  console.log("Delete action triggered!");
+                  setMaskIndex(-1);
+                } else {
+                  setMaskIndex(index);
+                }
+              }}
+              className={maskIndex === index ? "active-button" : ""}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
               >
-                {React.cloneElement(Mask, { color: colors.mask })}
-              </motion.button>
+              {index === maskOptions.length - 1 ? (
+                <DeleteIcon className="delete-icon"/>
+              ) : (
+                React.cloneElement(Mask, { color: colors.mask })
+              )}
+            </motion.button>
             ))}
           </div>
         );
