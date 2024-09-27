@@ -11,7 +11,7 @@ function Body2() {
       className="gogo-body gogo-c"
     >
       <path
-        fill="#413F42"
+        fill="BABABA"
         stroke="#000"
         strokeMiterlimit="10"
         strokeWidth="4"

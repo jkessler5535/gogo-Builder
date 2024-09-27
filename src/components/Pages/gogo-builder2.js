@@ -72,14 +72,14 @@ function GogoBuilder2() {
   
  
   //State to manage colors for each part
-  const [colors, setColors] = useState({
-    hat: "#BABABA",
-    glasses: "#000",
-    body: "#000",
-    hair: "#000",
-    mask: "#000",
-    scarf: "#000",
-    Beard:"#BABABA",
+  const [colors] = useState({
+    hat: "#BFBFBF",
+    glasses: "#BABABA",
+    body: "#BABABA",
+    hair: "#BABABA",
+    mask: "#BABABA",
+    scarf: "#BABABA",
+    beard:"#BABABA",
   });
 
   

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Hat5() {
+function Hat5({color}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
