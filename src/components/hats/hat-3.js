@@ -6,7 +6,7 @@ function Hat3({color}) {
       xmlns="http://www.w3.org/2000/svg"
       width="600"
       height="600"
-      fill="BFBFBF"
+      fill="none"
       viewBox="0 0 600 600"
       className="gogo-c gogo-cap"
     >
